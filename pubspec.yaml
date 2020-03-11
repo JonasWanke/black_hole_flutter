@@ -1,12 +1,14 @@
 name: black_hole_flutter
-description: A package absorbing all Flutter utility functions
+description: "🛠 A package absorbing all Flutter utility functions"
 version: 0.0.1
 homepage: https://github.com/JonasWanke/black_hole_flutter
 
 environment:
-  sdk: '>=2.7.0 <3.0.0'
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  flutter:
+    sdk: flutter
   meta: ^1.1.8
 
 dev_dependencies:
