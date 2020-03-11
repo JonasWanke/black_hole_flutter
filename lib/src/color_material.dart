@@ -41,15 +41,75 @@ extension MaterialColors on Color {
 }
 
 extension ThemeMaterialColors on ThemeData {
+  // Primary color
+
+  /// The Material Design "On" color contrasting with this theme's
+  /// primary [Color], i.e., [Colors.black] or [Colors.white].
+  Color get onPrimary => primaryColor.contrastColor;
+
   /// The Material Design high emphasis color contrasting with this theme's
-  /// [Brightness].
-  Color get highEmphasisOnColor => brightness.highEmphasisOnColor;
+  /// primary [Color].
+  Color get highEmphasisOnPrimary => primaryColor.highEmphasisOnColor;
 
   /// The Material Design medium emphasis color contrasting with this theme's
-  /// [Brightness].
-  Color get mediumEmphasisOnColor => brightness.mediumEmphasisOnColor;
+  /// primary [Color].
+  Color get mediumEmphasisOnPrimary => primaryColor.mediumEmphasisOnColor;
 
   /// The Material Design disabled color contrasting with this theme's
-  /// [Brightness].
-  Color get disabledOnColor => brightness.disabledOnColor;
+  /// primary [Color].
+  Color get disabledOnPrimary => primaryColor.disabledOnColor;
+
+  // Accent color
+
+  /// The Material Design "On" color contrasting with this theme's
+  /// accent [Color], i.e., [Colors.black] or [Colors.white].
+  Color get onAccent => accentColor.contrastColor;
+
+  /// The Material Design high emphasis color contrasting with this theme's
+  /// accent [Color].
+  Color get highEmphasisOnAccent => accentColor.highEmphasisOnColor;
+
+  /// The Material Design medium emphasis color contrasting with this theme's
+  /// accent [Color].
+  Color get mediumEmphasisOnAccent => accentColor.mediumEmphasisOnColor;
+
+  /// The Material Design disabled color contrasting with this theme's
+  /// accent [Color].
+  Color get disabledOnAccent => accentColor.disabledOnColor;
+
+  // Background color
+
+  /// The Material Design "On" color contrasting with this theme's
+  /// background [Color], i.e., [Colors.black] or [Colors.white].
+  Color get onBackground => backgroundColor.contrastColor;
+
+  /// The Material Design high emphasis color contrasting with this theme's
+  /// background [Color].
+  Color get highEmphasisOnBackground => backgroundColor.highEmphasisOnColor;
+
+  /// The Material Design medium emphasis color contrasting with this theme's
+  /// background [Color].
+  Color get mediumEmphasisOnBackground => backgroundColor.mediumEmphasisOnColor;
+
+  /// The Material Design disabled color contrasting with this theme's
+  /// background [Color].
+  Color get disabledOnBackground => backgroundColor.disabledOnColor;
+
+  // Error color
+
+  /// The Material Design "On" color contrasting with this theme's
+  /// error [Color], i.e., [Colors.black] or [Colors.white].
+  Color get onError => errorColor.contrastColor;
+
+  /// The Material Design high emphasis color contrasting with this theme's
+  /// error [Color].
+  Color get highEmphasisOnError => errorColor.highEmphasisOnColor;
+
+  /// The Material Design medium emphasis color contrasting with this theme's
+  /// error [Color].
+  Color get mediumEmphasisOnError => errorColor.mediumEmphasisOnColor;
+
+  /// The Material Design disabled color contrasting with this theme's
+  /// error [Color].
+  Color get disabledOnError => errorColor.disabledOnColor;
 }
