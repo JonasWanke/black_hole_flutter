@@ -13,6 +13,9 @@ extension FancyContext on BuildContext {
   /// Shortcut for `MediaQuery.of(context)`.
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 
+  /// Shortcut for `ModalRoute.of(context)`.
+  ModalRoute get modalRoute => ModalRoute.of(this);
+
   /// Shortcut for `Navigator.of(context)`.
   NavigatorState get navigator => Navigator.of(this);
 
