@@ -8,3 +8,4 @@ export 'src/color.dart';
 export 'src/color_material.dart';
 export 'src/context.dart';
 export 'src/separated_buttons.dart';
+export 'src/size.dart';
