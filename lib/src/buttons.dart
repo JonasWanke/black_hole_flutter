@@ -24,8 +24,6 @@ class FancyFlatButton extends StatelessWidget {
     this.color,
   })  : onPressed = _actualOnPressed(isEnabled, onPressed, isLoading),
         assert(child != null),
-        assert(!isLoading || loadingChild != null,
-            'loadingChild must be set when isLoading is true'),
         super(key: key);
 
   final VoidCallback onPressed;
@@ -66,8 +64,6 @@ class FancyOutlineButton extends StatelessWidget {
     this.color,
   })  : onPressed = _actualOnPressed(isEnabled, onPressed, isLoading),
         assert(child != null),
-        assert(!isLoading || loadingChild != null,
-            'loadingChild must be set when isLoading is true'),
         super(key: key);
 
   final VoidCallback onPressed;
@@ -108,8 +104,6 @@ class FancyRaisedButton extends StatelessWidget {
     this.color,
   })  : onPressed = _actualOnPressed(isEnabled, onPressed, isLoading),
         assert(child != null),
-        assert(!isLoading || loadingChild != null,
-            'loadingChild must be set when isLoading is true'),
         super(key: key);
 
   final VoidCallback onPressed;
@@ -144,12 +138,12 @@ class FancyFab extends StatelessWidget {
     @required VoidCallback onPressed,
     @required this.icon,
     this.isLoading = false,
-  })  : isExtended = false,
+    this.loadingLabel,
+  })  : _isExtended = isLoading && loadingLabel != null,
         onPressed = _actualOnPressed(isEnabled, onPressed, isLoading),
         assert(icon != null),
         label = null,
         assert(isLoading != null),
-        loadingLabel = null,
         super(key: key);
 
   /// Creates an extended [FloatingActionButton].
@@ -165,15 +159,14 @@ class FancyFab extends StatelessWidget {
     this.icon,
     @required this.label,
     this.isLoading = false,
-    @required this.loadingLabel,
-  })  : isExtended = true,
+    this.loadingLabel,
+  })  : _isExtended = !(isLoading && loadingLabel == null),
         onPressed = _actualOnPressed(isEnabled, onPressed, isLoading),
         assert(label != null),
         assert(isLoading != null),
-        assert(loadingLabel != null),
         super(key: key);
 
-  final bool isExtended;
+  final bool _isExtended;
   final VoidCallback onPressed;
   final Widget icon;
   final Widget label;
@@ -188,7 +181,7 @@ class FancyFab extends StatelessWidget {
             context.theme.disabledColor, context.theme.backgroundColor)
         : null;
 
-    if (isExtended) {
+    if (_isExtended) {
       return FloatingActionButton.extended(
         onPressed: onPressed,
         backgroundColor: backgroundColor,
@@ -230,9 +223,7 @@ VoidCallback _actualOnPressed(
 }
 
 class _LoadingContent extends StatelessWidget {
-  const _LoadingContent({Key key, @required this.child})
-      : assert(child != null),
-        super(key: key);
+  const _LoadingContent({Key key, this.child}) : super(key: key);
 
   final Widget child;
 
@@ -246,8 +237,10 @@ class _LoadingContent extends StatelessWidget {
           width: 16,
           child: CircularProgressIndicator(strokeWidth: 2),
         ),
-        SizedBox(width: 8),
-        child,
+        if (child != null) ...[
+          SizedBox(width: 8),
+          child,
+        ],
       ],
     );
   }
