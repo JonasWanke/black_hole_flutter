@@ -89,7 +89,7 @@ class FancyOutlineButton extends StatelessWidget {
 
 /// In addition to a normal [RaisedButton], this [Widget] natively supports
 /// disabling it and showing a loading state.
-class LoadingRaisedButton extends StatelessWidget {
+class FancyRaisedButton extends StatelessWidget {
   /// Creates a [RaisedButton].
   ///
   /// Use [isEnabled] to avoid ternary statements for [onPressed] — you can
@@ -98,7 +98,7 @@ class LoadingRaisedButton extends StatelessWidget {
   /// - `onPressed: null`
   ///
   /// [child] and [isLoading] must not be null.
-  LoadingRaisedButton({
+  FancyRaisedButton({
     Key key,
     bool isEnabled,
     @required VoidCallback onPressed,
