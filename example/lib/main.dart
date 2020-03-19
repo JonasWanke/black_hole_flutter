@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
           BottomSheetExample(),
           ButtonsExample(),
           ChipGroupExample(),
+          SeparatedButtonsExample(),
         ]),
       ),
     );
@@ -65,12 +66,24 @@ class ChipGroupExample extends StatelessWidget {
             Chip(label: Text('eiusmod')),
             Chip(label: Text('tempor')),
             Chip(label: Text('incididunt')),
-            Chip(label: Text('ut')),
-            Chip(label: Text('labore')),
-            Chip(label: Text('et')),
-            Chip(label: Text('dolore')),
-            Chip(label: Text('magna')),
-            Chip(label: Text('aliqua')),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class SeparatedButtonsExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Section(
+      title: 'SeparatedButtons',
+      children: <Widget>[
+        SeparatedButtons(
+          children: <Widget>[
+            FlatButton(onPressed: () {}, child: Text('Imprint')),
+            FlatButton(onPressed: () {}, child: Text('Privacy Policy')),
+            FlatButton(onPressed: () {}, child: Text('Licenses')),
           ],
         ),
       ],
