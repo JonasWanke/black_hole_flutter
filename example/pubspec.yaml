@@ -1,0 +1,20 @@
+name: black_hole_flutter_example
+description: "Example for 🛠 black_hole_flutter, a package absorbing all Flutter utility functions"
+version: 0.1.0
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  black_hole_flutter:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
