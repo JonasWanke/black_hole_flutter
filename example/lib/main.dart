@@ -1,6 +1,8 @@
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:flutter/material.dart';
 
+import 'buttons.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -12,6 +14,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(title: Text('🛠 black_hole_flutter example')),
         body: ListView(children: <Widget>[
           BottomSheetExample(),
+          ButtonsExample(),
         ]),
       ),
     );
@@ -58,11 +61,7 @@ class Section extends StatelessWidget {
         children: <Widget>[
           Text(title, style: context.textTheme.subhead),
           SizedBox(height: 8),
-          Wrap(
-            spacing: 16,
-            runSpacing: 16,
-            children: children,
-          ),
+          ...children
         ],
       ),
     );
