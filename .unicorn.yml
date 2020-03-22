@@ -3,7 +3,7 @@ name: "black_hole_flutter"
 description: "A package absorbing all Flutter utility functions"
 homepage: "https://pub.dev/packages/black_hole_flutter"
 license: "apache-2.0"
-version: "0.0.1"
+version: "0.1.1"
 categorization:
   component:
     values: []
