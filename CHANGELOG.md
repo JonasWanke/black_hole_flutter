@@ -15,7 +15,14 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.1.2...dev)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.1.3...dev)
+
+
+## [0.1.3](https://github.com/JonasWanke/black_hole_flutter/compare/v0.1.2...v0.1.3) - 2020-03-22
+
+### ⚡ Changes
+
+- remove unused parameter from `NavigatorState.pushNamedAndRemoveAll`
 
 
 ## [0.1.2](https://github.com/JonasWanke/black_hole_flutter/compare/v0.1.1...v0.1.2) - 2020-03-22
