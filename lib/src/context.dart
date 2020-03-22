@@ -13,15 +13,6 @@ extension FancyContext on BuildContext {
   /// Shortcut for `MediaQuery.of(context)`.
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 
-  /// Shortcut for `ModalRoute.of(context)`.
-  ModalRoute get modalRoute => ModalRoute.of(this);
-
-  /// Shortcut for `Navigator.of(context)`.
-  NavigatorState get navigator => Navigator.of(this);
-
-  /// Shortcut for `Navigator.of(context, rootNavigator: true)`.
-  NavigatorState get rootNavigator => Navigator.of(this, rootNavigator: true);
-
   /// Shortcut for `PageStorage.of(context)`.
   PageStorageBucket get pageStorage => PageStorage.of(this);
 
