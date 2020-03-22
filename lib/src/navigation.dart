@@ -20,8 +20,7 @@ extension FancyNavigatorState on NavigatorState {
   /// Push the route with the given name onto the navigator, and then remove all
   /// the previous routes.
   Future<T> pushNamedAndRemoveAll<T extends Object>(
-    String newRouteName,
-    RoutePredicate predicate, {
+    String newRouteName, {
     Object arguments,
   }) =>
       pushNamedAndRemoveUntil(newRouteName, (_) => false, arguments: arguments);
