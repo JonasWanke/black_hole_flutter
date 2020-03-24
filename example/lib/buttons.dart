@@ -11,26 +11,30 @@ class ButtonsExample extends StatelessWidget {
       children: [
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          child: Table(
-            defaultColumnWidth: IntrinsicColumnWidth(),
-            defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-            children: [
-              _buildRow('Widget', [
-                Text('default'),
-                Text('onPressed: null'),
-                Text('isEnabled: false'),
-                Text('isLoading: true,\nloadingChild: null'),
-                Text('isLoading: true'),
-              ]),
-              _buildSpacerRow(),
-              _buildFancyFlatButtonRow(),
-              _buildSpacerRow(),
-              _buildFancyRaisedButtonRow(),
-              _buildSpacerRow(),
-              _buildFancyFabRow(),
-              _buildSpacerRow(),
-              _buildExtendedFancyFabRow(),
-            ],
+          child: Padding(
+            // We don't want to crop shadows.
+            padding: EdgeInsets.only(right: 12, bottom: 12),
+            child: Table(
+              defaultColumnWidth: IntrinsicColumnWidth(),
+              defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+              children: [
+                _buildRow('Widget', [
+                  Text('default'),
+                  Text('onPressed: null'),
+                  Text('isEnabled: false'),
+                  Text('isLoading: true,\nloadingChild: null'),
+                  Text('isLoading: true'),
+                ]),
+                _buildSpacerRow(),
+                _buildFancyFlatButtonRow(),
+                _buildSpacerRow(),
+                _buildFancyRaisedButtonRow(),
+                _buildSpacerRow(),
+                _buildFancyFabRow(),
+                _buildSpacerRow(),
+                _buildExtendedFancyFabRow(),
+              ],
+            ),
           ),
         )
       ],
@@ -163,13 +167,4 @@ class ButtonsExample extends StatelessWidget {
 
   TableRow _buildSpacerRow() =>
       TableRow(children: List.filled(11, SizedBox(height: 8)));
-}
-
-extension WidgetListPadding on List<Widget> {
-  List<Widget> get padded {
-    return expand((w) sync* {
-      yield SizedBox(width: 8);
-      yield Center(child: w);
-    }).toList();
-  }
 }
