@@ -6,7 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 
 
 <!-- Template:
-## [NEW](https://github.com/JonasWanke/black_hole_flutter/compare/vOLD...vNEW) - 2020-xx-xx
+## [NEW](https://github.com/JonasWanke/black_hole_flutter/compare/vOLD...vNEW) · 2020-xx-xx
 ### 🎉 New Features
 ### ⚡ Changes
 ### 🐛 Bug Fixes
@@ -15,32 +15,44 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.1.3...dev)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.0...dev)
 
 
-## [0.1.3](https://github.com/JonasWanke/black_hole_flutter/compare/v0.1.2...v0.1.3) - 2020-03-22
+## [0.2.0](https://github.com/JonasWanke/black_hole_flutter/compare/v0.1.3...v0.2.0) · 2020-03-24
+
+### ⚠ BREAKING CHANGES
+- fix naming: `FancyFab.icon` is now called `FancyFab.child`
+
+### 🐛 Bug Fixes
+- `FancyFab`'s background color is now the same as that of other buttons
+
+### 📜 Documentation updates
+- add button demo to README
+
+### 🏗 Refactoring
+- `FancyButton` logic is now handled in their base `_FancyButton`
+
+
+## [0.1.3](https://github.com/JonasWanke/black_hole_flutter/compare/v0.1.2...v0.1.3) · 2020-03-22
 
 ### ⚡ Changes
-
 - remove unused parameter from `NavigatorState.pushNamedAndRemoveAll`
 
 
-## [0.1.2](https://github.com/JonasWanke/black_hole_flutter/compare/v0.1.1...v0.1.2) - 2020-03-22
+## [0.1.2](https://github.com/JonasWanke/black_hole_flutter/compare/v0.1.1...v0.1.2) · 2020-03-22
 
 ### 🐛 Bug Fixes
-
 - add missing export
 
 
-## [0.1.1](https://github.com/JonasWanke/black_hole_flutter/compare/v0.1.0...v0.1.1) - 2020-03-22
+## [0.1.1](https://github.com/JonasWanke/black_hole_flutter/compare/v0.1.0...v0.1.1) · 2020-03-22
 
 ### 🎉 New Features
-
 - add `NavigatorState.pushAndRemoveAll`, `NavigatorState.pushNamedAndRemoveAll`
 - **example:** add example app showcasing new widgets
 
 
-## [0.1.0](https://github.com/JonasWanke/black_hole_flutter/compare/v0.0.1...v0.1.0) - 2020-03-13
+## [0.1.0](https://github.com/JonasWanke/black_hole_flutter/compare/v0.0.1...v0.1.0) · 2020-03-13
 
 ### 🎉 New Features
 
@@ -55,5 +67,5 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 - fill the README with a package overview
 
 
-## 0.0.1 - 2020-03-12
+## 0.0.1 · 2020-03-12
 Initial release 🎉
