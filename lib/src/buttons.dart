@@ -8,10 +8,7 @@ import 'context.dart';
 class FancyFlatButton extends _FancyButton {
   /// Creates a [FlatButton].
   ///
-  /// Use [isEnabled] to avoid ternary statements for [onPressed] — you can
-  /// disable the button with:
-  /// - `isEnabled: false` or
-  /// - `onPressed: null`
+  /// {@macro black_hole_flutter.buttons.isEnabled}
   ///
   /// [child] and [isLoading] must not be null.
   const FancyFlatButton({
@@ -57,10 +54,7 @@ class FancyFlatButton extends _FancyButton {
 class FancyOutlineButton extends _FancyButton {
   /// Creates a [OutlineButton].
   ///
-  /// Use [isEnabled] to avoid ternary statements for [onPressed] — you can
-  /// disable the button with:
-  /// - `isEnabled: false` or
-  /// - `onPressed: null`
+  /// {@macro black_hole_flutter.buttons.isEnabled}
   ///
   /// [child] and [isLoading] must not be null.
   const FancyOutlineButton({
@@ -106,10 +100,7 @@ class FancyOutlineButton extends _FancyButton {
 class FancyRaisedButton extends _FancyButton {
   /// Creates a [RaisedButton].
   ///
-  /// Use [isEnabled] to avoid ternary statements for [onPressed] — you can
-  /// disable the button with:
-  /// - `isEnabled: false` or
-  /// - `onPressed: null`
+  /// {@macro black_hole_flutter.buttons.isEnabled}
   ///
   /// [child] and [isLoading] must not be null.
   const FancyRaisedButton({
@@ -155,10 +146,9 @@ class FancyRaisedButton extends _FancyButton {
 class FancyFab extends _FancyButton {
   /// Creates a circular [FloatingActionButton].
   ///
-  /// Use [isEnabled] to avoid ternary statements for [onPressed] — you can
-  /// disable the button with:
-  /// - `isEnabled: false` or
-  /// - `onPressed: null`
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  ///
+  /// [child] and [isLoading] must not be null.
   const FancyFab({
     Key key,
     bool isEnabled,
@@ -179,10 +169,9 @@ class FancyFab extends _FancyButton {
 
   /// Creates an extended [FloatingActionButton].
   ///
-  /// Use [isEnabled] to avoid ternary statements for [onPressed] — you can
-  /// disable the button with:
-  /// - `isEnabled: false` or
-  /// - `onPressed: null`
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  ///
+  /// [icon], [child] and [isLoading] must not be null.
   const FancyFab.extended({
     Key key,
     bool isEnabled,
@@ -250,6 +239,12 @@ class FancyFab extends _FancyButton {
 }
 
 abstract class _FancyButton extends StatelessWidget {
+  /// {@template black_hole_flutter.buttons.isEnabled}
+  /// Use [isEnabled] to avoid ternary statements for [onPressed] — you can
+  /// disable the button with:
+  /// - `isEnabled: false` or
+  /// - `onPressed: null`
+  /// {@endtemplate}
   const _FancyButton({
     Key key,
     this.isEnabled,
