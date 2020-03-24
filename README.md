@@ -17,7 +17,7 @@ context.form          // ≙ Form.of(context)
 
 Did you ever want to show a [progress indicator][`ProgressIndicator`] inside a button? Or were annoyed to conditionally set a [Button][`MaterialButton`]'s [`onPressed`][`MaterialButton.onPressed`] to disable it? Fear no more — black_hole_flutter has got you covered!
 
-![Button demo](https://github.com/JonasWanke/black_hole_flutter/raw/master/docs/demo-buttons.gif?raw=true)
+![Button demo](https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/demo-buttons.gif?raw=true)
 
 In [`FancyFab`] (a [`FloatingActionButton`]), [`FancyFlatButton`], [`FancyOutlineButton`] & [`FancyRaisedButton`], we introduce some new parameters:
 - [`isLoading`][`FancyFab.isLoading`]: Setting this to `true` shows a [`CircularProgressIndicator`] and disables this button. You can optionally specify a [`loadingChild`][`FancyFlatButton.loadingChild`] ([`loadingLabel`][`FancyFab.loadingLabel`] on [`FancyFab`]) to show next to the progress indicator.
