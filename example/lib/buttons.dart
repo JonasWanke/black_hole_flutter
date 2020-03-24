@@ -94,27 +94,27 @@ class ButtonsExample extends StatelessWidget {
   TableRow _buildFancyFabRow() => _buildRow('FancyFab', [
         FancyFab(
           onPressed: () {},
-          icon: Icon(Icons.favorite),
+          child: Icon(Icons.favorite),
         ),
         FancyFab(
           onPressed: null,
-          icon: Icon(Icons.favorite),
+          child: Icon(Icons.favorite),
         ),
         FancyFab(
           isEnabled: false,
           onPressed: () {},
-          icon: Icon(Icons.favorite),
+          child: Icon(Icons.favorite),
         ),
         FancyFab(
           onPressed: () {},
           isLoading: true,
-          icon: Icon(Icons.favorite),
+          child: Icon(Icons.favorite),
         ),
         FancyFab(
           onPressed: () {},
           isLoading: true,
           loadingLabel: Text('loadingLabel'),
-          icon: Icon(Icons.favorite),
+          child: Icon(Icons.favorite),
         ),
       ]);
   TableRow _buildExtendedFancyFabRow() => _buildRow('FancyFab.extended', [

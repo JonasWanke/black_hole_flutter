@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
 
-import 'color_material.dart';
 import 'context.dart';
 
 /// In addition to a normal [FlatButton], this [Widget] natively supports
 /// disabling it and showing a loading state.
-class FancyFlatButton extends StatelessWidget {
+class FancyFlatButton extends _FancyButton {
   /// Creates a [FlatButton].
   ///
   /// Use [isEnabled] to avoid ternary statements for [onPressed] — you can
@@ -14,38 +14,47 @@ class FancyFlatButton extends StatelessWidget {
   /// - `onPressed: null`
   ///
   /// [child] and [isLoading] must not be null.
-  FancyFlatButton({
+  const FancyFlatButton({
     Key key,
     bool isEnabled,
     @required VoidCallback onPressed,
-    @required this.child,
-    this.isLoading = false,
-    this.loadingChild,
-    this.color,
-  })  : onPressed = _actualOnPressed(isEnabled, onPressed, isLoading),
-        assert(child != null),
-        super(key: key);
-
-  final VoidCallback onPressed;
-  final Widget child;
-  final bool isLoading;
-  final Widget loadingChild;
-
-  final Color color;
+    @required Widget child,
+    bool isLoading = false,
+    Widget loadingChild,
+    Color color,
+  }) : super(
+          key: key,
+          isEnabled: isEnabled,
+          onPressed: onPressed,
+          child: child,
+          isLoading: isLoading,
+          loadingChild: loadingChild,
+          color: color,
+        );
 
   @override
-  Widget build(BuildContext context) {
+  Widget _buildDefault(BuildContext context) {
     return FlatButton(
-      onPressed: onPressed,
+      onPressed: actualOnPressed,
       color: color,
-      child: isLoading ? _LoadingContent(child: loadingChild) : child,
+      child: child,
+    );
+  }
+
+  @override
+  Widget _buildIcon(BuildContext context, Widget icon) {
+    return FlatButton.icon(
+      onPressed: actualOnPressed,
+      color: color,
+      icon: icon,
+      label: actualLoadingChild,
     );
   }
 }
 
 /// In addition to a normal [OutlineButton], this [Widget] natively supports
 /// disabling it and showing a loading state.
-class FancyOutlineButton extends StatelessWidget {
+class FancyOutlineButton extends _FancyButton {
   /// Creates a [OutlineButton].
   ///
   /// Use [isEnabled] to avoid ternary statements for [onPressed] — you can
@@ -54,38 +63,47 @@ class FancyOutlineButton extends StatelessWidget {
   /// - `onPressed: null`
   ///
   /// [child] and [isLoading] must not be null.
-  FancyOutlineButton({
+  const FancyOutlineButton({
     Key key,
     bool isEnabled,
     @required VoidCallback onPressed,
-    @required this.child,
-    this.isLoading = false,
-    this.loadingChild,
-    this.color,
-  })  : onPressed = _actualOnPressed(isEnabled, onPressed, isLoading),
-        assert(child != null),
-        super(key: key);
-
-  final VoidCallback onPressed;
-  final Widget child;
-  final bool isLoading;
-  final Widget loadingChild;
-
-  final Color color;
+    @required Widget child,
+    bool isLoading = false,
+    Widget loadingChild,
+    Color color,
+  }) : super(
+          key: key,
+          isEnabled: isEnabled,
+          onPressed: onPressed,
+          child: child,
+          isLoading: isLoading,
+          loadingChild: loadingChild,
+          color: color,
+        );
 
   @override
-  Widget build(BuildContext context) {
+  Widget _buildDefault(BuildContext context) {
     return OutlineButton(
-      onPressed: onPressed,
+      onPressed: actualOnPressed,
       color: color,
-      child: isLoading ? _LoadingContent(child: loadingChild) : child,
+      child: child,
+    );
+  }
+
+  @override
+  Widget _buildIcon(BuildContext context, Widget icon) {
+    return OutlineButton.icon(
+      onPressed: actualOnPressed,
+      color: color,
+      icon: icon,
+      label: actualLoadingChild,
     );
   }
 }
 
 /// In addition to a normal [RaisedButton], this [Widget] natively supports
 /// disabling it and showing a loading state.
-class FancyRaisedButton extends StatelessWidget {
+class FancyRaisedButton extends _FancyButton {
   /// Creates a [RaisedButton].
   ///
   /// Use [isEnabled] to avoid ternary statements for [onPressed] — you can
@@ -94,57 +112,70 @@ class FancyRaisedButton extends StatelessWidget {
   /// - `onPressed: null`
   ///
   /// [child] and [isLoading] must not be null.
-  FancyRaisedButton({
+  const FancyRaisedButton({
     Key key,
     bool isEnabled,
     @required VoidCallback onPressed,
-    @required this.child,
-    this.isLoading = false,
-    this.loadingChild,
-    this.color,
-  })  : onPressed = _actualOnPressed(isEnabled, onPressed, isLoading),
-        assert(child != null),
-        super(key: key);
-
-  final VoidCallback onPressed;
-  final Widget child;
-  final bool isLoading;
-  final Widget loadingChild;
-
-  final Color color;
+    @required Widget child,
+    bool isLoading = false,
+    Widget loadingChild,
+    Color color,
+  }) : super(
+          key: key,
+          isEnabled: isEnabled,
+          onPressed: onPressed,
+          child: child,
+          isLoading: isLoading,
+          loadingChild: loadingChild,
+          color: color,
+        );
 
   @override
-  Widget build(BuildContext context) {
+  Widget _buildDefault(BuildContext context) {
     return RaisedButton(
-      onPressed: onPressed,
+      onPressed: actualOnPressed,
       color: color,
-      child: isLoading ? _LoadingContent(child: loadingChild) : child,
+      child: child,
+    );
+  }
+
+  @override
+  Widget _buildIcon(BuildContext context, Widget icon) {
+    return RaisedButton.icon(
+      onPressed: actualOnPressed,
+      color: color,
+      icon: icon,
+      label: actualLoadingChild,
     );
   }
 }
 
 /// In addition to a normal [FloatingActionButton], this [Widget] natively
 /// supports disabling it and showing a loading state.
-class FancyFab extends StatelessWidget {
+class FancyFab extends _FancyButton {
   /// Creates a circular [FloatingActionButton].
   ///
   /// Use [isEnabled] to avoid ternary statements for [onPressed] — you can
   /// disable the button with:
   /// - `isEnabled: false` or
   /// - `onPressed: null`
-  FancyFab({
+  const FancyFab({
     Key key,
     bool isEnabled,
     @required VoidCallback onPressed,
-    @required this.icon,
-    this.isLoading = false,
-    this.loadingLabel,
-  })  : _isExtended = isLoading && loadingLabel != null,
-        onPressed = _actualOnPressed(isEnabled, onPressed, isLoading),
-        assert(icon != null),
-        label = null,
-        assert(isLoading != null),
-        super(key: key);
+    @required Widget child,
+    bool isLoading = false,
+    Widget loadingLabel,
+    Color color,
+  }) : super(
+          key: key,
+          isEnabled: isEnabled,
+          onPressed: onPressed,
+          child: child,
+          isLoading: isLoading,
+          loadingChild: loadingLabel,
+          color: color,
+        );
 
   /// Creates an extended [FloatingActionButton].
   ///
@@ -152,96 +183,136 @@ class FancyFab extends StatelessWidget {
   /// disable the button with:
   /// - `isEnabled: false` or
   /// - `onPressed: null`
-  FancyFab.extended({
+  const FancyFab.extended({
     Key key,
     bool isEnabled,
     @required VoidCallback onPressed,
-    this.icon,
-    @required this.label,
-    this.isLoading = false,
-    this.loadingLabel,
-  })  : _isExtended = !(isLoading && loadingLabel == null),
-        onPressed = _actualOnPressed(isEnabled, onPressed, isLoading),
-        assert(label != null),
-        assert(isLoading != null),
-        super(key: key);
-
-  final bool _isExtended;
-  final VoidCallback onPressed;
-  final Widget icon;
-  final Widget label;
-  final bool isLoading;
-  final Widget loadingLabel;
+    @required Widget icon,
+    @required Widget label,
+    bool isLoading = false,
+    Widget loadingLabel,
+    Color backgroundColor,
+  })  : assert(icon != null),
+        super(
+          key: key,
+          isEnabled: isEnabled,
+          onPressed: onPressed,
+          child: label,
+          isLoading: isLoading,
+          loadingChild: loadingLabel,
+          color: backgroundColor,
+        );
 
   @override
-  Widget build(BuildContext context) {
-    final icon = isLoading ? _buildLoadingIndicator() : this.icon;
-    final backgroundColor = onPressed == null
-        ? Color.alphaBlend(
-            context.theme.disabledColor, context.theme.backgroundColor)
-        : null;
+  double get loadingIndicatorSize => 24;
 
-    if (_isExtended) {
-      return FloatingActionButton.extended(
-        onPressed: onPressed,
-        backgroundColor: backgroundColor,
-        icon: icon,
-        label: DefaultTextStyle.merge(
-          style: TextStyle(color: backgroundColor?.highEmphasisOnColor),
-          child: isLoading ? loadingLabel : label,
-        ),
-      );
+  @override
+  Widget _buildDefault(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: actualOnPressed,
+      foregroundColor: _foregroundColor(context),
+      backgroundColor: _backgroundColor(context),
+      child: isLoading ? _LoadingIndicator(loadingIndicatorSize) : child,
+    );
+  }
+
+  @override
+  Widget _buildIcon(BuildContext context, Widget icon) {
+    if (isLoading && loadingChild == null) {
+      return _buildDefault(context);
     }
 
-    return FloatingActionButton(
-      onPressed: onPressed,
-      backgroundColor: backgroundColor,
-      child: icon,
+    return FloatingActionButton.extended(
+      onPressed: actualOnPressed,
+      foregroundColor: _foregroundColor(context),
+      backgroundColor: _backgroundColor(context),
+      icon: icon,
+      label: actualLoadingChild,
     );
   }
 
-  Widget _buildLoadingIndicator() {
-    return SizedBox(
-      height: 24,
-      width: 24,
-      child: CircularProgressIndicator(strokeWidth: 3),
+  Color _foregroundColor(BuildContext context) {
+    if (isActuallyEnabled) {
+      return null;
+    }
+    return context.theme.disabledColor;
+  }
+
+  Color _backgroundColor(BuildContext context) {
+    if (isActuallyEnabled) {
+      return color;
+    }
+    return Color.alphaBlend(
+      context.theme.disabledColor,
+      context.theme.scaffoldBackgroundColor,
     );
   }
 }
 
-VoidCallback _actualOnPressed(
-  bool isEnabled,
-  VoidCallback onPressed,
-  bool isLoading,
-) {
-  assert(!(isEnabled == true && onPressed == null),
-      'When explicitly setting isEnabled to true, onPressed must not be null');
-  assert(isLoading != null);
+abstract class _FancyButton extends StatelessWidget {
+  const _FancyButton({
+    Key key,
+    this.isEnabled,
+    @required this.onPressed,
+    this.isLoading = false,
+    this.loadingChild,
+    this.color,
+    this.icon,
+    @required this.child,
+  })  : assert(!(isEnabled == true && onPressed == null),
+            'When explicitly setting isEnabled to true, onPressed must not be null'),
+        assert(isLoading != null),
+        assert(child != null),
+        super(key: key);
 
-  final isActuallyEnabled = (isEnabled ?? onPressed != null) && !isLoading;
-  return isActuallyEnabled ? onPressed : null;
-}
+  final bool isEnabled;
+  bool get isActuallyEnabled => (isEnabled ?? onPressed != null) && !isLoading;
 
-class _LoadingContent extends StatelessWidget {
-  const _LoadingContent({Key key, this.child}) : super(key: key);
+  final VoidCallback onPressed;
+  VoidCallback get actualOnPressed => isActuallyEnabled ? onPressed : null;
 
+  final bool isLoading;
+
+  final Widget loadingChild;
+  Widget get actualLoadingChild => loadingChild ?? child;
+
+  @visibleForOverriding
+  double get loadingIndicatorSize => 18;
+
+  final Color color;
+
+  final Widget icon;
   final Widget child;
 
   @override
+  @nonVirtual
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        SizedBox(
-          height: 16,
-          width: 16,
-          child: CircularProgressIndicator(strokeWidth: 2),
-        ),
-        if (child != null) ...[
-          SizedBox(width: 8),
-          child,
-        ],
-      ],
+    if (isLoading) {
+      return _buildIcon(context, _LoadingIndicator(loadingIndicatorSize));
+    }
+    if (icon != null) {
+      return _buildIcon(context, icon);
+    }
+    return _buildDefault(context);
+  }
+
+  @visibleForOverriding
+  Widget _buildDefault(BuildContext context);
+  @visibleForOverriding
+  Widget _buildIcon(BuildContext context, Widget icon);
+}
+
+class _LoadingIndicator extends StatelessWidget {
+  const _LoadingIndicator(this.size) : assert(size != null);
+
+  final double size;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: size,
+      height: size,
+      child: CircularProgressIndicator(strokeWidth: 2),
     );
   }
 }
