@@ -15,7 +15,13 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.0...dev)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.1...dev)
+
+
+## [0.2.1](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.0...v0.2.1) · 2020-03-25
+
+### 🐛 Bug Fixes
+- correctly display `FancyFab.extended`
 
 
 ## [0.2.0](https://github.com/JonasWanke/black_hole_flutter/compare/v0.1.3...v0.2.0) · 2020-03-24
