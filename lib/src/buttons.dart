@@ -186,6 +186,7 @@ class FancyFab extends _FancyButton {
           key: key,
           isEnabled: isEnabled,
           onPressed: onPressed,
+          icon: icon,
           child: label,
           isLoading: isLoading,
           loadingChild: loadingLabel,
@@ -207,7 +208,9 @@ class FancyFab extends _FancyButton {
 
   @override
   Widget _buildIcon(BuildContext context, Widget icon) {
-    if (isLoading && loadingChild == null) {
+    if (isLoading && this.icon == null && loadingChild == null) {
+      // While loading a default FAB, we don't want a loading indicator next to
+      // the icon if no loadingChild is set.
       return _buildDefault(context);
     }
 
