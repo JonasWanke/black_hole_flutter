@@ -15,7 +15,13 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.1...dev)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.2...dev)
+
+
+## [0.2.2](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.1...v0.2.2) · 2020-03-26
+
+### 🎉 New Features
+- add `Color.hsl`, `Color.hsv` extensions
 
 
 ## [0.2.1](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.0...v0.2.1) · 2020-03-25
