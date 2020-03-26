@@ -29,6 +29,12 @@ extension FancyColor on Color {
   /// A pure [Color] contrasting with this one (i.e., [Colors.black] or
   /// [Colors.white]), depending on the estimated [Brightness].
   Color get contrastColor => estimatedBrightness.contrastColor;
+
+  /// Shortcut for `HSLColor.fromColor(color)`.
+  HSLColor get hsl => HSLColor.fromColor(this);
+
+  /// Shortcut for `HSVColor.fromColor(color)`.
+  HSVColor get hsv => HSVColor.fromColor(this);
 }
 
 extension FancyThemeData on ThemeData {
