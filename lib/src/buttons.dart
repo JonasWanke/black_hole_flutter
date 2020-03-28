@@ -18,6 +18,7 @@ class FancyFlatButton extends _FancyButton {
     @required Widget child,
     bool isLoading = false,
     Widget loadingChild,
+    Color textColor,
     Color color,
   }) : super(
           key: key,
@@ -26,6 +27,7 @@ class FancyFlatButton extends _FancyButton {
           child: child,
           isLoading: isLoading,
           loadingChild: loadingChild,
+          textColor: textColor,
           color: color,
         );
 
@@ -33,6 +35,7 @@ class FancyFlatButton extends _FancyButton {
   Widget _buildDefault(BuildContext context) {
     return FlatButton(
       onPressed: actualOnPressed,
+      textColor: textColor,
       color: color,
       child: child,
     );
@@ -42,6 +45,7 @@ class FancyFlatButton extends _FancyButton {
   Widget _buildIcon(BuildContext context, Widget icon) {
     return FlatButton.icon(
       onPressed: actualOnPressed,
+      textColor: textColor,
       color: color,
       icon: icon,
       label: actualLoadingChild,
@@ -64,6 +68,7 @@ class FancyOutlineButton extends _FancyButton {
     @required Widget child,
     bool isLoading = false,
     Widget loadingChild,
+    Color textColor,
     Color color,
   }) : super(
           key: key,
@@ -72,6 +77,7 @@ class FancyOutlineButton extends _FancyButton {
           child: child,
           isLoading: isLoading,
           loadingChild: loadingChild,
+          textColor: textColor,
           color: color,
         );
 
@@ -88,6 +94,7 @@ class FancyOutlineButton extends _FancyButton {
     @required Widget label,
     bool isLoading = false,
     Widget loadingLabel,
+    Color textColor,
     Color color,
   })  : assert(icon != null),
         super(
@@ -98,6 +105,7 @@ class FancyOutlineButton extends _FancyButton {
           child: label,
           isLoading: isLoading,
           loadingChild: loadingLabel,
+          textColor: textColor,
           color: color,
         );
 
@@ -105,6 +113,7 @@ class FancyOutlineButton extends _FancyButton {
   Widget _buildDefault(BuildContext context) {
     return OutlineButton(
       onPressed: actualOnPressed,
+      textColor: textColor,
       color: color,
       child: child,
     );
@@ -114,6 +123,7 @@ class FancyOutlineButton extends _FancyButton {
   Widget _buildIcon(BuildContext context, Widget icon) {
     return OutlineButton.icon(
       onPressed: actualOnPressed,
+      textColor: textColor,
       color: color,
       icon: icon,
       label: actualLoadingChild,
@@ -136,6 +146,7 @@ class FancyRaisedButton extends _FancyButton {
     @required Widget child,
     bool isLoading = false,
     Widget loadingChild,
+    Color textColor,
     Color color,
   }) : super(
           key: key,
@@ -144,6 +155,7 @@ class FancyRaisedButton extends _FancyButton {
           child: child,
           isLoading: isLoading,
           loadingChild: loadingChild,
+          textColor: textColor,
           color: color,
         );
 
@@ -151,6 +163,7 @@ class FancyRaisedButton extends _FancyButton {
   Widget _buildDefault(BuildContext context) {
     return RaisedButton(
       onPressed: actualOnPressed,
+      textColor: textColor,
       color: color,
       child: child,
     );
@@ -160,6 +173,7 @@ class FancyRaisedButton extends _FancyButton {
   Widget _buildIcon(BuildContext context, Widget icon) {
     return RaisedButton.icon(
       onPressed: actualOnPressed,
+      textColor: textColor,
       color: color,
       icon: icon,
       label: actualLoadingChild,
@@ -280,6 +294,7 @@ abstract class _FancyButton extends StatelessWidget {
     @required this.onPressed,
     this.isLoading = false,
     this.loadingChild,
+    this.textColor,
     this.color,
     this.icon,
     @required this.child,
@@ -303,6 +318,7 @@ abstract class _FancyButton extends StatelessWidget {
   @visibleForOverriding
   double get loadingIndicatorSize => 18;
 
+  final Color textColor;
   final Color color;
 
   final Widget icon;
