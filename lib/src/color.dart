@@ -39,6 +39,18 @@ extension FancyColor on Color {
   SystemUiOverlayStyle get contrastSystemUiOverlayStyle =>
       estimatedBrightness.contrastSystemUiOverlayStyle;
 
+  /// Apply [opacity] in addition to the existing opacity by multiplying them.
+  Color withAdditionalOpacity(double opacity) {
+    assert(opacity != null && opacity >= 0.0 && opacity <= 1.0);
+    return withOpacity(this.opacity * opacity);
+  }
+
+  /// Apply [alpha] in addition to the existing alpha by multiplying them.
+  Color withAdditionalAlpha(int alpha) {
+    assert(alpha != null);
+    return withAlpha(this.alpha * alpha);
+  }
+
   /// Shortcut for `HSLColor.fromColor(color)`.
   HSLColor get hsl => HSLColor.fromColor(this);
 
