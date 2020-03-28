@@ -15,7 +15,17 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.2...dev)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.3...dev)
+
+
+## [0.2.3](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.2...v0.2.3) · 2020-03-28
+
+### 🎉 New Features
+- **buttons:** add `icon`-variants to `FancyFlatButton`, `FancyOutlineButton` & `FancyRaisedButton`
+- **buttons:** add `textColor` to all fancy buttons
+- **buttons:** add `FancyOutlineButton.borderSide`, `FancyOutlineButton.highlightedBorderColor`
+- **color:** add `Color.withAdditionalOpacity`, `Color.withAdditionalAlpha`
+- **color:** add `contrastSystemUiOverlayStyle` getters to `Brightness`, `Color`
 
 
 ## [0.2.2](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.1...v0.2.2) · 2020-03-26
