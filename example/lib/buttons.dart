@@ -28,11 +28,15 @@ class ButtonsExample extends StatelessWidget {
                 _buildSpacerRow(),
                 _buildFancyFlatButtonRow(),
                 _buildSpacerRow(),
+                _buildFancyIconFlatButtonRow(),
+                _buildSpacerRow(),
                 _buildFancyOutlineButtonRow(),
                 _buildSpacerRow(),
                 _buildFancyIconOutlineButtonRow(),
                 _buildSpacerRow(),
                 _buildFancyRaisedButtonRow(),
+                _buildSpacerRow(),
+                _buildFancyIconRaisedButtonRow(),
                 _buildSpacerRow(),
                 _buildFancyFabRow(),
                 _buildSpacerRow(),
@@ -69,6 +73,37 @@ class ButtonsExample extends StatelessWidget {
           isLoading: true,
           loadingChild: Text('loadingChild'),
           child: Text('child'),
+        ),
+      ]);
+  TableRow _buildFancyIconFlatButtonRow() => _buildRow('FancyFlatButton.icon', [
+        FancyFlatButton.icon(
+          onPressed: () {},
+          label: Text('label'),
+          icon: Icon(Icons.favorite),
+        ),
+        FancyFlatButton.icon(
+          onPressed: null,
+          label: Text('label'),
+          icon: Icon(Icons.favorite),
+        ),
+        FancyFlatButton.icon(
+          isEnabled: false,
+          onPressed: () {},
+          label: Text('label'),
+          icon: Icon(Icons.favorite),
+        ),
+        FancyFlatButton.icon(
+          onPressed: () {},
+          isLoading: true,
+          label: Text('label'),
+          icon: Icon(Icons.favorite),
+        ),
+        FancyFlatButton.icon(
+          onPressed: () {},
+          isLoading: true,
+          loadingLabel: Text('loadingLabel'),
+          label: Text('label'),
+          icon: Icon(Icons.favorite),
         ),
       ]);
 
@@ -155,6 +190,38 @@ class ButtonsExample extends StatelessWidget {
           isLoading: true,
           loadingChild: Text('loadingChild'),
           child: Text('child'),
+        ),
+      ]);
+  TableRow _buildFancyIconRaisedButtonRow() =>
+      _buildRow('FancyRaisedButton.icon', [
+        FancyRaisedButton.icon(
+          onPressed: () {},
+          label: Text('label'),
+          icon: Icon(Icons.favorite),
+        ),
+        FancyRaisedButton.icon(
+          onPressed: null,
+          label: Text('label'),
+          icon: Icon(Icons.favorite),
+        ),
+        FancyRaisedButton.icon(
+          isEnabled: false,
+          onPressed: () {},
+          label: Text('label'),
+          icon: Icon(Icons.favorite),
+        ),
+        FancyRaisedButton.icon(
+          onPressed: () {},
+          isLoading: true,
+          label: Text('label'),
+          icon: Icon(Icons.favorite),
+        ),
+        FancyRaisedButton.icon(
+          onPressed: () {},
+          isLoading: true,
+          loadingLabel: Text('loadingLabel'),
+          label: Text('label'),
+          icon: Icon(Icons.favorite),
         ),
       ]);
 

@@ -31,6 +31,34 @@ class FancyFlatButton extends _FancyButton {
           color: color,
         );
 
+  /// Creates a [FlatButton] with a leading icon.
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  ///
+  /// [child], [icon] and [isLoading] must not be null.
+  const FancyFlatButton.icon({
+    Key key,
+    bool isEnabled,
+    @required VoidCallback onPressed,
+    @required Widget icon,
+    @required Widget label,
+    bool isLoading = false,
+    Widget loadingLabel,
+    Color textColor,
+    Color color,
+  })  : assert(icon != null),
+        super(
+          key: key,
+          isEnabled: isEnabled,
+          onPressed: onPressed,
+          icon: icon,
+          child: label,
+          isLoading: isLoading,
+          loadingChild: loadingLabel,
+          textColor: textColor,
+          color: color,
+        );
+
   @override
   Widget _buildDefault(BuildContext context) {
     return FlatButton(
@@ -166,6 +194,34 @@ class FancyRaisedButton extends _FancyButton {
           child: child,
           isLoading: isLoading,
           loadingChild: loadingChild,
+          textColor: textColor,
+          color: color,
+        );
+        
+  /// Creates a [RaisedButton] with a leading icon.
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  ///
+  /// [child], [icon] and [isLoading] must not be null.
+  const FancyRaisedButton.icon({
+    Key key,
+    bool isEnabled,
+    @required VoidCallback onPressed,
+    @required Widget icon,
+    @required Widget label,
+    bool isLoading = false,
+    Widget loadingLabel,
+    Color textColor,
+    Color color,
+  })  : assert(icon != null),
+        super(
+          key: key,
+          isEnabled: isEnabled,
+          onPressed: onPressed,
+          icon: icon,
+          child: label,
+          isLoading: isLoading,
+          loadingChild: loadingLabel,
           textColor: textColor,
           color: color,
         );
