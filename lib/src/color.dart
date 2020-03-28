@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 extension FancyBrightness on Brightness {
   /// `true` for [Brightness.dark], `false` otherwise.
@@ -19,6 +20,10 @@ extension FancyBrightness on Brightness {
   /// - [Colors.white] for [Brightness.dark]
   /// - [Colors.black] for [Brightness.light]
   Color get contrastColor => opposite.color;
+
+  /// The [SystemUiOverlayStyle] providing the most contrast on this brightness.
+  SystemUiOverlayStyle get contrastSystemUiOverlayStyle =>
+      isDark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark;
 }
 
 extension FancyColor on Color {
@@ -29,6 +34,10 @@ extension FancyColor on Color {
   /// A pure [Color] contrasting with this one (i.e., [Colors.black] or
   /// [Colors.white]), depending on the estimated [Brightness].
   Color get contrastColor => estimatedBrightness.contrastColor;
+
+  /// The [SystemUiOverlayStyle] providing the most contrast on this color.
+  SystemUiOverlayStyle get contrastSystemUiOverlayStyle =>
+      estimatedBrightness.contrastSystemUiOverlayStyle;
 
   /// Shortcut for `HSLColor.fromColor(color)`.
   HSLColor get hsl => HSLColor.fromColor(this);
