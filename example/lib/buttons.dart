@@ -28,6 +28,10 @@ class ButtonsExample extends StatelessWidget {
                 _buildSpacerRow(),
                 _buildFancyFlatButtonRow(),
                 _buildSpacerRow(),
+                _buildFancyOutlineButtonRow(),
+                _buildSpacerRow(),
+                _buildFancyIconOutlineButtonRow(),
+                _buildSpacerRow(),
                 _buildFancyRaisedButtonRow(),
                 _buildSpacerRow(),
                 _buildFancyFabRow(),
@@ -65,6 +69,65 @@ class ButtonsExample extends StatelessWidget {
           isLoading: true,
           loadingChild: Text('loadingChild'),
           child: Text('child'),
+        ),
+      ]);
+
+  TableRow _buildFancyOutlineButtonRow() => _buildRow('FancyOutlineButton', [
+        FancyOutlineButton(
+          onPressed: () {},
+          child: Text('child'),
+        ),
+        FancyOutlineButton(
+          onPressed: null,
+          child: Text('child'),
+        ),
+        FancyOutlineButton(
+          isEnabled: false,
+          onPressed: () {},
+          child: Text('child'),
+        ),
+        FancyOutlineButton(
+          onPressed: () {},
+          isLoading: true,
+          child: Text('child'),
+        ),
+        FancyOutlineButton(
+          onPressed: () {},
+          isLoading: true,
+          loadingChild: Text('loadingChild'),
+          child: Text('child'),
+        ),
+      ]);
+  TableRow _buildFancyIconOutlineButtonRow() =>
+      _buildRow('FancyOutlineButton.icon', [
+        FancyOutlineButton.icon(
+          onPressed: () {},
+          label: Text('label'),
+          icon: Icon(Icons.favorite),
+        ),
+        FancyOutlineButton.icon(
+          onPressed: null,
+          label: Text('label'),
+          icon: Icon(Icons.favorite),
+        ),
+        FancyOutlineButton.icon(
+          isEnabled: false,
+          onPressed: () {},
+          label: Text('label'),
+          icon: Icon(Icons.favorite),
+        ),
+        FancyOutlineButton.icon(
+          onPressed: () {},
+          isLoading: true,
+          label: Text('label'),
+          icon: Icon(Icons.favorite),
+        ),
+        FancyOutlineButton.icon(
+          onPressed: () {},
+          isLoading: true,
+          loadingLabel: Text('loadingLabel'),
+          label: Text('label'),
+          icon: Icon(Icons.favorite),
         ),
       ]);
 

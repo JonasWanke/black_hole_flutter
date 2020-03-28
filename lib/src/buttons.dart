@@ -52,7 +52,7 @@ class FancyFlatButton extends _FancyButton {
 /// In addition to a normal [OutlineButton], this [Widget] natively supports
 /// disabling it and showing a loading state.
 class FancyOutlineButton extends _FancyButton {
-  /// Creates a [OutlineButton].
+  /// Creates an [OutlineButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
   ///
@@ -72,6 +72,32 @@ class FancyOutlineButton extends _FancyButton {
           child: child,
           isLoading: isLoading,
           loadingChild: loadingChild,
+          color: color,
+        );
+
+  /// Creates an [OutlineButton] with a leading icon.
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  ///
+  /// [child], [icon] and [isLoading] must not be null.
+  const FancyOutlineButton.icon({
+    Key key,
+    bool isEnabled,
+    @required VoidCallback onPressed,
+    @required Widget icon,
+    @required Widget label,
+    bool isLoading = false,
+    Widget loadingLabel,
+    Color color,
+  })  : assert(icon != null),
+        super(
+          key: key,
+          isEnabled: isEnabled,
+          onPressed: onPressed,
+          icon: icon,
+          child: label,
+          isLoading: isLoading,
+          loadingChild: loadingLabel,
           color: color,
         );
 
