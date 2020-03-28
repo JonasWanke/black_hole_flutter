@@ -70,6 +70,8 @@ class FancyOutlineButton extends _FancyButton {
     Widget loadingChild,
     Color textColor,
     Color color,
+    this.borderSide,
+    this.highlightedBorderColor,
   }) : super(
           key: key,
           isEnabled: isEnabled,
@@ -96,6 +98,8 @@ class FancyOutlineButton extends _FancyButton {
     Widget loadingLabel,
     Color textColor,
     Color color,
+    this.borderSide,
+    this.highlightedBorderColor,
   })  : assert(icon != null),
         super(
           key: key,
@@ -109,12 +113,17 @@ class FancyOutlineButton extends _FancyButton {
           color: color,
         );
 
+  final BorderSide borderSide;
+  final Color highlightedBorderColor;
+
   @override
   Widget _buildDefault(BuildContext context) {
     return OutlineButton(
       onPressed: actualOnPressed,
       textColor: textColor,
       color: color,
+      borderSide: borderSide,
+      highlightedBorderColor: highlightedBorderColor,
       child: child,
     );
   }
@@ -125,6 +134,8 @@ class FancyOutlineButton extends _FancyButton {
       onPressed: actualOnPressed,
       textColor: textColor,
       color: color,
+      borderSide: borderSide,
+      highlightedBorderColor: highlightedBorderColor,
       icon: icon,
       label: actualLoadingChild,
     );
