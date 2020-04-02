@@ -1,6 +1,6 @@
 name: black_hole_flutter_example
 description: "Example for 🛠 black_hole_flutter, a package absorbing all Flutter utility functions"
-version: 0.2.3
+version: 0.2.4
 
 environment:
   sdk: ">=2.3.0 <3.0.0"

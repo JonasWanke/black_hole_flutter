@@ -15,7 +15,13 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.3...dev)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.4...dev)
+
+
+## [0.2.4](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.3...v0.2.4) · 2020-04-02
+
+### 🐛 Bug Fixes
+- **buttons:** fix: use default child for extended buttons while not loading
 
 
 ## [0.2.3](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.2...v0.2.3) · 2020-03-28
