@@ -76,7 +76,7 @@ class FancyFlatButton extends _FancyButton {
       textColor: textColor,
       color: color,
       icon: icon,
-      label: actualLoadingChild,
+      label: actualChild,
     );
   }
 }
@@ -165,7 +165,7 @@ class FancyOutlineButton extends _FancyButton {
       borderSide: borderSide,
       highlightedBorderColor: highlightedBorderColor,
       icon: icon,
-      label: actualLoadingChild,
+      label: actualChild,
     );
   }
 }
@@ -197,7 +197,7 @@ class FancyRaisedButton extends _FancyButton {
           textColor: textColor,
           color: color,
         );
-        
+
   /// Creates a [RaisedButton] with a leading icon.
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
@@ -243,7 +243,7 @@ class FancyRaisedButton extends _FancyButton {
       textColor: textColor,
       color: color,
       icon: icon,
-      label: actualLoadingChild,
+      label: actualChild,
     );
   }
 }
@@ -326,7 +326,7 @@ class FancyFab extends _FancyButton {
       foregroundColor: _foregroundColor(context),
       backgroundColor: _backgroundColor(context),
       icon: icon,
-      label: actualLoadingChild,
+      label: actualChild,
     );
   }
 
@@ -390,6 +390,7 @@ abstract class _FancyButton extends StatelessWidget {
 
   final Widget icon;
   final Widget child;
+  Widget get actualChild => isLoading ? actualLoadingChild : child;
 
   @override
   @nonVirtual
