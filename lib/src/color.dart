@@ -1,5 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// Maximum value per channel of a [Color].
+const _channelMax = (2 << 8) - 1;
 
 extension FancyBrightness on Brightness {
   /// `true` for [Brightness.dark], `false` otherwise.
@@ -71,4 +76,24 @@ extension FancyThemeData on ThemeData {
   /// A pure [Color] contrasting with this theme's [Brightness], i.e.
   /// [Colors.black] or [Colors.white].
   Color get contrastColor => brightness.contrastColor;
+}
+
+extension RandomColor on Random {
+  /// Generates a random [Color] with uniformly distributed R, G & B values.
+  ///
+  /// You can optionally specify either [alpha] or [opacity] of the generated
+  /// color.
+  Color nextColor({int alpha, double opacity}) {
+    assert(
+      alpha == null || opacity == null,
+      'You cannot specify both alpha and opacity.',
+    );
+    final r = nextInt(_channelMax);
+    final g = nextInt(_channelMax);
+    final b = nextInt(_channelMax);
+    if (opacity != null) {
+      return Color.fromRGBO(r, g, b, opacity);
+    }
+    return Color.fromARGB(alpha ?? nextInt(_channelMax), r, g, b);
+  }
 }
