@@ -2,7 +2,7 @@
 
 ## [`BuildContext`]
 
-In Flutter you often see the pattern `<Class>.of(context)` (e.g. [`Theme.of(context)`][Theme.of]). This package adds extension getters on [`BuildContext`][BuildContext] for those classes so you can just say:
+In Flutter you often see the pattern `<Class>.of(context)` (e.g. [`Theme.of(context)`]). This package adds extension getters on [`BuildContext`] for those classes so you can just say:
 ```dart
 context.theme         // ≙ Theme.of(context)
 context.textTheme     // ≙ Theme.of(context).textTheme
