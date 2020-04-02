@@ -39,6 +39,9 @@ extension FancyColor on Color {
   SystemUiOverlayStyle get contrastSystemUiOverlayStyle =>
       estimatedBrightness.contrastSystemUiOverlayStyle;
 
+  /// Shortcut for `Color.alphaBlend(color, background)`.
+  Color alphaBlendOn(Color background) => Color.alphaBlend(this, background);
+
   /// Apply [opacity] in addition to the existing opacity by multiplying them.
   Color withAdditionalOpacity(double opacity) {
     assert(opacity != null && opacity >= 0.0 && opacity <= 1.0);
