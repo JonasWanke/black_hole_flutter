@@ -15,7 +15,15 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.5...dev)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.6...master)
+
+
+## [0.2.6](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.5...v0.2.6) · 2020-04-07
+
+### 🎉 New Features
+- **color:** allow fixed red, green or blue values in `Random.nextColor()`
+- **fillOrWrap:** create `FillOrWrap` widget
+- **navigation:** add `LoggingNavigatorObserver`
 
 
 ## [0.2.5](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.4...v0.2.5) · 2020-04-02
