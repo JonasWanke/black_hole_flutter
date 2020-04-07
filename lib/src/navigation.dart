@@ -25,3 +25,36 @@ extension FancyNavigatorState on NavigatorState {
   }) =>
       pushNamedAndRemoveUntil(newRouteName, (_) => false, arguments: arguments);
 }
+
+typedef MessageLogger = void Function(String message);
+
+/// A [NavigatorObserver] that loggs all navigation events to a [MessageLogger]
+/// (defaults to [print]).
+class LoggingNavigatorObserver extends NavigatorObserver {
+  LoggingNavigatorObserver({
+    this.logger = defaultLogger,
+  }) : assert(logger != null);
+
+  final MessageLogger logger;
+
+  // ignore: avoid_print
+  static void defaultLogger(String message) => print('Navigator: $message');
+
+  @override
+  void didPush(Route<dynamic> route, Route<dynamic> previousRoute) => logger(
+      'didPush ${routeToString(previousRoute)} → ${routeToString(route)}');
+
+  @override
+  void didPop(Route route, Route previousRoute) => logger(
+      'didPop ${routeToString(previousRoute)} ← ${routeToString(route)}');
+
+  @override
+  void didRemove(Route route, Route previousRoute) => logger(
+      'didRemove ${routeToString(previousRoute)} → ${routeToString(route)}');
+
+  @override
+  void didReplace({Route<dynamic> newRoute, Route<dynamic> oldRoute}) => logger(
+      'didReplace ${routeToString(oldRoute)} → ${routeToString(newRoute)}');
+
+  String routeToString(Route<dynamic> route) => route?.settings?.name;
+}
