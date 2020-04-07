@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
           ButtonsExample(),
           ChipGroupExample(),
           SeparatedButtonsExample(),
+          FillOrWrapExample(),
         ]),
       ),
     );
@@ -87,6 +88,40 @@ class SeparatedButtonsExample extends StatelessWidget {
           ],
         ),
       ],
+    );
+  }
+}
+
+class FillOrWrapExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Section(
+      title: 'FillOrWrap',
+      children: <Widget>[
+        Text('Enough horizontal space → no wrapping'),
+        _buildExample(isConstrained: false),
+        SizedBox(height: 16),
+        Text('Constrained horizontal space → wrapping'),
+        _buildExample(isConstrained: true),
+      ],
+    );
+  }
+
+  Widget _buildExample({bool isConstrained}) {
+    return Center(
+      child: Container(
+        constraints: isConstrained ? BoxConstraints(maxWidth: 200) : null,
+        decoration: BoxDecoration(border: Border.all()),
+        child: FillOrWrap(
+          spacing: 8,
+          wrappedSpacing: 8,
+          children: <Widget>[
+            RaisedButton(onPressed: () {}, child: Text('Short')),
+            RaisedButton(onPressed: () {}, child: Text('Loooooooooong')),
+            RaisedButton(onPressed: () {}, child: Text('Short')),
+          ],
+        ),
+      ),
     );
   }
 }
