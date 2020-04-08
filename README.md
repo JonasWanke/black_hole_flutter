@@ -15,9 +15,9 @@
 
 ## 📄 Bottom Sheet
 
-Handy extension on [`BuildContext`]: [`context.showModalBottomSheet()`].
+Show modal bottom sheets using: [`context.showModalBottomSheet()`].
 
-<img src="https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-fancyBottomSheet.gif?raw=true" style="float: right;" alt="FancyBottomSheet demo" />
+<img src="https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-fancyBottomSheet.png?raw=true" width="250px" alt="FancyBottomSheet demo" />
 
 Also, this package adds a custom [`FancyBottomSheet`] with a drag indicator at the top. You can create one using [`context.showFancyModalBottomSheet()`].
 
@@ -71,7 +71,7 @@ Handy extensions on [`Color`]:
 | ----------------------------------------------- | --------------------------------------------------------------- |
 | [`color.estimatedBrightness`]                   | estimated [`Brightness`] based on `color`'s luminance           |
 | [`color.alphaBlendOn(Color background)`]        | resulting [`Color`] when drawing `color` on top of `background` |
-| [`color.withAdditionalOpacity(double opacity)`] | applies [opacity] by multiplying it to the existing opacity     |
+| [`color.withAdditionalOpacity(double opacity)`] | applies `opacity` by multiplying it to the existing opacity     |
 | [`color.withAdditionalAlpha(int alpha)`]        | like above, but with an integer alpha                           |
 | [`color.hsl`]                                   | ≙ `HSLColor.fromColor(color)`                                   |
 | [`color.hsv`]                                   | ≙ `HSVColor.fromColor(color)`                                   |
@@ -88,7 +88,7 @@ And if you can't decide on a color, just use [`random.nextColor()`]!
 [`color.hsl`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/hsl.html
 [`color.hsv`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/hsv.html
 [`color.withAdditionalOpacity(double opacity)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/withAdditionalOpacity.html
-[`color.withAdditionalAlpha(inte alpha)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/withAdditionalAlpha.html
+[`color.withAdditionalAlpha(int alpha)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/withAdditionalAlpha.html
 [`random.nextColor()`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/RandomColor/nextColor.html
 
 
@@ -163,14 +163,14 @@ In [`FancyFab`] (a [`FloatingActionButton`]), [`FancyFlatButton`], [`FancyOutlin
 
 ### 🥔 ChipGroup
 
-<img src="https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-chipGroup.png?raw=true" style="float: left;" alt="ChipGroup demo" />
+<img src="https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-chipGroup.png?raw=true" width="300px" alt="ChipGroup demo" />
 
 Wraps multiple chips and can optionally show a title above these.
 
 
 ### 🥙 FillOrWrap
 
-![FillOrWrap demo](https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-fillOrWrap.png?raw=true)
+<img src="https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-fillOrWrap.png?raw=true" width="300px" alt="FillOrWrap demo" />
 
 A layout with two different behaviors:
 - By default, all children are positioned **next to each other with equal widths**. This is comparable to a [`Row`] with all children wrapped in [`Expanded`].
@@ -179,7 +179,7 @@ A layout with two different behaviors:
 
 ### SeparatedButtons
 
-![SeparatedButtons demo](https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-separatedButtons.png?raw=true)
+<img src="https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-separatedButtons.png?raw=true" width="300px" alt="SeparatedButtons demo" />
 
 A container wrapping multiple buttons with an interpunct (`·`) between each one. It's recommended to use [`FlatButton`]s as children.
 
