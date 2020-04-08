@@ -15,7 +15,15 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.6...master)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.7...master)
+
+## [0.2.7](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.6...v0.2.7) · 2020-04-08
+
+### 🎉 New Features
+- **color:** add `Color.isDark`, `Color.isLight`
+
+### 📜 Documentation updates
+- fill README with missing extensions and widgets
 
 
 ## [0.2.6](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.5...v0.2.6) · 2020-04-07
