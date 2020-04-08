@@ -36,8 +36,16 @@ extension FancyColor on Color {
   Brightness get estimatedBrightness =>
       ThemeData.estimateBrightnessForColor(this);
 
+  /// `true` if the [estimatedBrightness] is [Brightness.dark], `false`
+  /// otherwise.
+  bool get isDark => estimatedBrightness.isDark;
+
+  /// `true` if the [estimatedBrightness] is [Brightness.light], `false`
+  /// otherwise.
+  bool get isLight => estimatedBrightness.isLight;
+
   /// A pure [Color] contrasting with this one (i.e., [Colors.black] or
-  /// [Colors.white]), depending on the estimated [Brightness].
+  /// [Colors.white]), depending on the [estimatedBrightness].
   Color get contrastColor => estimatedBrightness.contrastColor;
 
   /// The [SystemUiOverlayStyle] providing the most contrast on this color.
