@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
-import 'context.dart';
+import '../context.dart';
 
 /// In addition to a normal [FlatButton], this [Widget] natively supports
 /// disabling it and showing a loading state.

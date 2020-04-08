@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'context.dart';
+import '../context.dart';
 
 /// Wraps multiple [Chip]s and can optionally show a [title] above these.
 class ChipGroup extends StatelessWidget {

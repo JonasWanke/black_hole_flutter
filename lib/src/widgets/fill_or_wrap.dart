@@ -10,7 +10,7 @@ import 'package:flutter/widgets.dart';
 /// widths**. This is comparable to a [Row] with all [children] wrapped in
 /// [Expanded].
 ///
-/// If the children are too wide to fit in a single line, or one child would
+/// If the [children] are too wide to fit in a single line, or one child would
 /// become smaller than its reported minimum width, the [children] get
 /// positioned **below each other** ("wrapped"). This is similar to a [Column]
 /// with [MainAxisSize.min].

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dartx/dartx.dart';
 
-import 'context.dart';
+import '../context.dart';
 
 /// A container wrapping multiple buttons with an interpunct (·) between each
 /// one. It's recommended to use [FlatButton]s as children.
