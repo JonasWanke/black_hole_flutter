@@ -1,16 +1,16 @@
 🛠 A package absorbing all Flutter utility functions, including extension functions and commonly used widgets.
 
-- [📄 Bottom Sheet](#%f0%9f%93%84-bottom-sheet)
-- [🏗 BuildContext](#%f0%9f%8f%97-buildcontext)
-- [🎨 Colors](#%f0%9f%8e%a8-colors)
-  - [🌈 Material Design colors](#%f0%9f%8c%88-material-design-colors)
-- [🧭 Navigation](#%f0%9f%a7%ad-navigation)
-- [📱 Widgets](#%f0%9f%93%b1-widgets)
-- [🔳 Buttons](#%f0%9f%94%b3-buttons)
-  - [🥔 ChipGroup](#%f0%9f%a5%94-chipgroup)
-  - [🥙 FillOrWrap](#%f0%9f%a5%99-fillorwrap)
-  - [SeparatedButtons](#separatedbuttons)
-- [↕ Size](#%e2%86%95-size)
+- [📄 Bottom Sheet](#-bottom-sheet)
+- [🏗 BuildContext](#-buildcontext)
+- [🎨 Colors](#-colors)
+  - [🌈 Material Design colors](#-material-design-colors)
+- [🧭 Navigation](#-navigation)
+- [📱 Widgets](#-widgets)
+- [🔳 Buttons](#-buttons)
+  - [🥔 ChipGroup](#-chipgroup)
+  - [🥙 FillOrWrap](#-fillorwrap)
+  - [↔ SeparatedButtons](#-separatedbuttons)
+- [↕ Size](#-size)
 
 
 ## 📄 Bottom Sheet
@@ -177,7 +177,7 @@ A layout with two different behaviors:
 - If the children are too wide to fit in a single line, or one child would become smaller than its reported minimum width, the children get positioned **below each other** ("wrapped"). This is similar to a [`Column`] with [`MainAxisSize.min`].
 
 
-### SeparatedButtons
+### ↔ SeparatedButtons
 
 <img src="https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-separatedButtons.png?raw=true" width="300px" alt="SeparatedButtons demo" />
 
