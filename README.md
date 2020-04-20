@@ -6,10 +6,11 @@
   - [🌈 Material Design colors](#-material-design-colors)
 - [🧭 Navigation](#-navigation)
 - [📱 Widgets](#-widgets)
-- [🔳 Buttons](#-buttons)
+  - [🔳 Buttons](#-buttons)
   - [🥔 ChipGroup](#-chipgroup)
   - [🥙 FillOrWrap](#-fillorwrap)
   - [↔ SeparatedButtons](#-separatedbuttons)
+- [🖼 RenderObject](#-renderobject)
 - [↕ Size](#-size)
 
 
@@ -143,7 +144,7 @@ MaterialApp(
 
 ## 📱 Widgets
 
-## 🔳 Buttons
+### 🔳 Buttons
 
 Did you ever want to show a [progress indicator][`ProgressIndicator`] inside a button? Or were annoyed to conditionally set a [Button][`MaterialButton`]'s [`onPressed`][`MaterialButton.onPressed`] to disable it? Fear no more — <kbd>black_hole_flutter</kbd> has got you covered!
 
@@ -186,6 +187,17 @@ A layout with two different behaviors:
 A container wrapping multiple buttons with an interpunct (`·`) between each one. It's recommended to use [`FlatButton`]s as children.
 
 
+## 🖼 RenderObject
+
+When writing a custom layout, you might find this extension on [`ContainerRenderObjectMixin`] useful:
+
+| Extension                               | Explanation                                              |
+| --------------------------------------- | -------------------------------------------------------- |
+| [`containerRenderObjectMixin.children`] | Returns all children using `firstChild` and `childAfter` |
+
+[`containerRenderObjectMixin.children`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/ContainerRenderObjectMixinBlackHole/children.html
+
+
 ## ↕ Size
 
 | Extension                | Explanation                                              |
@@ -205,6 +217,7 @@ A container wrapping multiple buttons with an interpunct (`·`) between each one
 [`Color`]: https://api.flutter.dev/flutter/dart-ui/Color-class.html
 [`Colors`]: https://api.flutter.dev/flutter/material/Colors-class.html
 [`Column`]: https://api.flutter.dev/flutter/widgets/Column-class.html
+[`ContainerRenderObjectMixin`]: https://api.flutter.dev/flutter/rendering/ContainerRenderObjectMixin-mixin.html
 [`Expanded`]: https://api.flutter.dev/flutter/widgets/Expanded-class.html
 [`FlatButton`]: https://api.flutter.dev/flutter/material/FlatButton-class.html
 [`FloatingActionButton`]: https://api.flutter.dev/flutter/material/FloatingActionButton-class.html

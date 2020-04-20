@@ -4,6 +4,8 @@ import 'package:dartx/dartx.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
+import '../render_object.dart';
+
 /// A layout with two different behaviors:
 ///
 /// By default, all [children] are positioned **next to each other with equal
@@ -202,13 +204,5 @@ class _FillOrWrapLayout extends RenderBox
 
     context.pushClipRect(
         needsCompositing, offset, Offset.zero & size, defaultPaint);
-  }
-
-  Iterable<RenderBox> get children sync* {
-    var child = firstChild;
-    while (child != null) {
-      yield child;
-      child = childAfter(child);
-    }
   }
 }

@@ -6,6 +6,7 @@ export 'src/color.dart';
 export 'src/color_material.dart';
 export 'src/context.dart';
 export 'src/navigation.dart';
+export 'src/render_object.dart';
 export 'src/size.dart';
 export 'src/widgets/buttons.dart';
 export 'src/widgets/chip_group.dart';
