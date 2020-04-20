@@ -15,7 +15,14 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.7...master)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.8...master)
+
+## [0.2.8](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.7...v0.2.8) · 2020-04-20
+
+### 🎉 New Features
+- **context:** add `BuildContext.locale`
+- **render_object:** add `ContainerRenderObjectMixin.children`
+
 
 ## [0.2.7](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.6...v0.2.7) · 2020-04-08
 
@@ -106,7 +113,6 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ## [0.1.0](https://github.com/JonasWanke/black_hole_flutter/compare/v0.0.1...v0.1.0) · 2020-03-13
 
 ### 🎉 New Features
-
 - add `Size.diagonal`, `Size.squaredDiagonal`
 - allow loading buttons without a `loadingChild`
 
