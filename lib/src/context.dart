@@ -10,6 +10,9 @@ extension FancyContext on BuildContext {
   /// Shortcut for `Form.of(context)`.
   FormState get form => Form.of(this);
 
+  /// Shortcut for `Localizations.localeOf(context)`.
+  Locale get locale => Localizations.localeOf(this);
+
   /// Shortcut for `MediaQuery.of(context)`.
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 
