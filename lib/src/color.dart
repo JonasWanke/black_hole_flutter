@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // Maximum value per channel of a [Color].
-const _channelMax = (2 << 8) - 1;
+const _channelMax = (1 << 8) - 1;
 
 extension FancyBrightness on Brightness {
   /// `true` for [Brightness.dark], `false` otherwise.
@@ -43,6 +43,9 @@ extension FancyColor on Color {
   /// `true` if the [estimatedBrightness] is [Brightness.light], `false`
   /// otherwise.
   bool get isLight => estimatedBrightness.isLight;
+
+  /// `true` if this color is fully opaque, i.e. has an [opacity] of `1.0`.
+  bool get isOpaque => alpha == _channelMax;
 
   /// A pure [Color] contrasting with this one (i.e., [Colors.black] or
   /// [Colors.white]), depending on the [estimatedBrightness].
