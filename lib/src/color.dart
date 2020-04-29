@@ -118,3 +118,15 @@ extension RandomColor on Random {
     return Color.fromARGB(alpha ?? nextInt(_channelMax), r, g, b);
   }
 }
+
+extension IntColorBlackHole on int {
+  /// Interprets this [int] as an alpha value (0 – 255) and converts it to an
+  /// opacity value (0 – 1).
+  double get alphaToOpacity => this / _channelMax;
+}
+
+extension DoubleColorBlackHole on double {
+  /// Interprets this [double] as an opacity value (0 – 1) and converts it to an
+  /// alpha value (0 – 255).
+  int get opacityToAlpha => this * _channelMax ~/ 1;
+}
