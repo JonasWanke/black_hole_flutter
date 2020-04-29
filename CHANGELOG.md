@@ -15,7 +15,17 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.8...master)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.9...master)
+
+## [0.2.9](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.8...v0.2.9) · 2020-04-29
+
+### 🎉 New Features
+- **color:** add `Color.isOpaque`
+- **color:** add `int.alphaToOpacity`, `double.opacityToAlpha`
+- **context:** add `BuildContext.materialLocalizations`
+- **context:** add `BuildContext.scaffoldOrNull`
+- **size:** add `Size.coerceAtLeast`, `Size.coerceAtMost`
+
 
 ## [0.2.8](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.7...v0.2.8) · 2020-04-20
 
