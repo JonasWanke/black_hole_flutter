@@ -13,6 +13,10 @@ extension FancyContext on BuildContext {
   /// Shortcut for `Localizations.localeOf(context)`.
   Locale get locale => Localizations.localeOf(this);
 
+  /// Shortcut for `MaterialLocalizations.of(context)`.
+  MaterialLocalizations get materialLocalizations =>
+      MaterialLocalizations.of(this);
+
   /// Shortcut for `MediaQuery.of(context)`.
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 

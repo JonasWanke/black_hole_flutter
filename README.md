@@ -31,23 +31,25 @@ Also, this package adds a custom [`FancyBottomSheet`] with a drag indicator at t
 
 In Flutter, you often see the pattern `<Class>.of(context)` (e.g., [`Theme.of(context)`][`Theme.of`]). This package adds extension getters on [`BuildContext`] for those classes so you can just say:
 
-| Extension                    | Shortcut for                         |
-| ---------------------------- | ------------------------------------ |
-| [`context.defaultTextStyle`] | `DefaultTextStyle.of(context)`       |
-| [`context.directionality`]   | `Directionality.of(context)`         |
-| [`context.form`]             | `Form.of(context)`                   |
-| [`context.locale`]           | `Localizations.localeOf(context)`    |
-| [`context.mediaQuery`]       | `MediaQuery.of(context)`             |
-| [`context.pageStorage`]      | `PageStorage.of(context)`            |
-| [`context.scaffold`]         | `Scaffold.of(context)`               |
-| [`context.scaffoldOrNull`]   | `Scaffold.of(context, nullOk: true)` |
-| [`context.textTheme`]        | `Theme.of(context).textTheme`        |
-| [`context.theme`]            | `Theme.of(context)`                  |
+| Extension                         | Shortcut for                         |
+| --------------------------------- | ------------------------------------ |
+| [`context.defaultTextStyle`]      | `DefaultTextStyle.of(context)`       |
+| [`context.directionality`]        | `Directionality.of(context)`         |
+| [`context.form`]                  | `Form.of(context)`                   |
+| [`context.locale`]                | `Localizations.localeOf(context)`    |
+| [`context.materialLocalizations`] | `MaterialLocalizations.of(context)`  |
+| [`context.mediaQuery`]            | `MediaQuery.of(context)`             |
+| [`context.pageStorage`]           | `PageStorage.of(context)`            |
+| [`context.scaffold`]              | `Scaffold.of(context)`               |
+| [`context.scaffoldOrNull`]        | `Scaffold.of(context, nullOk: true)` |
+| [`context.textTheme`]             | `Theme.of(context).textTheme`        |
+| [`context.theme`]                 | `Theme.of(context)`                  |
 
 [`context.defaultTextStyle`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/defaultTextStyle.html
 [`context.directionality`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/directionality.html
 [`context.form`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/form.html
 [`context.locale`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/locale.html
+[`context.materialLocalizations`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/materialLocalizations.html
 [`context.mediaQuery`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/mediaQuery.html
 [`context.pageStorage`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/pageStorage.html
 [`context.scaffold`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/scaffold.html
