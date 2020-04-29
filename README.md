@@ -31,17 +31,18 @@ Also, this package adds a custom [`FancyBottomSheet`] with a drag indicator at t
 
 In Flutter, you often see the pattern `<Class>.of(context)` (e.g., [`Theme.of(context)`][`Theme.of`]). This package adds extension getters on [`BuildContext`] for those classes so you can just say:
 
-| Extension                    | Shortcut for                      |
-| ---------------------------- | --------------------------------- |
-| [`context.defaultTextStyle`] | `DefaultTextStyle.of(context)`    |
-| [`context.directionality`]   | `Directionality.of(context)`      |
-| [`context.form`]             | `Form.of(context)`                |
-| [`context.locale`]           | `Localizations.localeOf(context)` |
-| [`context.mediaQuery`]       | `MediaQuery.of(context)`          |
-| [`context.pageStorage`]      | `PageStorage.of(context)`         |
-| [`context.scaffold`]         | `Scaffold.of(context)`            |
-| [`context.textTheme`]        | `Theme.of(context).textTheme`     |
-| [`context.theme`]            | `Theme.of(context)`               |
+| Extension                    | Shortcut for                         |
+| ---------------------------- | ------------------------------------ |
+| [`context.defaultTextStyle`] | `DefaultTextStyle.of(context)`       |
+| [`context.directionality`]   | `Directionality.of(context)`         |
+| [`context.form`]             | `Form.of(context)`                   |
+| [`context.locale`]           | `Localizations.localeOf(context)`    |
+| [`context.mediaQuery`]       | `MediaQuery.of(context)`             |
+| [`context.pageStorage`]      | `PageStorage.of(context)`            |
+| [`context.scaffold`]         | `Scaffold.of(context)`               |
+| [`context.scaffoldOrNull`]   | `Scaffold.of(context, nullOk: true)` |
+| [`context.textTheme`]        | `Theme.of(context).textTheme`        |
+| [`context.theme`]            | `Theme.of(context)`                  |
 
 [`context.defaultTextStyle`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/defaultTextStyle.html
 [`context.directionality`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/directionality.html
@@ -50,6 +51,7 @@ In Flutter, you often see the pattern `<Class>.of(context)` (e.g., [`Theme.of(co
 [`context.mediaQuery`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/mediaQuery.html
 [`context.pageStorage`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/pageStorage.html
 [`context.scaffold`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/scaffold.html
+[`context.scaffoldOrNull`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/scaffoldOrNull.html
 [`context.textTheme`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/textTheme.html
 [`context.theme`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/theme.html
 
@@ -73,6 +75,7 @@ Handy extensions on [`Color`]:
 | Extension                                       | Explanation                                                     |
 | ----------------------------------------------- | --------------------------------------------------------------- |
 | [`color.estimatedBrightness`]                   | estimated [`Brightness`] based on `color`'s luminance           |
+| [`color.isOpaque`]                              | if opacity is `1.0`                                             |
 | [`color.alphaBlendOn(Color background)`]        | resulting [`Color`] when drawing `color` on top of `background` |
 | [`color.withAdditionalOpacity(double opacity)`] | applies `opacity` by multiplying it to the existing opacity     |
 | [`color.withAdditionalAlpha(int alpha)`]        | like above, but with an integer alpha                           |
@@ -81,6 +84,8 @@ Handy extensions on [`Color`]:
 
 And if you can't decide on a color, just use [`random.nextColor()`]!
 
+Convert between alpha and opacity with `int.alphaToOpacity` & `double.opacityToAlpha`.
+
 [`brightness.isDark`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyBrightness/isDark.html
 [`brightness.isLight`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyBrightness/isLight.html
 [`brightness.opposite`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyBrightness/opposite.html
@@ -88,6 +93,7 @@ And if you can't decide on a color, just use [`random.nextColor()`]!
 [`brightness.contrastColor`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyBrightness/contrastColor.html
 [`color.alphaBlendOn(Color background)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/alphaBlendOn.html
 [`color.estimatedBrightness`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/estimatedBrightness.html
+[`color.isOpaque`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/isOpaque.html
 [`color.hsl`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/hsl.html
 [`color.hsv`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/hsv.html
 [`color.withAdditionalOpacity(double opacity)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/withAdditionalOpacity.html
@@ -200,13 +206,17 @@ When writing a custom layout, you might find this extension on [`ContainerRender
 
 ## ↕ Size
 
-| Extension                | Explanation                                              |
-| ------------------------ | -------------------------------------------------------- |
-| [`size.diagonal`]        | length of the diagonal of a rectangle with this [`Size`] |
-| [`size.squaredDiagonal`] | ≙ `size.diagonal * size.diagonal`                        |
+| Extension                            | Explanation                                              |
+| ------------------------------------ | -------------------------------------------------------- |
+| [`size.diagonal`]                    | length of the diagonal of a rectangle with this [`Size`] |
+| [`size.squaredDiagonal`]             | ≙ `size.diagonal * size.diagonal`                        |
+| [`size.coerceAtLeast(Size minimum)`] | Ensures `size` is not smaller than `minimum` in any axis |
+| [`size.coerceAtMost(Size maximum)`]  | Ensures `size` is not larger than `minimum` in any axis  |
 
 [`size.diagonal`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancySize/diagonal.html
 [`size.squaredDiagonal`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancySize/squaredDiagonal.html
+[`size.coerceAtLeast(Size minimum)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancySize/coerceAtLeast.html
+[`size.coerceAtMost(Size maximum)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancySize/coerceAtMost.html
 
 
 [<kbd>🧭 flutter_deep_linking</kbd>]: https://pub.dev/packages/flutter_deep_linking

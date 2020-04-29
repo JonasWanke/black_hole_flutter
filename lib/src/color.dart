@@ -44,9 +44,6 @@ extension FancyColor on Color {
   /// otherwise.
   bool get isLight => estimatedBrightness.isLight;
 
-  /// `true` if this color is fully opaque, i.e. has an [opacity] of `1.0`.
-  bool get isOpaque => alpha == _channelMax;
-
   /// A pure [Color] contrasting with this one (i.e., [Colors.black] or
   /// [Colors.white]), depending on the [estimatedBrightness].
   Color get contrastColor => estimatedBrightness.contrastColor;
@@ -54,6 +51,9 @@ extension FancyColor on Color {
   /// The [SystemUiOverlayStyle] providing the most contrast on this color.
   SystemUiOverlayStyle get contrastSystemUiOverlayStyle =>
       estimatedBrightness.contrastSystemUiOverlayStyle;
+
+  /// `true` if this color is fully opaque, i.e. has an [opacity] of `1.0`.
+  bool get isOpaque => alpha == _channelMax;
 
   /// Shortcut for `Color.alphaBlend(color, background)`.
   Color alphaBlendOn(Color background) => Color.alphaBlend(this, background);
