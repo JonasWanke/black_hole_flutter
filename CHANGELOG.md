@@ -15,7 +15,16 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.9...master)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.10...master)
+
+## [0.2.10](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.9...v0.2.10) · 2020-04-30
+
+### 🎉 New Features
+- **widgets:** add `TitleAndSubtitle`
+
+### 📦 Build & CI
+- update <kbd>dartx</kbd> to ^0.3.0
+
 
 ## [0.2.9](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.8...v0.2.9) · 2020-04-29
 
