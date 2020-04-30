@@ -12,3 +12,4 @@ export 'src/widgets/buttons.dart';
 export 'src/widgets/chip_group.dart';
 export 'src/widgets/fill_or_wrap.dart';
 export 'src/widgets/separated_buttons.dart';
+export 'src/widgets/title_and_subtitle.dart';

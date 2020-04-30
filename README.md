@@ -10,6 +10,7 @@
   - [🥔 ChipGroup](#-chipgroup)
   - [🥙 FillOrWrap](#-fillorwrap)
   - [↔ SeparatedButtons](#-separatedbuttons)
+  - [📚 TitleAndSubtitle](#-titleandsubtitle)
 - [🖼 RenderObject](#-renderobject)
 - [↕ Size](#-size)
 
@@ -193,6 +194,22 @@ A layout with two different behaviors:
 <img src="https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-separatedButtons.png?raw=true" width="300px" alt="SeparatedButtons demo" />
 
 A container wrapping multiple buttons with an interpunct (`·`) between each one. It's recommended to use [`FlatButton`]s as children.
+
+
+### 📚 TitleAndSubtitle
+
+Did you ever want to show a subtitle (in addition to a main title) in your `AppBar`? Use [`TitleAndSubtitle`] (very creative name, I know):
+
+```dart
+AppBar(
+  title: TitleAndSubtitle(
+    title: Text('My title'),
+    subtitle: Text('My optional subtitle'),
+  ),
+)
+```
+
+[`TitleAndSubtitle`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyFab-class.html
 
 
 ## 🖼 RenderObject
