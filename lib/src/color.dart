@@ -117,6 +117,42 @@ extension RandomColor on Random {
     }
     return Color.fromARGB(alpha ?? nextInt(_channelMax), r, g, b);
   }
+
+  /// Generates a random [HSLColor] with uniformly distributed hue, saturation &
+  /// lightness values.
+  ///
+  /// You can optionally specify some components of the generated [HSLColor].
+  HSLColor nextColorHsl({
+    double hue,
+    double saturation,
+    double lightness,
+    double alpha,
+  }) {
+    final h = hue ?? nextDouble() * 360;
+    final s = saturation ?? nextDouble();
+    final l = lightness ?? nextDouble();
+    final a = alpha ?? nextDouble();
+
+    return HSLColor.fromAHSL(a, h, s, l);
+  }
+
+  /// Generates a random [HSVColor] with uniformly distributed hue, saturation &
+  /// value values.
+  ///
+  /// You can optionally specify some components of the generated [HSVColor].
+  HSVColor nextColorHsv({
+    double hue,
+    double saturation,
+    double value,
+    double alpha,
+  }) {
+    final h = hue ?? nextDouble() * 360;
+    final s = saturation ?? nextDouble();
+    final v = value ?? nextDouble();
+    final a = alpha ?? nextDouble();
+
+    return HSVColor.fromAHSV(a, h, s, v);
+  }
 }
 
 extension IntColorBlackHole on int {

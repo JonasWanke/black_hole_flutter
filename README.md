@@ -85,7 +85,7 @@ Handy extensions on [`Color`]:
 | [`color.hsl`]                                   | ≙ `HSLColor.fromColor(color)`                                   |
 | [`color.hsv`]                                   | ≙ `HSVColor.fromColor(color)`                                   |
 
-And if you can't decide on a color, just use [`random.nextColor()`]!
+And if you can't decide on a color, just use [`random.nextColor()`], [`random.nextColorHsl()`] or [`random.nextColorHsv()`]!
 
 Convert between alpha and opacity with `int.alphaToOpacity` & `double.opacityToAlpha`.
 
@@ -102,6 +102,8 @@ Convert between alpha and opacity with `int.alphaToOpacity` & `double.opacityToA
 [`color.withAdditionalOpacity(double opacity)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/withAdditionalOpacity.html
 [`color.withAdditionalAlpha(int alpha)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyColor/withAdditionalAlpha.html
 [`random.nextColor()`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/RandomColor/nextColor.html
+[`random.nextColorHsl()`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/RandomColor/nextColorHsl.html
+[`random.nextColorHsv()`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/RandomColor/nextColorHsv.html
 
 
 ### 🌈 Material Design colors
