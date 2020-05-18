@@ -20,6 +20,9 @@ extension FancyContext on BuildContext {
   /// Shortcut for `MediaQuery.of(context)`.
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 
+  /// Shortcut for `Overlay.of(context)`.
+  OverlayState get overlay => Overlay.of(this);
+
   /// Shortcut for `PageStorage.of(context)`.
   PageStorageBucket get pageStorage => PageStorage.of(this);
 
