@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 
 <!-- Template:
 ## [NEW](https://github.com/JonasWanke/black_hole_flutter/compare/vOLD...vNEW) · 2020-xx-xx
+### ⚠ BREAKING CHANGES
 ### 🎉 New Features
 ### ⚡ Changes
 ### 🐛 Bug Fixes
@@ -15,7 +16,18 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.10...master)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.11...master)
+
+## [0.2.11](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.10...v0.2.11) · 2020-05-18
+
+### 🎉 New Features
+- **async:** add `AsyncSnapshot.hasNoData`, `AsyncSnapshot.hasNoError`
+- **color:** add `Random.nextColorHsl()`, `Random.nextColorHsv()`
+- **context:** add `BuildContext.overlay`
+
+### 📦 Build & CI
+- **example:** update packages
+
 
 ## [0.2.10](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.9...v0.2.10) · 2020-04-30
 
