@@ -16,7 +16,17 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.11...master)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.12...master)
+
+## [0.2.12](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.11...v0.2.12) · 2020-06-11
+
+### 🎉 New Features
+- **context:** add `BuildContext.focusScope`
+
+### 📦 Build & CI
+- update dartx to v0.4.0
+- update Flutter to v1.17.0
+
 
 ## [0.2.11](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.10...v0.2.11) · 2020-05-18
 
