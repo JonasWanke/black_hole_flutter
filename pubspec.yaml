@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  dartx: ^0.3.0
+  dartx: ^0.4.0
   meta: ^1.1.8
 
 dev_dependencies:
