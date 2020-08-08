@@ -20,6 +20,7 @@ class FancyFlatButton extends _FancyButton {
     Widget loadingChild,
     Color textColor,
     Color color,
+    ShapeBorder shape,
   }) : super(
           key: key,
           isEnabled: isEnabled,
@@ -29,6 +30,7 @@ class FancyFlatButton extends _FancyButton {
           loadingChild: loadingChild,
           textColor: textColor,
           color: color,
+          shape: shape,
         );
 
   /// Creates a [FlatButton] with a leading icon.
@@ -46,6 +48,7 @@ class FancyFlatButton extends _FancyButton {
     Widget loadingLabel,
     Color textColor,
     Color color,
+    ShapeBorder shape,
   })  : assert(icon != null),
         super(
           key: key,
@@ -57,6 +60,7 @@ class FancyFlatButton extends _FancyButton {
           loadingChild: loadingLabel,
           textColor: textColor,
           color: color,
+          shape: shape,
         );
 
   @override
@@ -65,6 +69,7 @@ class FancyFlatButton extends _FancyButton {
       onPressed: actualOnPressed,
       textColor: textColor,
       color: color,
+      shape: shape,
       child: child,
     );
   }
@@ -75,6 +80,7 @@ class FancyFlatButton extends _FancyButton {
       onPressed: actualOnPressed,
       textColor: textColor,
       color: color,
+      shape: shape,
       icon: icon,
       label: actualChild,
     );
@@ -100,6 +106,7 @@ class FancyOutlineButton extends _FancyButton {
     Color color,
     this.borderSide,
     this.highlightedBorderColor,
+    ShapeBorder shape,
   }) : super(
           key: key,
           isEnabled: isEnabled,
@@ -109,6 +116,7 @@ class FancyOutlineButton extends _FancyButton {
           loadingChild: loadingChild,
           textColor: textColor,
           color: color,
+          shape: shape,
         );
 
   /// Creates an [OutlineButton] with a leading icon.
@@ -128,6 +136,7 @@ class FancyOutlineButton extends _FancyButton {
     Color color,
     this.borderSide,
     this.highlightedBorderColor,
+    ShapeBorder shape,
   })  : assert(icon != null),
         super(
           key: key,
@@ -139,6 +148,7 @@ class FancyOutlineButton extends _FancyButton {
           loadingChild: loadingLabel,
           textColor: textColor,
           color: color,
+          shape: shape,
         );
 
   final BorderSide borderSide;
@@ -152,6 +162,7 @@ class FancyOutlineButton extends _FancyButton {
       color: color,
       borderSide: borderSide,
       highlightedBorderColor: highlightedBorderColor,
+      shape: shape,
       child: child,
     );
   }
@@ -164,6 +175,7 @@ class FancyOutlineButton extends _FancyButton {
       color: color,
       borderSide: borderSide,
       highlightedBorderColor: highlightedBorderColor,
+      shape: shape,
       icon: icon,
       label: actualChild,
     );
@@ -187,6 +199,7 @@ class FancyRaisedButton extends _FancyButton {
     Widget loadingChild,
     Color textColor,
     Color color,
+    ShapeBorder shape,
   }) : super(
           key: key,
           isEnabled: isEnabled,
@@ -196,6 +209,7 @@ class FancyRaisedButton extends _FancyButton {
           loadingChild: loadingChild,
           textColor: textColor,
           color: color,
+          shape: shape,
         );
 
   /// Creates a [RaisedButton] with a leading icon.
@@ -213,6 +227,7 @@ class FancyRaisedButton extends _FancyButton {
     Widget loadingLabel,
     Color textColor,
     Color color,
+    ShapeBorder shape,
   })  : assert(icon != null),
         super(
           key: key,
@@ -224,6 +239,7 @@ class FancyRaisedButton extends _FancyButton {
           loadingChild: loadingLabel,
           textColor: textColor,
           color: color,
+          shape: shape,
         );
 
   @override
@@ -232,6 +248,7 @@ class FancyRaisedButton extends _FancyButton {
       onPressed: actualOnPressed,
       textColor: textColor,
       color: color,
+      shape: shape,
       child: child,
     );
   }
@@ -242,6 +259,7 @@ class FancyRaisedButton extends _FancyButton {
       onPressed: actualOnPressed,
       textColor: textColor,
       color: color,
+      shape: shape,
       icon: icon,
       label: actualChild,
     );
@@ -264,6 +282,7 @@ class FancyFab extends _FancyButton {
     bool isLoading = false,
     Widget loadingLabel,
     Color color,
+    ShapeBorder shape,
   }) : super(
           key: key,
           isEnabled: isEnabled,
@@ -272,6 +291,7 @@ class FancyFab extends _FancyButton {
           isLoading: isLoading,
           loadingChild: loadingLabel,
           color: color,
+          shape: shape,
         );
 
   /// Creates an extended [FloatingActionButton].
@@ -288,6 +308,7 @@ class FancyFab extends _FancyButton {
     bool isLoading = false,
     Widget loadingLabel,
     Color backgroundColor,
+    ShapeBorder shape,
   })  : assert(icon != null),
         super(
           key: key,
@@ -298,6 +319,7 @@ class FancyFab extends _FancyButton {
           isLoading: isLoading,
           loadingChild: loadingLabel,
           color: backgroundColor,
+          shape: shape,
         );
 
   @override
@@ -309,6 +331,7 @@ class FancyFab extends _FancyButton {
       onPressed: actualOnPressed,
       foregroundColor: _foregroundColor(context),
       backgroundColor: _backgroundColor(context),
+      shape: shape,
       child: isLoading ? _LoadingIndicator(loadingIndicatorSize) : child,
     );
   }
@@ -325,6 +348,7 @@ class FancyFab extends _FancyButton {
       onPressed: actualOnPressed,
       foregroundColor: _foregroundColor(context),
       backgroundColor: _backgroundColor(context),
+      shape: shape,
       icon: icon,
       label: actualChild,
     );
@@ -363,6 +387,7 @@ abstract class _FancyButton extends StatelessWidget {
     this.loadingChild,
     this.textColor,
     this.color,
+    this.shape,
     this.icon,
     @required this.child,
   })  : assert(!(isEnabled == true && onPressed == null),
@@ -387,6 +412,7 @@ abstract class _FancyButton extends StatelessWidget {
 
   final Color textColor;
   final Color color;
+  final ShapeBorder shape;
 
   final Widget icon;
   final Widget child;
