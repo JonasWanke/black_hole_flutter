@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
 <!-- Template:
@@ -16,7 +16,16 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.12...master)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.13...master)
+
+## [0.2.13](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.11...v0.2.13) · 2020-08-20
+
+### 🎉 New Features
+- **buttons:** add `shape` parameter
+
+### 📦 Build & CI
+- update dartx to v0.5.0
+
 
 ## [0.2.12](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.11...v0.2.12) · 2020-06-11
 
