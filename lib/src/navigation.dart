@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 
 extension NavigationContext on BuildContext {
   /// Shortcut for `ModalRoute.of(context)`.
-  ModalRoute get modalRoute => ModalRoute.of(this);
+  ModalRoute<dynamic> get modalRoute => ModalRoute.of(this);
 
   /// Shortcut for `Navigator.of(context)`.
   NavigatorState get navigator => Navigator.of(this);
@@ -45,11 +45,11 @@ class LoggingNavigatorObserver extends NavigatorObserver {
       'didPush ${routeToString(previousRoute)} → ${routeToString(route)}');
 
   @override
-  void didPop(Route route, Route previousRoute) => logger(
+  void didPop(Route<dynamic> route, Route<dynamic> previousRoute) => logger(
       'didPop ${routeToString(previousRoute)} ← ${routeToString(route)}');
 
   @override
-  void didRemove(Route route, Route previousRoute) => logger(
+  void didRemove(Route<dynamic> route, Route<dynamic> previousRoute) => logger(
       'didRemove ${routeToString(previousRoute)} → ${routeToString(route)}');
 
   @override

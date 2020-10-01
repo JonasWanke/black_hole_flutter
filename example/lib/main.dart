@@ -32,7 +32,7 @@ class BottomSheetExample extends StatelessWidget {
       children: <Widget>[
         FancyRaisedButton(
           onPressed: () {
-            context.showFancyModalBottomSheet(
+            context.showFancyModalBottomSheet<void>(
               builder: (_) => Padding(
                 padding: EdgeInsets.symmetric(vertical: 128, horizontal: 16),
                 child: Text("I'm fancy!"),
