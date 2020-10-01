@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
+import '../color_material.dart';
 import '../context.dart';
 
 /// In addition to a normal [FlatButton], this [Widget] natively supports
@@ -18,6 +19,7 @@ class FancyFlatButton extends _FancyButton {
     @required Widget child,
     bool isLoading = false,
     Widget loadingChild,
+    Widget loadingIndicator,
     Color textColor,
     Color color,
     ShapeBorder shape,
@@ -27,6 +29,7 @@ class FancyFlatButton extends _FancyButton {
           onPressed: onPressed,
           child: child,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingChild,
           textColor: textColor,
           color: color,
@@ -46,6 +49,7 @@ class FancyFlatButton extends _FancyButton {
     @required Widget label,
     bool isLoading = false,
     Widget loadingLabel,
+    Widget loadingIndicator,
     Color textColor,
     Color color,
     ShapeBorder shape,
@@ -57,6 +61,7 @@ class FancyFlatButton extends _FancyButton {
           icon: icon,
           child: label,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingLabel,
           textColor: textColor,
           color: color,
@@ -102,6 +107,7 @@ class FancyOutlineButton extends _FancyButton {
     @required Widget child,
     bool isLoading = false,
     Widget loadingChild,
+    Widget loadingIndicator,
     Color textColor,
     Color color,
     this.borderSide,
@@ -113,6 +119,7 @@ class FancyOutlineButton extends _FancyButton {
           onPressed: onPressed,
           child: child,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingChild,
           textColor: textColor,
           color: color,
@@ -132,6 +139,7 @@ class FancyOutlineButton extends _FancyButton {
     @required Widget label,
     bool isLoading = false,
     Widget loadingLabel,
+    Widget loadingIndicator,
     Color textColor,
     Color color,
     this.borderSide,
@@ -145,6 +153,7 @@ class FancyOutlineButton extends _FancyButton {
           icon: icon,
           child: label,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingLabel,
           textColor: textColor,
           color: color,
@@ -197,6 +206,7 @@ class FancyRaisedButton extends _FancyButton {
     @required Widget child,
     bool isLoading = false,
     Widget loadingChild,
+    Widget loadingIndicator,
     Color textColor,
     Color color,
     ShapeBorder shape,
@@ -206,6 +216,7 @@ class FancyRaisedButton extends _FancyButton {
           onPressed: onPressed,
           child: child,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingChild,
           textColor: textColor,
           color: color,
@@ -225,6 +236,7 @@ class FancyRaisedButton extends _FancyButton {
     @required Widget label,
     bool isLoading = false,
     Widget loadingLabel,
+    Widget loadingIndicator,
     Color textColor,
     Color color,
     ShapeBorder shape,
@@ -236,6 +248,7 @@ class FancyRaisedButton extends _FancyButton {
           icon: icon,
           child: label,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingLabel,
           textColor: textColor,
           color: color,
@@ -281,6 +294,7 @@ class FancyFab extends _FancyButton {
     @required Widget child,
     bool isLoading = false,
     Widget loadingLabel,
+    Widget loadingIndicator,
     Color color,
     ShapeBorder shape,
   }) : super(
@@ -289,6 +303,7 @@ class FancyFab extends _FancyButton {
           onPressed: onPressed,
           child: child,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingLabel,
           color: color,
           shape: shape,
@@ -307,6 +322,7 @@ class FancyFab extends _FancyButton {
     @required Widget label,
     bool isLoading = false,
     Widget loadingLabel,
+    Widget loadingIndicator,
     Color backgroundColor,
     ShapeBorder shape,
   })  : assert(icon != null),
@@ -317,6 +333,7 @@ class FancyFab extends _FancyButton {
           icon: icon,
           child: label,
           isLoading: isLoading,
+          loadingIndicator: loadingIndicator,
           loadingChild: loadingLabel,
           color: backgroundColor,
           shape: shape,
@@ -332,7 +349,7 @@ class FancyFab extends _FancyButton {
       foregroundColor: _foregroundColor(context),
       backgroundColor: _backgroundColor(context),
       shape: shape,
-      child: isLoading ? _LoadingIndicator(loadingIndicatorSize) : child,
+      child: isLoading ? actualLoadingIndicator : child,
     );
   }
 
@@ -384,6 +401,7 @@ abstract class _FancyButton extends StatelessWidget {
     this.isEnabled,
     @required this.onPressed,
     this.isLoading = false,
+    this.loadingIndicator,
     this.loadingChild,
     this.textColor,
     this.color,
@@ -403,6 +421,9 @@ abstract class _FancyButton extends StatelessWidget {
   VoidCallback get actualOnPressed => isActuallyEnabled ? onPressed : null;
 
   final bool isLoading;
+  final Widget loadingIndicator;
+  Widget get actualLoadingIndicator =>
+      loadingIndicator ?? _LoadingIndicator(loadingIndicatorSize);
 
   final Widget loadingChild;
   Widget get actualLoadingChild => loadingChild ?? child;
@@ -422,7 +443,7 @@ abstract class _FancyButton extends StatelessWidget {
   @nonVirtual
   Widget build(BuildContext context) {
     if (isLoading) {
-      return _buildIcon(context, _LoadingIndicator(loadingIndicatorSize));
+      return _buildIcon(context, actualLoadingIndicator);
     }
     if (icon != null) {
       return _buildIcon(context, icon);
