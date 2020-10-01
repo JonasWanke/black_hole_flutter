@@ -16,15 +16,22 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.13...master)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.14...master)
 
-## [0.2.13](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.11...v0.2.13) · 2020-08-20
+## [0.2.14](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.13...v0.2.14) · 2020-10-01
 
 ### 🎉 New Features
-- **buttons:** add `shape` parameter
+- **widgets/buttons:** add customizable `loadingIndicator`
+- **widgets/buttons:** allow reversing extended FAB's child order (to show the icon on the right)
+
+
+## [0.2.13](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.12...v0.2.13) · 2020-08-20
+
+### 🎉 New Features
+- **widgets/buttons:** add `shape` parameter
 
 ### 📦 Build & CI
-- update dartx to v0.5.0
+- update <kbd>dartx</kbd> to `^0.5.0`
 
 
 ## [0.2.12](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.11...v0.2.12) · 2020-06-11
@@ -33,8 +40,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - **context:** add `BuildContext.focusScope`
 
 ### 📦 Build & CI
-- update dartx to v0.4.0
-- update Flutter to v1.17.0
+- update <kbd>dartx</kbd> to `^0.4.0`
+- update <kbd>Flutter</kbd> to `>=1.17.0`
 
 
 ## [0.2.11](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.10...v0.2.11) · 2020-05-18
@@ -54,7 +61,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - **widgets:** add `TitleAndSubtitle`
 
 ### 📦 Build & CI
-- update <kbd>dartx</kbd> to ^0.3.0
+- update <kbd>dartx</kbd> to `^0.3.0`
 
 
 ## [0.2.9](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.8...v0.2.9) · 2020-04-29
@@ -101,17 +108,17 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [0.2.4](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.3...v0.2.4) · 2020-04-02
 
 ### 🐛 Bug Fixes
-- **buttons:** use default child for extended buttons while not loading
+- **widgets/buttons:** use default child for extended buttons while not loading
 
 
 ## [0.2.3](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.2...v0.2.3) · 2020-03-28
 
 ### 🎉 New Features
-- **buttons:** add `icon`-variants to `FancyFlatButton`, `FancyOutlineButton` & `FancyRaisedButton`
-- **buttons:** add `textColor` to all fancy buttons
-- **buttons:** add `FancyOutlineButton.borderSide`, `FancyOutlineButton.highlightedBorderColor`
 - **color:** add `Color.withAdditionalOpacity`, `Color.withAdditionalAlpha`
 - **color:** add `contrastSystemUiOverlayStyle` getters to `Brightness`, `Color`
+- **widgets/buttons:** add `icon`-variants to `FancyFlatButton`, `FancyOutlineButton` & `FancyRaisedButton`
+- **widgets/buttons:** add `textColor` to all fancy buttons
+- **widgets/buttons:** add `FancyOutlineButton.borderSide`, `FancyOutlineButton.highlightedBorderColor`
 
 
 ## [0.2.2](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.1...v0.2.2) · 2020-03-26
