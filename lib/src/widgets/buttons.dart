@@ -297,7 +297,8 @@ class FancyFab extends _FancyButton {
     Widget loadingIndicator,
     Color color,
     ShapeBorder shape,
-  }) : super(
+  })  : reverseChildren = false,
+        super(
           key: key,
           isEnabled: isEnabled,
           onPressed: onPressed,
@@ -325,7 +326,9 @@ class FancyFab extends _FancyButton {
     Widget loadingIndicator,
     Color backgroundColor,
     ShapeBorder shape,
+    this.reverseChildren = false,
   })  : assert(icon != null),
+        assert(reverseChildren != null),
         super(
           key: key,
           isEnabled: isEnabled,
@@ -338,6 +341,8 @@ class FancyFab extends _FancyButton {
           color: backgroundColor,
           shape: shape,
         );
+
+  final bool reverseChildren;
 
   @override
   double get loadingIndicatorSize => 24;
@@ -366,8 +371,13 @@ class FancyFab extends _FancyButton {
       foregroundColor: _foregroundColor(context),
       backgroundColor: _backgroundColor(context),
       shape: shape,
-      icon: icon,
-      label: actualChild,
+      icon: reverseChildren ? null : icon,
+      label: reverseChildren
+          ? Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [actualChild, SizedBox(width: 8), icon],
+            )
+          : actualChild,
     );
   }
 
