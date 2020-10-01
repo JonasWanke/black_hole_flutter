@@ -385,7 +385,7 @@ class FancyFab extends _FancyButton {
     if (isActuallyEnabled) {
       return null;
     }
-    return context.theme.disabledColor;
+    return _backgroundColor(context).disabledOnColor;
   }
 
   Color _backgroundColor(BuildContext context) {
