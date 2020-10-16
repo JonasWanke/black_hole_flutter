@@ -85,9 +85,7 @@ class FancyBottomSheet extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Center(
-            child: _DragIndicator(),
-          ),
+          Center(child: DragIndicator()),
           SizedBox(height: 8),
           builder(context),
         ],
@@ -96,7 +94,7 @@ class FancyBottomSheet extends StatelessWidget {
   }
 }
 
-class _DragIndicator extends StatelessWidget {
+class DragIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
