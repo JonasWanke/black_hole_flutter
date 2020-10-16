@@ -16,13 +16,26 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.14...master)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.15...master)
+
+
+## [0.2.15](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.14...v0.2.15) · 2020-10-16
+
+### 🎉 New Features
+- **bottom_sheet:** export DragIndicator
+
+### 🐛 Bug Fixes
+- **bottom_sheet:** expand content to fill cross axis
+
 
 ## [0.2.14](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.13...v0.2.14) · 2020-10-01
 
 ### 🎉 New Features
 - **widgets/buttons:** add customizable `loadingIndicator`
 - **widgets/buttons:** allow reversing extended FAB's child order (to show the icon on the right)
+
+### ⚡ Changes
+- **widgets/buttons:** choose disabled FAB's foreground color based on the background color
 
 
 ## [0.2.13](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.12...v0.2.13) · 2020-08-20
