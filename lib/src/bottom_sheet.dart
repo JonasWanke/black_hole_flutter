@@ -84,6 +84,7 @@ class FancyBottomSheet extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 8),
       child: Column(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Center(child: DragIndicator()),
           SizedBox(height: 8),
