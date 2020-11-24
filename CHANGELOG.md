@@ -16,7 +16,16 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 📦 Build & CI
 -->
 
-## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.15...master)
+## [Unreleased](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.16...master)
+
+
+## [0.2.16](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.15...v0.2.16) · 2020-11-24
+
+### 🎉 New Features
+- **context:** add `BuildContext.scaffoldMessenger` & `BuildContext.scaffoldMessengerOrNull`
+
+### 📦 Build & CI
+- support Flutter `>=1.24.0-7.0.pre`
 
 
 ## [0.2.15](https://github.com/JonasWanke/black_hole_flutter/compare/v0.2.14...v0.2.15) · 2020-10-16
