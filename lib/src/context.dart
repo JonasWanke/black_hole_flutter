@@ -32,8 +32,8 @@ extension FancyContext on BuildContext {
   /// Shortcut for `Scaffold.of(context)`.
   ScaffoldState get scaffold => Scaffold.of(this);
 
-  /// Shortcut for `Scaffold.of(context, nullOk: true)`.
-  ScaffoldState get scaffoldOrNull => Scaffold.of(this, nullOk: true);
+  /// Shortcut for `Scaffold.maybeOf(context)`.
+  ScaffoldState get scaffoldOrNull => Scaffold.maybeOf(this);
 
   /// Shortcut for `Theme.of(context)`.
   ThemeData get theme => Theme.of(this);
