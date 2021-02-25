@@ -60,15 +60,12 @@ extension FancyColor on Color {
 
   /// Apply [opacity] in addition to the existing opacity by multiplying them.
   Color withAdditionalOpacity(double opacity) {
-    assert(opacity != null && opacity >= 0.0 && opacity <= 1.0);
+    assert(opacity >= 0.0 && opacity <= 1.0);
     return withOpacity(this.opacity * opacity);
   }
 
   /// Apply [alpha] in addition to the existing alpha by multiplying them.
-  Color withAdditionalAlpha(int alpha) {
-    assert(alpha != null);
-    return withAlpha(this.alpha * alpha);
-  }
+  Color withAdditionalAlpha(int alpha) => withAlpha(this.alpha * alpha);
 
   /// Shortcut for `HSLColor.fromColor(color)`.
   HSLColor get hsl => HSLColor.fromColor(this);
@@ -97,11 +94,11 @@ extension RandomColor on Random {
   /// - [red], [green] or [blue]
   /// - either [alpha] or [opacity]
   Color nextColor({
-    int red,
-    int green,
-    int blue,
-    int alpha,
-    double opacity,
+    int? red,
+    int? green,
+    int? blue,
+    int? alpha,
+    double? opacity,
   }) {
     assert(
       alpha == null || opacity == null,
@@ -112,9 +109,7 @@ extension RandomColor on Random {
     final g = green ?? nextInt(_channelMax);
     final b = blue ?? nextInt(_channelMax);
 
-    if (opacity != null) {
-      return Color.fromRGBO(r, g, b, opacity);
-    }
+    if (opacity != null) return Color.fromRGBO(r, g, b, opacity);
     return Color.fromARGB(alpha ?? nextInt(_channelMax), r, g, b);
   }
 
@@ -123,10 +118,10 @@ extension RandomColor on Random {
   ///
   /// You can optionally specify some components of the generated [HSLColor].
   HSLColor nextColorHsl({
-    double hue,
-    double saturation,
-    double lightness,
-    double alpha,
+    double? hue,
+    double? saturation,
+    double? lightness,
+    double? alpha,
   }) {
     final h = hue ?? nextDouble() * 360;
     final s = saturation ?? nextDouble();
@@ -141,10 +136,10 @@ extension RandomColor on Random {
   ///
   /// You can optionally specify some components of the generated [HSVColor].
   HSVColor nextColorHsv({
-    double hue,
-    double saturation,
-    double value,
-    double alpha,
+    double? hue,
+    double? saturation,
+    double? value,
+    double? alpha,
   }) {
     final h = hue ?? nextDouble() * 360;
     final s = saturation ?? nextDouble();

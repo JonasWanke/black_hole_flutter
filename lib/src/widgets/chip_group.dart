@@ -5,15 +5,14 @@ import '../context.dart';
 /// Wraps multiple [Chip]s and can optionally show a [title] above these.
 class ChipGroup extends StatelessWidget {
   const ChipGroup({
-    Key key,
+    Key? key,
     this.title,
-    @required this.children,
-  })  : assert(children != null),
-        super(key: key);
+    required this.children,
+  }) : super(key: key);
 
   /// An optional [Widget] that is displayed above the [children] if there are
   /// any.
-  final Widget title;
+  final Widget? title;
   final List<Widget> children;
 
   @override
@@ -30,8 +29,8 @@ class ChipGroup extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           DefaultTextStyle(
-            style: context.textTheme.overline,
-            child: title,
+            style: context.textTheme.overline!,
+            child: title!,
           ),
           child,
         ],

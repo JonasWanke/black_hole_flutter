@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:black_hole_flutter/black_hole_flutter.dart';
+
+import '../context.dart';
 
 /// Shows a title and a subtitle in a [Column].
 ///
 /// It's recommended to use this widget inside an [AppBar].
 class TitleAndSubtitle extends StatelessWidget {
   const TitleAndSubtitle({
-    @required this.title,
+    required this.title,
     this.subtitle,
-  }) : assert(title != null);
+  });
 
   /// See [AppBar.title].
   final Widget title;
@@ -16,13 +17,11 @@ class TitleAndSubtitle extends StatelessWidget {
   /// A widget displayed below the title.
   ///
   /// Typically a [Text] widget.
-  final Widget subtitle;
+  final Widget? subtitle;
 
   @override
   Widget build(BuildContext context) {
-    if (subtitle == null) {
-      return title;
-    }
+    if (subtitle == null) return title;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -31,7 +30,7 @@ class TitleAndSubtitle extends StatelessWidget {
         title,
         DefaultTextStyle.merge(
           style: context.textTheme.subtitle2,
-          child: subtitle,
+          child: subtitle!,
         ),
       ],
     );

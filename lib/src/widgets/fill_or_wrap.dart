@@ -1,8 +1,9 @@
 import 'dart:math' as math;
 
-import 'package:dartx/dartx.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:supercharged/supercharged.dart';
 
 import '../render_object.dart';
 
@@ -18,13 +19,11 @@ import '../render_object.dart';
 /// with [MainAxisSize.min].
 class FillOrWrap extends MultiChildRenderObjectWidget {
   FillOrWrap({
-    Key key,
+    Key? key,
     this.spacing = 0,
     this.wrappedSpacing = 0,
-    @required List<Widget> children,
-  })  : assert(spacing != null),
-        assert(wrappedSpacing != null),
-        super(key: key, children: children);
+    required List<Widget> children,
+  }) : super(key: key, children: children);
 
   /// How much space to place between children when not wrapping.
   final double spacing;
@@ -60,15 +59,12 @@ class _FillOrWrapLayout extends RenderBox
   _FillOrWrapLayout({
     double spacing = 0,
     double wrappedSpacing = 0,
-  })  : assert(spacing != null),
-        _spacing = spacing,
-        assert(wrappedSpacing != null),
+  })  : _spacing = spacing,
         _wrappedSpacing = wrappedSpacing;
 
   double _spacing;
   double get spacing => _spacing;
   set spacing(double value) {
-    assert(value != null);
     if (_spacing == value) {
       return;
     }
@@ -80,7 +76,6 @@ class _FillOrWrapLayout extends RenderBox
   double _wrappedSpacing;
   double get wrappedSpacing => _wrappedSpacing;
   set wrappedSpacing(double value) {
-    assert(value != null);
     if (_wrappedSpacing == value) {
       return;
     }
@@ -89,7 +84,7 @@ class _FillOrWrapLayout extends RenderBox
     markNeedsLayout();
   }
 
-  int get _spacingCount => (childCount - 1).coerceAtLeast(0);
+  int get _spacingCount => math.max(childCount - 1, 0);
 
   @override
   void setupParentData(RenderObject child) {
@@ -100,11 +95,11 @@ class _FillOrWrapLayout extends RenderBox
 
   @override
   double computeMinIntrinsicWidth(double height) =>
-      children.map((c) => c.getMinIntrinsicWidth(double.infinity)).max();
+      children.map((c) => c.getMinIntrinsicWidth(double.infinity)).max() ?? 0;
 
   @override
   double computeMaxIntrinsicWidth(double height) =>
-      children.sumBy((c) => c.getMaxIntrinsicWidth(double.infinity));
+      children.sumByDouble((c) => c.getMaxIntrinsicWidth(double.infinity));
 
   @override
   double computeMinIntrinsicHeight(double width) =>
@@ -158,8 +153,8 @@ class _FillOrWrapLayout extends RenderBox
       }
       size = Size(constraints.maxWidth, height);
 
-      children.forEachIndexed((child, index) {
-        (child.parentData as _FillOrWrapParentData).offset = Offset(
+      children.forEachIndexed((index, child) {
+        (child.parentData! as _FillOrWrapParentData).offset = Offset(
           index * (childWidth + spacing),
           (size.height - child.size.height) / 2,
         );
@@ -178,7 +173,7 @@ class _FillOrWrapLayout extends RenderBox
 
       var y = 0.0;
       for (final child in children) {
-        (child.parentData as _FillOrWrapParentData).offset =
+        (child.parentData! as _FillOrWrapParentData).offset =
             Offset((size.width - child.size.width) / 2, y);
         y += child.size.height + wrappedSpacing;
       }
@@ -187,9 +182,8 @@ class _FillOrWrapLayout extends RenderBox
   }
 
   @override
-  bool hitTestChildren(BoxHitTestResult result, {Offset position}) {
-    return defaultHitTestChildren(result, position: position);
-  }
+  bool hitTestChildren(BoxHitTestResult result, {required Offset position}) =>
+      defaultHitTestChildren(result, position: position);
 
   @override
   void paint(PaintingContext context, Offset offset) {
@@ -198,11 +192,13 @@ class _FillOrWrapLayout extends RenderBox
       return;
     }
 
-    if (size.width <= 0) {
-      return;
-    }
+    if (size.width <= 0) return;
 
     context.pushClipRect(
-        needsCompositing, offset, Offset.zero & size, defaultPaint);
+      needsCompositing,
+      offset,
+      Offset.zero & size,
+      defaultPaint,
+    );
   }
 }

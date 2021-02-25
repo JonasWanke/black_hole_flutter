@@ -30,7 +30,7 @@ class BottomSheetExample extends StatelessWidget {
     return Section(
       title: 'FancyBottomSheet',
       children: <Widget>[
-        FancyRaisedButton(
+        FancyElevatedButton(
           onPressed: () {
             context.showFancyModalBottomSheet<void>(
               builder: (_) => Padding(
@@ -82,9 +82,9 @@ class SeparatedButtonsExample extends StatelessWidget {
       children: <Widget>[
         SeparatedButtons(
           children: <Widget>[
-            FlatButton(onPressed: () {}, child: Text('Imprint')),
-            FlatButton(onPressed: () {}, child: Text('Privacy Policy')),
-            FlatButton(onPressed: () {}, child: Text('Licenses')),
+            TextButton(onPressed: () {}, child: Text('Imprint')),
+            TextButton(onPressed: () {}, child: Text('Privacy Policy')),
+            TextButton(onPressed: () {}, child: Text('Licenses')),
           ],
         ),
       ],
@@ -107,7 +107,7 @@ class FillOrWrapExample extends StatelessWidget {
     );
   }
 
-  Widget _buildExample({bool isConstrained}) {
+  Widget _buildExample({required bool isConstrained}) {
     return Center(
       child: Container(
         constraints: isConstrained ? BoxConstraints(maxWidth: 200) : null,
@@ -116,9 +116,9 @@ class FillOrWrapExample extends StatelessWidget {
           spacing: 8,
           wrappedSpacing: 8,
           children: <Widget>[
-            RaisedButton(onPressed: () {}, child: Text('Short')),
-            RaisedButton(onPressed: () {}, child: Text('Loooooooooong')),
-            RaisedButton(onPressed: () {}, child: Text('Short')),
+            TextButton(onPressed: () {}, child: Text('Short')),
+            TextButton(onPressed: () {}, child: Text('Loooooooooong')),
+            TextButton(onPressed: () {}, child: Text('Short')),
           ],
         ),
       ),
@@ -127,10 +127,8 @@ class FillOrWrapExample extends StatelessWidget {
 }
 
 class Section extends StatelessWidget {
-  const Section({Key key, @required this.title, @required this.children})
-      : assert(title != null),
-        assert(children != null),
-        super(key: key);
+  const Section({Key? key, required this.title, required this.children})
+      : super(key: key);
 
   final String title;
   final List<Widget> children;

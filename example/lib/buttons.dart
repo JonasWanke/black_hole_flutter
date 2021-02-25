@@ -26,15 +26,15 @@ class ButtonsExample extends StatelessWidget {
                   Text('isLoading: true'),
                 ]),
                 _buildSpacerRow(),
-                _buildFancyFlatButtonRow(),
+                _buildFancyTextButtonRow(),
                 _buildSpacerRow(),
                 _buildFancyIconFlatButtonRow(),
                 _buildSpacerRow(),
-                _buildFancyOutlineButtonRow(),
+                _buildFancyOutlinedButtonRow(),
                 _buildSpacerRow(),
                 _buildFancyIconOutlineButtonRow(),
                 _buildSpacerRow(),
-                _buildFancyRaisedButtonRow(),
+                _buildFancyElevatedButtonRow(),
                 _buildSpacerRow(),
                 _buildFancyIconRaisedButtonRow(),
                 _buildSpacerRow(),
@@ -49,56 +49,56 @@ class ButtonsExample extends StatelessWidget {
     );
   }
 
-  TableRow _buildFancyFlatButtonRow() => _buildRow('FancyFlatButton', [
-        FancyFlatButton(
+  TableRow _buildFancyTextButtonRow() => _buildRow('FancyTextButton', [
+        FancyTextButton(
           onPressed: () {},
           child: Text('child'),
         ),
-        FancyFlatButton(
+        FancyTextButton(
           onPressed: null,
           child: Text('child'),
         ),
-        FancyFlatButton(
+        FancyTextButton(
           isEnabled: false,
           onPressed: () {},
           child: Text('child'),
         ),
-        FancyFlatButton(
+        FancyTextButton(
           onPressed: () {},
           isLoading: true,
           child: Text('child'),
         ),
-        FancyFlatButton(
+        FancyTextButton(
           onPressed: () {},
           isLoading: true,
           loadingChild: Text('loadingChild'),
           child: Text('child'),
         ),
       ]);
-  TableRow _buildFancyIconFlatButtonRow() => _buildRow('FancyFlatButton.icon', [
-        FancyFlatButton.icon(
+  TableRow _buildFancyIconFlatButtonRow() => _buildRow('FancyTextButton.icon', [
+        FancyTextButton.icon(
           onPressed: () {},
           label: Text('label'),
           icon: Icon(Icons.favorite),
         ),
-        FancyFlatButton.icon(
+        FancyTextButton.icon(
           onPressed: null,
           label: Text('label'),
           icon: Icon(Icons.favorite),
         ),
-        FancyFlatButton.icon(
+        FancyTextButton.icon(
           isEnabled: false,
           onPressed: () {},
           label: Text('label'),
           icon: Icon(Icons.favorite),
         ),
-        FancyFlatButton.icon(
+        FancyTextButton.icon(
           onPressed: () {},
           isLoading: true,
           label: Text('label'),
           icon: Icon(Icons.favorite),
         ),
-        FancyFlatButton.icon(
+        FancyTextButton.icon(
           onPressed: () {},
           isLoading: true,
           loadingLabel: Text('loadingLabel'),
@@ -107,26 +107,26 @@ class ButtonsExample extends StatelessWidget {
         ),
       ]);
 
-  TableRow _buildFancyOutlineButtonRow() => _buildRow('FancyOutlineButton', [
-        FancyOutlineButton(
+  TableRow _buildFancyOutlinedButtonRow() => _buildRow('FancyOutlinedButton', [
+        FancyOutlinedButton(
           onPressed: () {},
           child: Text('child'),
         ),
-        FancyOutlineButton(
+        FancyOutlinedButton(
           onPressed: null,
           child: Text('child'),
         ),
-        FancyOutlineButton(
+        FancyOutlinedButton(
           isEnabled: false,
           onPressed: () {},
           child: Text('child'),
         ),
-        FancyOutlineButton(
+        FancyOutlinedButton(
           onPressed: () {},
           isLoading: true,
           child: Text('child'),
         ),
-        FancyOutlineButton(
+        FancyOutlinedButton(
           onPressed: () {},
           isLoading: true,
           loadingChild: Text('loadingChild'),
@@ -134,30 +134,30 @@ class ButtonsExample extends StatelessWidget {
         ),
       ]);
   TableRow _buildFancyIconOutlineButtonRow() =>
-      _buildRow('FancyOutlineButton.icon', [
-        FancyOutlineButton.icon(
+      _buildRow('FancyOutlinedButton.icon', [
+        FancyOutlinedButton.icon(
           onPressed: () {},
           label: Text('label'),
           icon: Icon(Icons.favorite),
         ),
-        FancyOutlineButton.icon(
+        FancyOutlinedButton.icon(
           onPressed: null,
           label: Text('label'),
           icon: Icon(Icons.favorite),
         ),
-        FancyOutlineButton.icon(
+        FancyOutlinedButton.icon(
           isEnabled: false,
           onPressed: () {},
           label: Text('label'),
           icon: Icon(Icons.favorite),
         ),
-        FancyOutlineButton.icon(
+        FancyOutlinedButton.icon(
           onPressed: () {},
           isLoading: true,
           label: Text('label'),
           icon: Icon(Icons.favorite),
         ),
-        FancyOutlineButton.icon(
+        FancyOutlinedButton.icon(
           onPressed: () {},
           isLoading: true,
           loadingLabel: Text('loadingLabel'),
@@ -166,26 +166,26 @@ class ButtonsExample extends StatelessWidget {
         ),
       ]);
 
-  TableRow _buildFancyRaisedButtonRow() => _buildRow('FancyRaisedButton', [
-        FancyRaisedButton(
+  TableRow _buildFancyElevatedButtonRow() => _buildRow('FancyElevatedButton', [
+        FancyElevatedButton(
           onPressed: () {},
           child: Text('child'),
         ),
-        FancyRaisedButton(
+        FancyElevatedButton(
           onPressed: null,
           child: Text('child'),
         ),
-        FancyRaisedButton(
+        FancyElevatedButton(
           isEnabled: false,
           onPressed: () {},
           child: Text('child'),
         ),
-        FancyRaisedButton(
+        FancyElevatedButton(
           onPressed: () {},
           isLoading: true,
           child: Text('child'),
         ),
-        FancyRaisedButton(
+        FancyElevatedButton(
           onPressed: () {},
           isLoading: true,
           loadingChild: Text('loadingChild'),
@@ -193,30 +193,30 @@ class ButtonsExample extends StatelessWidget {
         ),
       ]);
   TableRow _buildFancyIconRaisedButtonRow() =>
-      _buildRow('FancyRaisedButton.icon', [
-        FancyRaisedButton.icon(
+      _buildRow('FancyElevatedButton.icon', [
+        FancyElevatedButton.icon(
           onPressed: () {},
           label: Text('label'),
           icon: Icon(Icons.favorite),
         ),
-        FancyRaisedButton.icon(
+        FancyElevatedButton.icon(
           onPressed: null,
           label: Text('label'),
           icon: Icon(Icons.favorite),
         ),
-        FancyRaisedButton.icon(
+        FancyElevatedButton.icon(
           isEnabled: false,
           onPressed: () {},
           label: Text('label'),
           icon: Icon(Icons.favorite),
         ),
-        FancyRaisedButton.icon(
+        FancyElevatedButton.icon(
           onPressed: () {},
           isLoading: true,
           label: Text('label'),
           icon: Icon(Icons.favorite),
         ),
-        FancyRaisedButton.icon(
+        FancyElevatedButton.icon(
           onPressed: () {},
           isLoading: true,
           loadingLabel: Text('loadingLabel'),

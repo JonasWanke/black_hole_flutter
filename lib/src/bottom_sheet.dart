@@ -4,12 +4,12 @@ import 'context.dart';
 
 extension BottomSheetContext on BuildContext {
   /// Shortcut for `showModalBottomSheet(context: context, ...)`.
-  Future<T> showModalBottomSheet<T>({
-    @required WidgetBuilder builder,
-    Color backgroundColor,
-    double elevation,
-    ShapeBorder shape,
-    Clip clipBehavior,
+  Future<T?> showModalBottomSheet<T>({
+    required WidgetBuilder builder,
+    Color? backgroundColor,
+    double? elevation,
+    ShapeBorder? shape,
+    Clip? clipBehavior,
     bool isScrollControlled = false,
     bool useRootNavigator = false,
     bool isDismissible = true,
@@ -28,12 +28,12 @@ extension BottomSheetContext on BuildContext {
   }
 
   /// Shortcut for [showModalBottomSheet] with a [FancyBottomSheet] child.
-  Future<T> showFancyModalBottomSheet<T>({
-    @required WidgetBuilder builder,
-    Color backgroundColor,
-    double elevation,
-    ShapeBorder shape,
-    Clip clipBehavior,
+  Future<T?> showFancyModalBottomSheet<T>({
+    required WidgetBuilder builder,
+    Color? backgroundColor,
+    double? elevation,
+    ShapeBorder? shape,
+    Clip? clipBehavior,
     bool isScrollControlled = false,
     bool useRootNavigator = false,
     bool isDismissible = true,
@@ -72,9 +72,7 @@ extension BottomSheetContext on BuildContext {
 /// );
 /// ```
 class FancyBottomSheet extends StatelessWidget {
-  const FancyBottomSheet({Key key, @required this.builder})
-      : assert(builder != null),
-        super(key: key);
+  const FancyBottomSheet({Key? key, required this.builder}) : super(key: key);
 
   final WidgetBuilder builder;
 

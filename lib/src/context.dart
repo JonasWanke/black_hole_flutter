@@ -11,7 +11,7 @@ extension FancyContext on BuildContext {
   FocusScopeNode get focusScope => FocusScope.of(this);
 
   /// Shortcut for `Form.of(context)`.
-  FormState get form => Form.of(this);
+  FormState? get form => Form.of(this);
 
   /// Shortcut for `Localizations.localeOf(context)`.
   Locale get locale => Localizations.localeOf(this);
@@ -24,22 +24,22 @@ extension FancyContext on BuildContext {
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 
   /// Shortcut for `Overlay.of(context)`.
-  OverlayState get overlay => Overlay.of(this);
+  OverlayState? get overlay => Overlay.of(this);
 
   /// Shortcut for `PageStorage.of(context)`.
-  PageStorageBucket get pageStorage => PageStorage.of(this);
+  PageStorageBucket? get pageStorage => PageStorage.of(this);
 
   /// Shortcut for `Scaffold.of(context)`.
   ScaffoldState get scaffold => Scaffold.of(this);
 
   /// Shortcut for `Scaffold.maybeOf(context)`.
-  ScaffoldState get scaffoldOrNull => Scaffold.maybeOf(this);
+  ScaffoldState? get scaffoldOrNull => Scaffold.maybeOf(this);
 
   /// Shortcut for `ScaffoldMessenger.of(context)`.
   ScaffoldMessengerState get scaffoldMessenger => ScaffoldMessenger.of(this);
 
   /// Shortcut for `ScaffoldMessenger.maybeOf(context)`.
-  ScaffoldMessengerState get scaffoldMessengerOrNull =>
+  ScaffoldMessengerState? get scaffoldMessengerOrNull =>
       ScaffoldMessenger.maybeOf(this);
 
   /// Shortcut for `Theme.of(context)`.
