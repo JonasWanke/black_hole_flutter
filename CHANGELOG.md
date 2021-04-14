@@ -15,6 +15,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 📦 Build & CI
 -->
 
+## 0.3.1 · 2021-04-14
+
+### 🐛 Bug Fixes
+- **navigation:** allow nullable route return types in `pushAndRemoveAll` and `pushNamedAndRemoveAll`
+
+
 ## 0.3.0 · 2021-02-25
 
 ### ⚠ BREAKING CHANGES
