@@ -14,12 +14,12 @@ extension NavigationContext on BuildContext {
 extension FancyNavigatorState on NavigatorState {
   /// Push the given route onto the navigator, and then remove all the previous
   /// routes.
-  Future<T?> pushAndRemoveAll<T extends Object>(Route<T> newRoute) =>
+  Future<T?> pushAndRemoveAll<T extends Object?>(Route<T> newRoute) =>
       pushAndRemoveUntil(newRoute, (_) => false);
 
   /// Push the route with the given name onto the navigator, and then remove all
   /// the previous routes.
-  Future<T?> pushNamedAndRemoveAll<T extends Object>(
+  Future<T?> pushNamedAndRemoveAll<T extends Object?>(
     String newRouteName, {
     Object? arguments,
   }) =>
