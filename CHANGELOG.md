@@ -15,6 +15,16 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 📦 Build & CI
 -->
 
+## 0.3.2 · 2021-06-01
+
+### 🎉 New Features
+- **content** add `buildContext.showSimpleSnackBar`, `.showSnackBar`, and `scaffoldMessengerState.showSimpleSnackBar`
+- **widgets:** add `ExpandOrScroll`
+
+### 📦 Build & CI
+- depend on the stable Dart SDK `>=2.12.0 <3.0.0`
+- depend on the stable version of <kbd>supercharged</kbd>: `2.0.0`
+
 ## 0.3.1 · 2021-04-14
 
 ### 🐛 Bug Fixes
