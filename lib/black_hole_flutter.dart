@@ -10,6 +10,7 @@ export 'src/render_object.dart';
 export 'src/size.dart';
 export 'src/widgets/buttons.dart';
 export 'src/widgets/chip_group.dart';
+export 'src/widgets/expand_or_scroll.dart';
 export 'src/widgets/fill_or_wrap.dart';
 export 'src/widgets/separated_buttons.dart';
 export 'src/widgets/title_and_subtitle.dart';
