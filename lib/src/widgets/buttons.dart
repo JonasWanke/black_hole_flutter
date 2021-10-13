@@ -361,7 +361,7 @@ abstract class _FancyButton extends StatelessWidget {
     this.style,
     this.icon,
     required this.child,
-  })   : assert(
+  })  : assert(
           !(isEnabled == true && onPressed == null),
           'When explicitly setting isEnabled to true, onPressed must not be null',
         ),
@@ -398,9 +398,7 @@ abstract class _FancyButton extends StatelessWidget {
     return _buildDefault(context);
   }
 
-  @visibleForOverriding
   Widget _buildDefault(BuildContext context);
-  @visibleForOverriding
   Widget _buildIcon(BuildContext context, Widget icon);
 }
 
