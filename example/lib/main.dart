@@ -29,7 +29,7 @@ class BottomSheetExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Section(
       title: 'FancyBottomSheet',
-      children: <Widget>[
+      children: [
         FancyElevatedButton(
           onPressed: () {
             context.showFancyModalBottomSheet<void>(
@@ -51,24 +51,22 @@ class ChipGroupExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Section(
       title: 'ChipGroup',
-      children: <Widget>[
-        ChipGroup(
-          children: <Widget>[
-            Chip(label: Text('Lorem')),
-            Chip(label: Text('ipsum')),
-            Chip(label: Text('dolor')),
-            Chip(label: Text('sit')),
-            Chip(label: Text('amet')),
-            Chip(label: Text('consectetur')),
-            Chip(label: Text('adipiscing')),
-            Chip(label: Text('elit')),
-            Chip(label: Text('sed')),
-            Chip(label: Text('do')),
-            Chip(label: Text('eiusmod')),
-            Chip(label: Text('tempor')),
-            Chip(label: Text('incididunt')),
-          ],
-        ),
+      children: [
+        ChipGroup(children: [
+          Chip(label: Text('Lorem')),
+          Chip(label: Text('ipsum')),
+          Chip(label: Text('dolor')),
+          Chip(label: Text('sit')),
+          Chip(label: Text('amet')),
+          Chip(label: Text('consectetur')),
+          Chip(label: Text('adipiscing')),
+          Chip(label: Text('elit')),
+          Chip(label: Text('sed')),
+          Chip(label: Text('do')),
+          Chip(label: Text('eiusmod')),
+          Chip(label: Text('tempor')),
+          Chip(label: Text('incididunt')),
+        ]),
       ],
     );
   }
@@ -79,14 +77,12 @@ class SeparatedButtonsExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Section(
       title: 'SeparatedButtons',
-      children: <Widget>[
-        SeparatedButtons(
-          children: <Widget>[
-            TextButton(onPressed: () {}, child: Text('Imprint')),
-            TextButton(onPressed: () {}, child: Text('Privacy Policy')),
-            TextButton(onPressed: () {}, child: Text('Licenses')),
-          ],
-        ),
+      children: [
+        SeparatedButtons(children: [
+          TextButton(onPressed: () {}, child: Text('Imprint')),
+          TextButton(onPressed: () {}, child: Text('Privacy Policy')),
+          TextButton(onPressed: () {}, child: Text('Licenses')),
+        ]),
       ],
     );
   }
@@ -97,7 +93,7 @@ class FillOrWrapExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Section(
       title: 'FillOrWrap',
-      children: <Widget>[
+      children: [
         Text('Enough horizontal space → no wrapping'),
         _buildExample(isConstrained: false),
         SizedBox(height: 16),
@@ -115,7 +111,7 @@ class FillOrWrapExample extends StatelessWidget {
         child: FillOrWrap(
           spacing: 8,
           wrappedSpacing: 8,
-          children: <Widget>[
+          children: [
             TextButton(onPressed: () {}, child: Text('Short')),
             TextButton(onPressed: () {}, child: Text('Loooooooooong')),
             TextButton(onPressed: () {}, child: Text('Short')),
@@ -139,7 +135,7 @@ class Section extends StatelessWidget {
       padding: EdgeInsets.all(8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+        children: [
           Text(title, style: context.textTheme.subtitle1),
           SizedBox(height: 8),
           ...children

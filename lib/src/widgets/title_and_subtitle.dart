@@ -26,7 +26,7 @@ class TitleAndSubtitle extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
+      children: [
         title,
         DefaultTextStyle.merge(
           style: context.textTheme.subtitle2,
