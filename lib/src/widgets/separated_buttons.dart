@@ -20,7 +20,7 @@ class SeparatedButtons extends StatelessWidget {
       children: <Widget>[
         for (final child in children.withoutLast()) ...[
           child,
-          Text('⋅', style: context.theme.textTheme.headline5),
+          Text('⋅', style: context.theme.textTheme.button),
         ],
         children.last,
       ],
