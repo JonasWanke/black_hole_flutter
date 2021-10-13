@@ -1,5 +1,3 @@
-library black_hole_flutter;
-
 export 'src/async.dart';
 export 'src/bottom_sheet.dart';
 export 'src/color.dart';
