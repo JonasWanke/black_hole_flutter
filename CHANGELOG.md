@@ -15,10 +15,24 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 📦 Build & CI
 -->
 
+## 0.3.3 · 2021-10-14
+
+### 🎉 New Features
+- **widgets:** add `separatedButtons.textStyle`
+
+### ⚡ Changes
+- **color_material:** Deprecate `themeData.onAccent`, `.highEmphasisOnAccent`, `.mediumEmphasisOnAccent`, and `.disabledOnAccent`. Use `themeData.onSecondary`, `.highEmphasisOnSecondary`, `.mediumEmphasisOnSecondary`, or `.disabledOnSecondary` instead.
+
+### 📦 Build & CI
+- update lints
+- update issue and PR templates
+- add build & lint CI
+- **example:** update Android wrapper
+
 ## 0.3.2 · 2021-06-01
 
 ### 🎉 New Features
-- **content** add `buildContext.showSimpleSnackBar`, `.showSnackBar`, and `scaffoldMessengerState.showSimpleSnackBar`
+- **content:** add `buildContext.showSimpleSnackBar`, `.showSnackBar`, and `scaffoldMessengerState.showSimpleSnackBar`
 - **widgets:** add `ExpandOrScroll`
 
 ### 📦 Build & CI
