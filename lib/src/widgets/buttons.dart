@@ -348,8 +348,9 @@ abstract class _FancyButton extends StatelessWidget {
   /// {@template black_hole_flutter.buttons.isEnabled}
   /// Use [isEnabled] to avoid ternary statements for [onPressed] — you can
   /// disable the button with:
-  /// - `isEnabled: false` or
-  /// - `onPressed: null`
+  ///
+  /// * `isEnabled: false` or
+  /// * `onPressed: null`
   /// {@endtemplate}
   const _FancyButton({
     Key? key,

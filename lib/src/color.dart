@@ -17,13 +17,15 @@ extension FancyBrightness on Brightness {
   Brightness get opposite => isDark ? Brightness.light : Brightness.dark;
 
   /// The [Color] representing this [Brightness]:
-  /// - [Colors.black] for [Brightness.dark]
-  /// - [Colors.white] for [Brightness.light]
+  ///
+  /// * [Colors.black] for [Brightness.dark]
+  /// * [Colors.white] for [Brightness.light]
   Color get color => isDark ? Colors.black : Colors.white;
 
   /// The [Color] contrasting this [Brightness]:
-  /// - [Colors.white] for [Brightness.dark]
-  /// - [Colors.black] for [Brightness.light]
+  ///
+  /// * [Colors.white] for [Brightness.dark]
+  /// * [Colors.black] for [Brightness.light]
   Color get contrastColor => opposite.color;
 
   /// The [SystemUiOverlayStyle] providing the most contrast on this brightness.
@@ -91,8 +93,9 @@ extension RandomColor on Random {
   /// values.
   ///
   /// You can optionally specify some components of the generated [Color]:
-  /// - [red], [green] or [blue]
-  /// - either [alpha] or [opacity]
+  ///
+  /// * [red], [green], or [blue]
+  /// * either [alpha] or [opacity]
   Color nextColor({
     int? red,
     int? green,
@@ -113,8 +116,8 @@ extension RandomColor on Random {
     return Color.fromARGB(alpha ?? nextInt(_channelMax), r, g, b);
   }
 
-  /// Generates a random [HSLColor] with uniformly distributed hue, saturation &
-  /// lightness values.
+  /// Generates a random [HSLColor] with uniformly distributed hue, saturation,
+  /// and lightness values.
   ///
   /// You can optionally specify some components of the generated [HSLColor].
   HSLColor nextColorHsl({
@@ -131,8 +134,8 @@ extension RandomColor on Random {
     return HSLColor.fromAHSL(a, h, s, l);
   }
 
-  /// Generates a random [HSVColor] with uniformly distributed hue, saturation &
-  /// value values.
+  /// Generates a random [HSVColor] with uniformly distributed hue, saturation,
+  /// and value values.
   ///
   /// You can optionally specify some components of the generated [HSVColor].
   HSVColor nextColorHsv({
