@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as material show showModalBottomSheet;
+
 import 'context.dart';
 
 extension BottomSheetContext on BuildContext {
@@ -83,7 +84,7 @@ class FancyBottomSheet extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
+        children: [
           Center(child: DragIndicator()),
           SizedBox(height: 8),
           builder(context),
@@ -101,10 +102,7 @@ class DragIndicator extends StatelessWidget {
         color: context.theme.dividerColor,
         shape: StadiumBorder(),
       ),
-      child: SizedBox(
-        width: 36,
-        height: 8,
-      ),
+      child: SizedBox(width: 36, height: 8),
     );
   }
 }

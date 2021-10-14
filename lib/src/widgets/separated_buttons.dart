@@ -17,7 +17,7 @@ class SeparatedButtons extends StatelessWidget {
     return Wrap(
       alignment: WrapAlignment.center,
       crossAxisAlignment: WrapCrossAlignment.center,
-      children: <Widget>[
+      children: [
         for (final child in children.withoutLast()) ...[
           child,
           Text('⋅', style: context.theme.textTheme.headline5),
