@@ -6,10 +6,14 @@ import '../context.dart';
 /// A container wrapping multiple buttons with an interpunct (·) between each
 /// one. It's recommended to use [TextButton]s as children.
 class SeparatedButtons extends StatelessWidget {
-  const SeparatedButtons({Key? key, required this.children})
-      : assert(children.length > 0),
+  const SeparatedButtons({
+    Key? key,
+    this.textStyle,
+    required this.children,
+  })  : assert(children.length > 0),
         super(key: key);
 
+  final TextStyle? textStyle;
   final List<Widget> children;
 
   @override
@@ -20,7 +24,7 @@ class SeparatedButtons extends StatelessWidget {
       children: [
         for (final child in children.withoutLast()) ...[
           child,
-          Text('⋅', style: context.theme.textTheme.headline5),
+          Text('⋅', style: textStyle ?? context.theme.textTheme.headline5),
         ],
         children.last,
       ],
