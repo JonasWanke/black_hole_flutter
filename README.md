@@ -73,7 +73,7 @@ Handy extensions on [`Brightness`]:
 | [`brightness.color`]         | [`Color`] representing this brightness, i.e.:<br />· `Colors.white` for `Brightness.light`<br />· `Colors.black` for `Brightness.dark` |
 | [`brightness.contrastColor`] | opposite of `brightness.color` (above)                                                                                                 |
 
-`isDark`, `isLight` & `contrastColor` can also be used on [`ThemeData`] directly.
+`isDark`, `isLight`, and `contrastColor` can also be used on [`ThemeData`] directly.
 
 Handy extensions on [`Color`]:
 
@@ -89,7 +89,7 @@ Handy extensions on [`Color`]:
 
 And if you can't decide on a color, just use [`random.nextColor()`], [`random.nextColorHsl()`] or [`random.nextColorHsv()`]!
 
-Convert between alpha and opacity with `int.alphaToOpacity` & `double.opacityToAlpha`.
+Convert between alpha and opacity with `int.alphaToOpacity` and `double.opacityToAlpha`.
 
 [`brightness.isDark`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyBrightness/isDark.html
 [`brightness.isLight`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyBrightness/isLight.html
@@ -163,18 +163,18 @@ Did you ever want to show a [progress indicator][`ProgressIndicator`] inside a b
 
 ![Button demo](https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-buttons.gif?raw=true)
 
-In [`FancyFab`] (a [`FloatingActionButton`]), [`FancyFlatButton`], [`FancyOutlineButton`] & [`FancyRaisedButton`], we introduce some new parameters:
-- [`isLoading`][`FancyFab.isLoading`]: Setting this to `true` shows a [`CircularProgressIndicator`] and disables this button. You can optionally specify a [`loadingChild`][`FancyFlatButton.loadingChild`] ([`loadingLabel`][`FancyFab.loadingLabel`] on [`FancyFab`]) to show next to the progress indicator.
+In [`FancyFab`] (a [`FloatingActionButton`]), [`FancyTextButton`], [`FancyOutlinedButton`], and [`FancyElevatedButton`], we introduce some new parameters:
+- [`isLoading`][`FancyFab.isLoading`]: Setting this to `true` shows a [`CircularProgressIndicator`] and disables this button. You can optionally specify a [`loadingChild`][`FancyTextButton.loadingChild`] ([`loadingLabel`][`FancyFab.loadingLabel`] on [`FancyFab`]) to show next to the progress indicator.
 - `isEnabled`: Settings this to `false` disables this button, even if [`onPressed`][`FancyFab.onPressed`] is set.
 
 [`FancyFab`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyFab-class.html
 [`FancyFab.isLoading`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyFab/isLoading.html
 [`FancyFab.loadingLabel`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyFab/loadingLabel.html
 [`FancyFab.onPressed`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyFab/onPressed.html
-[`FancyFlatButton`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyFlatButton-class.html
-[`FancyFlatButton.loadingChild`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyFlatButton/loadingChild.html
-[`FancyOutlineButton`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyOutlineButton-class.html
-[`FancyRaisedButton`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyRaisedButton-class.html
+[`FancyTextButton`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyTextButton-class.html
+[`FancyTextButton.loadingChild`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyTextButton/loadingChild.html
+[`FancyOutlinedButton`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyOutlinedButton-class.html
+[`FancyElevatedButton`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyElevatedButton-class.html
 
 
 ### 🥔 ChipGroup
@@ -197,7 +197,7 @@ A layout with two different behaviors:
 
 <img src="https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-separatedButtons.png?raw=true" width="300px" alt="SeparatedButtons demo" />
 
-A container wrapping multiple buttons with an interpunct (`·`) between each one. It's recommended to use [`FlatButton`]s as children.
+A container wrapping multiple buttons with an interpunct (`·`) between each one. It's recommended to use [`TextButton`]s as children.
 
 
 ### 📚 TitleAndSubtitle
@@ -252,13 +252,13 @@ When writing a custom layout, you might find this extension on [`ContainerRender
 [`Column`]: https://api.flutter.dev/flutter/widgets/Column-class.html
 [`ContainerRenderObjectMixin`]: https://api.flutter.dev/flutter/rendering/ContainerRenderObjectMixin-mixin.html
 [`Expanded`]: https://api.flutter.dev/flutter/widgets/Expanded-class.html
-[`FlatButton`]: https://api.flutter.dev/flutter/material/FlatButton-class.html
 [`FloatingActionButton`]: https://api.flutter.dev/flutter/material/FloatingActionButton-class.html
 [`MainAxisSize.min`]: https://api.flutter.dev/flutter/rendering/MainAxisSize-class.html#min
-[`MaterialButton`]: https://api.flutter.dev/flutter/material/FlatButton-class.html
+[`MaterialButton`]: https://api.flutter.dev/flutter/material/MaterialButton-class.html
 [`MaterialButton.onPressed`]: https://api.flutter.dev/flutter/material/MaterialButton/onPressed.html
 [`ProgressIndicator`]: https://api.flutter.dev/flutter/material/ProgressIndicator-class.html
 [`Row`]: https://api.flutter.dev/flutter/widgets/Row-class.html
 [`Size`]: https://api.flutter.dev/flutter/dart-ui/Size-class.html
+[`TextButton`]: https://api.flutter.dev/flutter/material/TextButton-class.html
 [`Theme.of`]: https://api.flutter.dev/flutter/material/Theme/of.html
 [`ThemeData`]: https://api.flutter.dev/flutter/material/ThemeData-class.html
