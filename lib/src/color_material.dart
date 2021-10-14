@@ -63,19 +63,54 @@ extension ThemeMaterialColors on ThemeData {
 
   /// The Material Design "On" color contrasting with this theme's
   /// accent [Color], i.e., [Colors.black] or [Colors.white].
+  @Deprecated(
+    'Use `onSecondary` instead. This feature was deprecated after v0.3.2',
+  )
   Color get onAccent => accentColor.contrastColor;
 
   /// The Material Design high emphasis color contrasting with this theme's
   /// accent [Color].
+  @Deprecated(
+    'Use `highEmphasisOnSecondary` instead. This feature was deprecated after '
+    'v0.3.2',
+  )
   Color get highEmphasisOnAccent => accentColor.highEmphasisOnColor;
 
   /// The Material Design medium emphasis color contrasting with this theme's
   /// accent [Color].
+  @Deprecated(
+    'Use `mediumEmphasisOnSecondary` instead. This feature was deprecated '
+    'after v0.3.2',
+  )
   Color get mediumEmphasisOnAccent => accentColor.mediumEmphasisOnColor;
 
   /// The Material Design disabled color contrasting with this theme's
   /// accent [Color].
+  @Deprecated(
+    'Use `disabledOnSecondary` instead. This feature was deprecated after '
+    'v0.3.2',
+  )
   Color get disabledOnAccent => accentColor.disabledOnColor;
+
+  // Secondary color
+
+  /// The Material Design "On" color contrasting with this theme's
+  /// accent [Color], i.e., [Colors.black] or [Colors.white].
+  Color get onSecondary => colorScheme.secondary.contrastColor;
+
+  /// The Material Design high emphasis color contrasting with this theme's
+  /// [ColorScheme.secondary] [Color].
+  Color get highEmphasisOnSecondary =>
+      colorScheme.secondary.highEmphasisOnColor;
+
+  /// The Material Design medium emphasis color contrasting with this theme's
+  /// [ColorScheme.secondary] [Color].
+  Color get mediumEmphasisOnSecondary =>
+      colorScheme.secondary.mediumEmphasisOnColor;
+
+  /// The Material Design disabled color contrasting with this theme's
+  /// [ColorScheme.secondary] [Color].
+  Color get disabledOnSecondary => colorScheme.secondary.disabledOnColor;
 
   // Background color
 
