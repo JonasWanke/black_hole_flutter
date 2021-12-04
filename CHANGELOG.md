@@ -15,6 +15,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 📦 Build & CI
 -->
 
+## 0.3.4 · 2021-12-04
+
+### 🎉 New Features
+- **widgets:** add `expandOrScroll.scrollController`
+
 ## 0.3.3 · 2021-10-14
 
 ### 🎉 New Features
