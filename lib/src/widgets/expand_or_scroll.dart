@@ -4,11 +4,13 @@ class ExpandOrScroll extends StatelessWidget {
   const ExpandOrScroll({
     this.padding = EdgeInsets.zero,
     this.wrapInSafeArea = true,
+    this.scrollController,
     required this.child,
   });
 
   final EdgeInsetsGeometry padding;
   final bool wrapInSafeArea;
+  final ScrollController? scrollController;
   final Widget child;
 
   @override
@@ -19,6 +21,7 @@ class ExpandOrScroll extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         return SingleChildScrollView(
+          controller: scrollController,
           padding: padding,
           child: ConstrainedBox(
             constraints: BoxConstraints(
