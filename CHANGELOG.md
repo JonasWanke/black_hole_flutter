@@ -6,12 +6,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 <!-- Template:
 ## NEW · 2021-xx-xx
-### ⚠ BREAKING CHANGES
+### ⚠️ BREAKING CHANGES
 ### 🎉 New Features
 ### ⚡ Changes
 ### 🐛 Bug Fixes
 ### 📜 Documentation updates
-### 🏗 Refactoring
+### 🏗️ Refactoring
 ### 📦 Build & CI
 -->
 
@@ -52,7 +52,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## 0.3.0 · 2021-02-25
 
-### ⚠ BREAKING CHANGES
+### ⚠️ BREAKING CHANGES
 - change SDK constraint to `>=2.12.0-0 <3.0.0` to enable null-safety
 - **navigation:** replace `BuildContext.modalRoute` with `BuildContext.getModalRoute<T>()` to return a strongly typed `ModalRoute<T>?` (instead of `ModalRoute<dynamic>?`)
 - **widgets/buttons:** replace `FancyTextButton`, `FancyOutlineButton`, and `FancyRaisedButton` with `FancyFlatButton`, `FancyOutlinedButton`, and `FancyElevatedButton`, respectively
@@ -197,7 +197,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## 0.2.0 · 2020-03-24
 
-### ⚠ BREAKING CHANGES
+### ⚠️ BREAKING CHANGES
 - fix naming: `FancyFab.icon` is now called `FancyFab.child`
 
 ### 🐛 Bug Fixes
@@ -206,7 +206,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 📜 Documentation updates
 - add button demo to README
 
-### 🏗 Refactoring
+### 🏗️ Refactoring
 - `FancyButton` logic is now handled in their base `_FancyButton`
 
 
