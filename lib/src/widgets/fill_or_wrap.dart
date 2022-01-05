@@ -3,7 +3,6 @@ import 'dart:math' as math;
 import 'package:collection/collection.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'package:supercharged/supercharged.dart';
 
 import '../render_object.dart';
 
@@ -94,12 +93,21 @@ class _FillOrWrapLayout extends RenderBox
   }
 
   @override
-  double computeMinIntrinsicWidth(double height) =>
-      children.map((c) => c.getMinIntrinsicWidth(double.infinity)).max() ?? 0;
+  double computeMinIntrinsicWidth(double height) {
+    return children
+            .map<num>((c) => c.getMinIntrinsicWidth(double.infinity))
+            .maxOrNull
+            ?.toDouble() ??
+        0;
+  }
 
   @override
-  double computeMaxIntrinsicWidth(double height) =>
-      children.sumByDouble((c) => c.getMaxIntrinsicWidth(double.infinity));
+  double computeMaxIntrinsicWidth(double height) {
+    return children
+        .map((c) => c.getMaxIntrinsicWidth(double.infinity))
+        .sum
+        .toDouble();
+  }
 
   @override
   double computeMinIntrinsicHeight(double width) =>

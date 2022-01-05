@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:supercharged/supercharged.dart';
 
 import '../context.dart';
 
@@ -22,11 +21,11 @@ class SeparatedButtons extends StatelessWidget {
       alignment: WrapAlignment.center,
       crossAxisAlignment: WrapCrossAlignment.center,
       children: [
-        for (final child in children.withoutLast()) ...[
-          child,
+        children.first,
+        for (final child in children.skip(1)) ...[
           Text('⋅', style: textStyle ?? context.theme.textTheme.headline5),
+          child,
         ],
-        children.last,
       ],
     );
   }
