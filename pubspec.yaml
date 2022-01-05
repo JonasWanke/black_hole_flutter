@@ -1,6 +1,6 @@
 name: black_hole_flutter
 description: '🛠 A package absorbing all Flutter utility functions, including extension functions and commonly used widgets'
-version: 0.3.4
+version: 0.3.5
 homepage: https://github.com/JonasWanke/black_hole_flutter
 
 environment:

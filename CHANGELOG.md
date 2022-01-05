@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 <!-- Template:
-## NEW · 2021-xx-xx
+## NEW · 2022-xx-xx
 ### ⚠️ BREAKING CHANGES
 ### 🎉 New Features
 ### ⚡ Changes
@@ -14,6 +14,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 🏗️ Refactoring
 ### 📦 Build & CI
 -->
+
+## 0.3.5 · 2022-01-05
+
+### 📦 Build & CI
+* remove dependency on the discontinued [<kbd>supercharged</kbd>](https://pub.dev/packages/supercharged) ([`b1831db`](https://github.com/JonasWanke/black_hole_flutter/commit/b1831db8acedd2f46170333d7080a4316461e0cc))
 
 ## 0.3.4 · 2021-12-04
 
