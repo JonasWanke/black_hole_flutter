@@ -19,7 +19,7 @@
 
 Show modal bottom sheets using: [`context.showModalBottomSheet()`].
 
-<img src="https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-fancyBottomSheet.png?raw=true" width="250px" alt="FancyBottomSheet demo" />
+<img src="https://github.com/JonasWanke/black_hole_flutter/raw/main/doc/widgets-fancyBottomSheet.png?raw=true" width="250px" alt="FancyBottomSheet demo" />
 
 Also, this package adds a custom [`FancyBottomSheet`] with a drag indicator at the top. You can create one using [`context.showFancyModalBottomSheet()`].
 
@@ -161,7 +161,7 @@ MaterialApp(
 
 Did you ever want to show a [progress indicator][`ProgressIndicator`] inside a button? Or were annoyed to conditionally set a [Button][`MaterialButton`]'s [`onPressed`][`MaterialButton.onPressed`] to disable it? Fear no more — <kbd>black_hole_flutter</kbd> has got you covered!
 
-![Button demo](https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-buttons.gif?raw=true)
+![Button demo](https://github.com/JonasWanke/black_hole_flutter/raw/main/doc/widgets-buttons.gif?raw=true)
 
 In [`FancyFab`] (a [`FloatingActionButton`]), [`FancyTextButton`], [`FancyOutlinedButton`], and [`FancyElevatedButton`], we introduce some new parameters:
 - [`isLoading`][`FancyFab.isLoading`]: Setting this to `true` shows a [`CircularProgressIndicator`] and disables this button. You can optionally specify a [`loadingChild`][`FancyTextButton.loadingChild`] ([`loadingLabel`][`FancyFab.loadingLabel`] on [`FancyFab`]) to show next to the progress indicator.
@@ -179,14 +179,14 @@ In [`FancyFab`] (a [`FloatingActionButton`]), [`FancyTextButton`], [`FancyOutlin
 
 ### 🥔 ChipGroup
 
-<img src="https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-chipGroup.png?raw=true" width="300px" alt="ChipGroup demo" />
+<img src="https://github.com/JonasWanke/black_hole_flutter/raw/main/doc/widgets-chipGroup.png?raw=true" width="300px" alt="ChipGroup demo" />
 
 Wraps multiple chips and can optionally show a title above these.
 
 
 ### 🥙 FillOrWrap
 
-<img src="https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-fillOrWrap.png?raw=true" width="300px" alt="FillOrWrap demo" />
+<img src="https://github.com/JonasWanke/black_hole_flutter/raw/main/doc/widgets-fillOrWrap.png?raw=true" width="300px" alt="FillOrWrap demo" />
 
 A layout with two different behaviors:
 - By default, all children are positioned **next to each other with equal widths**. This is comparable to a [`Row`] with all children wrapped in [`Expanded`].
@@ -195,7 +195,7 @@ A layout with two different behaviors:
 
 ### ↔ SeparatedButtons
 
-<img src="https://github.com/JonasWanke/black_hole_flutter/raw/master/doc/widgets-separatedButtons.png?raw=true" width="300px" alt="SeparatedButtons demo" />
+<img src="https://github.com/JonasWanke/black_hole_flutter/raw/main/doc/widgets-separatedButtons.png?raw=true" width="300px" alt="SeparatedButtons demo" />
 
 A container wrapping multiple buttons with an interpunct (`·`) between each one. It's recommended to use [`TextButton`]s as children.
 
