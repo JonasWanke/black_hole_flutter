@@ -41,9 +41,9 @@ class FillOrWrap extends MultiChildRenderObjectWidget {
   @override
   void updateRenderObject(
     BuildContext context,
-    covariant _FillOrWrapLayout renderObject,
+    covariant RenderObject renderObject,
   ) {
-    renderObject
+    (renderObject as _FillOrWrapLayout)
       ..spacing = spacing
       ..wrappedSpacing = wrappedSpacing;
   }
