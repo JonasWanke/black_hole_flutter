@@ -95,24 +95,18 @@ class _FillOrWrapLayout extends RenderBox
   @override
   double computeMinIntrinsicWidth(double height) {
     return children
-            .map<num>((c) => c.getMinIntrinsicWidth(double.infinity))
-            .maxOrNull
-            ?.toDouble() ??
+            .map((c) => c.getMinIntrinsicWidth(double.infinity))
+            .maxOrNull ??
         0;
   }
 
   @override
-  double computeMaxIntrinsicWidth(double height) {
-    return children
-        .map((c) => c.getMaxIntrinsicWidth(double.infinity))
-        .sum
-        .toDouble();
-  }
+  double computeMaxIntrinsicWidth(double height) =>
+      children.map((c) => c.getMaxIntrinsicWidth(double.infinity)).sum;
 
   @override
   double computeMinIntrinsicHeight(double width) =>
       _computeIntrinsicHeightForWidth(width);
-
   @override
   double computeMaxIntrinsicHeight(double width) =>
       _computeIntrinsicHeightForWidth(width);
