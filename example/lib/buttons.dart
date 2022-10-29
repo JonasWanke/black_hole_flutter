@@ -13,17 +13,17 @@ class ButtonsExample extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Padding(
             // We don't want to crop shadows.
-            padding: EdgeInsets.only(right: 12, bottom: 12),
+            padding: const EdgeInsets.only(right: 12, bottom: 12),
             child: Table(
-              defaultColumnWidth: IntrinsicColumnWidth(),
+              defaultColumnWidth: const IntrinsicColumnWidth(),
               defaultVerticalAlignment: TableCellVerticalAlignment.middle,
               children: [
                 _buildRow('Widget', [
-                  Text('default'),
-                  Text('onPressed: null'),
-                  Text('isEnabled: false'),
-                  Text('isLoading: true,\nloadingChild: null'),
-                  Text('isLoading: true'),
+                  const Text('default'),
+                  const Text('onPressed: null'),
+                  const Text('isEnabled: false'),
+                  const Text('isLoading: true,\nloadingChild: null'),
+                  const Text('isLoading: true'),
                 ]),
                 _buildSpacerRow(),
                 _buildFancyTextButtonRow(),
@@ -52,36 +52,36 @@ class ButtonsExample extends StatelessWidget {
   TableRow _buildFancyTextButtonRow() => _buildRow('FancyTextButton', [
         FancyTextButton(
           onPressed: () {},
-          child: Text('child'),
+          child: const Text('child'),
         ),
-        FancyTextButton(
+        const FancyTextButton(
           onPressed: null,
           child: Text('child'),
         ),
         FancyTextButton(
           isEnabled: false,
           onPressed: () {},
-          child: Text('child'),
+          child: const Text('child'),
         ),
         FancyTextButton(
           onPressed: () {},
           isLoading: true,
-          child: Text('child'),
+          child: const Text('child'),
         ),
         FancyTextButton(
           onPressed: () {},
           isLoading: true,
-          loadingChild: Text('loadingChild'),
-          child: Text('child'),
+          loadingChild: const Text('loadingChild'),
+          child: const Text('child'),
         ),
       ]);
   TableRow _buildFancyIconFlatButtonRow() => _buildRow('FancyTextButton.icon', [
         FancyTextButton.icon(
           onPressed: () {},
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
-        FancyTextButton.icon(
+        const FancyTextButton.icon(
           onPressed: null,
           label: Text('label'),
           icon: Icon(Icons.favorite),
@@ -89,58 +89,58 @@ class ButtonsExample extends StatelessWidget {
         FancyTextButton.icon(
           isEnabled: false,
           onPressed: () {},
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
         FancyTextButton.icon(
           onPressed: () {},
           isLoading: true,
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
         FancyTextButton.icon(
           onPressed: () {},
           isLoading: true,
-          loadingLabel: Text('loadingLabel'),
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          loadingLabel: const Text('loadingLabel'),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
       ]);
 
   TableRow _buildFancyOutlinedButtonRow() => _buildRow('FancyOutlinedButton', [
         FancyOutlinedButton(
           onPressed: () {},
-          child: Text('child'),
+          child: const Text('child'),
         ),
-        FancyOutlinedButton(
+        const FancyOutlinedButton(
           onPressed: null,
           child: Text('child'),
         ),
         FancyOutlinedButton(
           isEnabled: false,
           onPressed: () {},
-          child: Text('child'),
+          child: const Text('child'),
         ),
         FancyOutlinedButton(
           onPressed: () {},
           isLoading: true,
-          child: Text('child'),
+          child: const Text('child'),
         ),
         FancyOutlinedButton(
           onPressed: () {},
           isLoading: true,
-          loadingChild: Text('loadingChild'),
-          child: Text('child'),
+          loadingChild: const Text('loadingChild'),
+          child: const Text('child'),
         ),
       ]);
   TableRow _buildFancyIconOutlineButtonRow() =>
       _buildRow('FancyOutlinedButton.icon', [
         FancyOutlinedButton.icon(
           onPressed: () {},
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
-        FancyOutlinedButton.icon(
+        const FancyOutlinedButton.icon(
           onPressed: null,
           label: Text('label'),
           icon: Icon(Icons.favorite),
@@ -148,58 +148,58 @@ class ButtonsExample extends StatelessWidget {
         FancyOutlinedButton.icon(
           isEnabled: false,
           onPressed: () {},
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
         FancyOutlinedButton.icon(
           onPressed: () {},
           isLoading: true,
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
         FancyOutlinedButton.icon(
           onPressed: () {},
           isLoading: true,
-          loadingLabel: Text('loadingLabel'),
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          loadingLabel: const Text('loadingLabel'),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
       ]);
 
   TableRow _buildFancyElevatedButtonRow() => _buildRow('FancyElevatedButton', [
         FancyElevatedButton(
           onPressed: () {},
-          child: Text('child'),
+          child: const Text('child'),
         ),
-        FancyElevatedButton(
+        const FancyElevatedButton(
           onPressed: null,
           child: Text('child'),
         ),
         FancyElevatedButton(
           isEnabled: false,
           onPressed: () {},
-          child: Text('child'),
+          child: const Text('child'),
         ),
         FancyElevatedButton(
           onPressed: () {},
           isLoading: true,
-          child: Text('child'),
+          child: const Text('child'),
         ),
         FancyElevatedButton(
           onPressed: () {},
           isLoading: true,
-          loadingChild: Text('loadingChild'),
-          child: Text('child'),
+          loadingChild: const Text('loadingChild'),
+          child: const Text('child'),
         ),
       ]);
   TableRow _buildFancyIconRaisedButtonRow() =>
       _buildRow('FancyElevatedButton.icon', [
         FancyElevatedButton.icon(
           onPressed: () {},
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
-        FancyElevatedButton.icon(
+        const FancyElevatedButton.icon(
           onPressed: null,
           label: Text('label'),
           icon: Icon(Icons.favorite),
@@ -207,57 +207,57 @@ class ButtonsExample extends StatelessWidget {
         FancyElevatedButton.icon(
           isEnabled: false,
           onPressed: () {},
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
         FancyElevatedButton.icon(
           onPressed: () {},
           isLoading: true,
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
         FancyElevatedButton.icon(
           onPressed: () {},
           isLoading: true,
-          loadingLabel: Text('loadingLabel'),
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          loadingLabel: const Text('loadingLabel'),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
       ]);
 
   TableRow _buildFancyFabRow() => _buildRow('FancyFab', [
         FancyFab(
           onPressed: () {},
-          child: Icon(Icons.favorite),
+          child: const Icon(Icons.favorite),
         ),
-        FancyFab(
+        const FancyFab(
           onPressed: null,
           child: Icon(Icons.favorite),
         ),
         FancyFab(
           isEnabled: false,
           onPressed: () {},
-          child: Icon(Icons.favorite),
+          child: const Icon(Icons.favorite),
         ),
         FancyFab(
           onPressed: () {},
           isLoading: true,
-          child: Icon(Icons.favorite),
+          child: const Icon(Icons.favorite),
         ),
         FancyFab(
           onPressed: () {},
           isLoading: true,
-          loadingLabel: Text('loadingLabel'),
-          child: Icon(Icons.favorite),
+          loadingLabel: const Text('loadingLabel'),
+          child: const Icon(Icons.favorite),
         ),
       ]);
   TableRow _buildExtendedFancyFabRow() => _buildRow('FancyFab.extended', [
         FancyFab.extended(
           onPressed: () {},
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
-        FancyFab.extended(
+        const FancyFab.extended(
           onPressed: null,
           label: Text('label'),
           icon: Icon(Icons.favorite),
@@ -265,21 +265,21 @@ class ButtonsExample extends StatelessWidget {
         FancyFab.extended(
           isEnabled: false,
           onPressed: () {},
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
         FancyFab.extended(
           onPressed: () {},
           isLoading: true,
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
         FancyFab.extended(
           onPressed: () {},
           isLoading: true,
-          loadingLabel: Text('loadingLabel'),
-          label: Text('label'),
-          icon: Icon(Icons.favorite),
+          loadingLabel: const Text('loadingLabel'),
+          label: const Text('label'),
+          icon: const Icon(Icons.favorite),
         ),
       ]);
 
@@ -288,7 +288,7 @@ class ButtonsExample extends StatelessWidget {
       // SizedBox(width: 8),
       Text(title),
       for (final child in children) ...[
-        SizedBox(width: 8),
+        const SizedBox(width: 8),
         Center(child: child),
       ],
       // SizedBox(width: 8),
@@ -296,5 +296,5 @@ class ButtonsExample extends StatelessWidget {
   }
 
   TableRow _buildSpacerRow() =>
-      TableRow(children: List.filled(11, SizedBox(height: 8)));
+      TableRow(children: List.filled(11, const SizedBox(height: 8)));
 }
