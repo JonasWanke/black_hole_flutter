@@ -322,7 +322,7 @@ class FancyFab extends _FancyButton {
       label: reverseChildren
           ? Row(
               mainAxisSize: MainAxisSize.min,
-              children: [actualChild, SizedBox(width: 8), icon],
+              children: [actualChild, const SizedBox(width: 8), icon],
             )
           : actualChild,
     );
@@ -413,7 +413,7 @@ class _LoadingIndicator extends StatelessWidget {
     return SizedBox(
       width: size,
       height: size,
-      child: CircularProgressIndicator(strokeWidth: 2),
+      child: const CircularProgressIndicator(strokeWidth: 2),
     );
   }
 }

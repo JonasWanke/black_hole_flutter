@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: '🛠 black_hole_flutter example',
       home: Scaffold(
-        appBar: AppBar(title: Text('🛠 black_hole_flutter example')),
+        appBar: AppBar(title: const Text('🛠 black_hole_flutter example')),
         body: ListView(children: <Widget>[
           BottomSheetExample(),
           ButtonsExample(),
@@ -33,13 +33,13 @@ class BottomSheetExample extends StatelessWidget {
         FancyElevatedButton(
           onPressed: () {
             context.showFancyModalBottomSheet<void>(
-              builder: (_) => Padding(
+              builder: (_) => const Padding(
                 padding: EdgeInsets.symmetric(vertical: 128, horizontal: 16),
                 child: Text("I'm fancy!"),
               ),
             );
           },
-          child: Text('Open FancyBottomSheet'),
+          child: const Text('Open FancyBottomSheet'),
         ),
       ],
     );
@@ -49,7 +49,7 @@ class BottomSheetExample extends StatelessWidget {
 class ChipGroupExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Section(
+    return const Section(
       title: 'ChipGroup',
       children: [
         ChipGroup(children: [
@@ -79,9 +79,9 @@ class SeparatedButtonsExample extends StatelessWidget {
       title: 'SeparatedButtons',
       children: [
         SeparatedButtons(children: [
-          TextButton(onPressed: () {}, child: Text('Imprint')),
-          TextButton(onPressed: () {}, child: Text('Privacy Policy')),
-          TextButton(onPressed: () {}, child: Text('Licenses')),
+          TextButton(onPressed: () {}, child: const Text('Imprint')),
+          TextButton(onPressed: () {}, child: const Text('Privacy Policy')),
+          TextButton(onPressed: () {}, child: const Text('Licenses')),
         ]),
       ],
     );
@@ -94,10 +94,10 @@ class FillOrWrapExample extends StatelessWidget {
     return Section(
       title: 'FillOrWrap',
       children: [
-        Text('Enough horizontal space → no wrapping'),
+        const Text('Enough horizontal space → no wrapping'),
         _buildExample(isConstrained: false),
-        SizedBox(height: 16),
-        Text('Constrained horizontal space → wrapping'),
+        const SizedBox(height: 16),
+        const Text('Constrained horizontal space → wrapping'),
         _buildExample(isConstrained: true),
       ],
     );
@@ -106,15 +106,15 @@ class FillOrWrapExample extends StatelessWidget {
   Widget _buildExample({required bool isConstrained}) {
     return Center(
       child: Container(
-        constraints: isConstrained ? BoxConstraints(maxWidth: 200) : null,
+        constraints: isConstrained ? const BoxConstraints(maxWidth: 200) : null,
         decoration: BoxDecoration(border: Border.all()),
         child: FillOrWrap(
           spacing: 8,
           wrappedSpacing: 8,
           children: [
-            TextButton(onPressed: () {}, child: Text('Short')),
-            TextButton(onPressed: () {}, child: Text('Loooooooooong')),
-            TextButton(onPressed: () {}, child: Text('Short')),
+            TextButton(onPressed: () {}, child: const Text('Short')),
+            TextButton(onPressed: () {}, child: const Text('Loooooooooong')),
+            TextButton(onPressed: () {}, child: const Text('Short')),
           ],
         ),
       ),
@@ -132,12 +132,12 @@ class Section extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(title, style: context.textTheme.subtitle1),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           ...children
         ],
       ),
