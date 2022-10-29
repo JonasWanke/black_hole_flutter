@@ -28,7 +28,7 @@ class ChipGroup extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          DefaultTextStyle(style: context.textTheme.overline!, child: title!),
+          DefaultTextStyle(style: context.textTheme.labelSmall!, child: title!),
           child,
         ],
       );
