@@ -29,7 +29,7 @@ class TitleAndSubtitle extends StatelessWidget {
       children: [
         title,
         DefaultTextStyle.merge(
-          style: context.textTheme.subtitle2,
+          style: context.textTheme.titleSmall,
           child: subtitle!,
         ),
       ],
