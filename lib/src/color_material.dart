@@ -45,19 +45,20 @@ extension ThemeMaterialColors on ThemeData {
 
   /// The Material Design "On" color contrasting with this theme's
   /// primary [Color], i.e., [Colors.black] or [Colors.white].
-  Color get onPrimary => primaryColor.contrastColor;
+  Color get onPrimary => colorScheme.primary.contrastColor;
 
   /// The Material Design high emphasis color contrasting with this theme's
   /// primary [Color].
-  Color get highEmphasisOnPrimary => primaryColor.highEmphasisOnColor;
+  Color get highEmphasisOnPrimary => colorScheme.primary.highEmphasisOnColor;
 
   /// The Material Design medium emphasis color contrasting with this theme's
   /// primary [Color].
-  Color get mediumEmphasisOnPrimary => primaryColor.mediumEmphasisOnColor;
+  Color get mediumEmphasisOnPrimary =>
+      colorScheme.primary.mediumEmphasisOnColor;
 
   /// The Material Design disabled color contrasting with this theme's
   /// primary [Color].
-  Color get disabledOnPrimary => primaryColor.disabledOnColor;
+  Color get disabledOnPrimary => colorScheme.primary.disabledOnColor;
 
   // Accent color
 
@@ -116,35 +117,37 @@ extension ThemeMaterialColors on ThemeData {
 
   /// The Material Design "On" color contrasting with this theme's
   /// background [Color], i.e., [Colors.black] or [Colors.white].
-  Color get onBackground => backgroundColor.contrastColor;
+  Color get onBackground => colorScheme.background.contrastColor;
 
   /// The Material Design high emphasis color contrasting with this theme's
   /// background [Color].
-  Color get highEmphasisOnBackground => backgroundColor.highEmphasisOnColor;
+  Color get highEmphasisOnBackground =>
+      colorScheme.background.highEmphasisOnColor;
 
   /// The Material Design medium emphasis color contrasting with this theme's
   /// background [Color].
-  Color get mediumEmphasisOnBackground => backgroundColor.mediumEmphasisOnColor;
+  Color get mediumEmphasisOnBackground =>
+      colorScheme.background.mediumEmphasisOnColor;
 
   /// The Material Design disabled color contrasting with this theme's
   /// background [Color].
-  Color get disabledOnBackground => backgroundColor.disabledOnColor;
+  Color get disabledOnBackground => colorScheme.background.disabledOnColor;
 
   // Error color
 
   /// The Material Design "On" color contrasting with this theme's
   /// error [Color], i.e., [Colors.black] or [Colors.white].
-  Color get onError => errorColor.contrastColor;
+  Color get onError => colorScheme.error.contrastColor;
 
   /// The Material Design high emphasis color contrasting with this theme's
   /// error [Color].
-  Color get highEmphasisOnError => errorColor.highEmphasisOnColor;
+  Color get highEmphasisOnError => colorScheme.error.highEmphasisOnColor;
 
   /// The Material Design medium emphasis color contrasting with this theme's
   /// error [Color].
-  Color get mediumEmphasisOnError => errorColor.mediumEmphasisOnColor;
+  Color get mediumEmphasisOnError => colorScheme.error.mediumEmphasisOnColor;
 
   /// The Material Design disabled color contrasting with this theme's
   /// error [Color].
-  Color get disabledOnError => errorColor.disabledOnColor;
+  Color get disabledOnError => colorScheme.error.disabledOnColor;
 }

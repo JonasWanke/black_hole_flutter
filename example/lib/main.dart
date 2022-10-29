@@ -136,7 +136,7 @@ class Section extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: context.textTheme.subtitle1),
+          Text(title, style: context.textTheme.titleMedium),
           const SizedBox(height: 8),
           ...children
         ],
