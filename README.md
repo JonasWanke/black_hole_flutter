@@ -11,7 +11,6 @@
 - [🖼 RenderObject](#-renderobject)
 - [↕ Size](#-size)
 
-
 ## 📄 Bottom Sheet
 
 Show modal bottom sheets using: [`context.showModalBottomSheet()`].
@@ -23,7 +22,6 @@ Also, this package adds a custom [`FancyBottomSheet`] with a drag indicator at t
 [`context.showModalBottomSheet()`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/BottomSheetContext/showModalBottomSheet.html
 [`context.showFancyModalBottomSheet()`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/BottomSheetContext/showFancyModalBottomSheet.html
 [`FancyBottomSheet`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/BottomSheetContext.html
-
 
 ## 🏗 BuildContext
 
@@ -56,7 +54,6 @@ In Flutter, you often see the pattern `<Class>.of(context)` (e.g., [`Theme.of(co
 [`context.scaffoldOrNull`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/scaffoldOrNull.html
 [`context.textTheme`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/textTheme.html
 [`context.theme`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/theme.html
-
 
 ## 🎨 Colors
 
@@ -104,7 +101,6 @@ Convert between alpha and opacity with `int.alphaToOpacity` and `double.opacityT
 [`random.nextColorHsl()`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/RandomColor/nextColorHsl.html
 [`random.nextColorHsv()`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/RandomColor/nextColorHsv.html
 
-
 ### 🌈 Material Design colors
 
 [Material Design](https://material.io/design/color/text-legibility.html) specifies different opacities of white and black colors to use for text of different emphases on colored backgrounds. You can now use the [`highEmphasisOnColor`][`MaterialColors.highEmphasisOnColor`], [`mediumEmphasisOnColor`][`MaterialColors.mediumEmphasisOnColor`] and [`disabledOnColor`][`MaterialColors.disabledOnColor`] extension getters on [`Color`] to make your text legible!
@@ -114,7 +110,6 @@ There are also getters on [`ThemeData`] for contrast colors on the primary, acce
 [`MaterialColors.disabledOnColor`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/MaterialColors/disabledOnColor.html
 [`MaterialColors.highEmphasisOnColor`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/MaterialColors/highEmphasisOnColor.html
 [`MaterialColors.mediumEmphasisOnColor`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/MaterialColors/mediumEmphasisOnColor.html
-
 
 ## 🧭 Navigation
 
@@ -145,12 +140,12 @@ MaterialApp(
 // Navigator: didPush /dashboard → /articles/12345
 // Navigator: didPop /dashboard ← /articles/12345
 ```
+
 > **Note:** This uses the `name` of routes, so it only works with [named routes](https://flutter.dev/docs/cookbook/navigation/named-routes). If you want to handle all your routing declaratively with proper deep links, check out my package [<kbd>🧭 flutter_deep_linking</kbd>] :)
 
 [`context.modalRoute`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/NavigationContext/modalRoute.html
 [`context.navigator`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/NavigationContext/navigator.html
 [`context.rootNavigator`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/NavigationContext/rootNavigator.html
-
 
 ## 📱 Widgets
 
@@ -161,6 +156,7 @@ Did you ever want to show a [progress indicator][`ProgressIndicator`] inside a b
 ![Button demo](https://github.com/JonasWanke/black_hole_flutter/raw/main/doc/widgets-buttons.gif?raw=true)
 
 In [`FancyFab`] (a [`FloatingActionButton`]), [`FancyTextButton`], [`FancyOutlinedButton`], and [`FancyElevatedButton`], we introduce some new parameters:
+
 - [`isLoading`][`FancyFab.isLoading`]: Setting this to `true` shows a [`CircularProgressIndicator`] and disables this button. You can optionally specify a [`loadingChild`][`FancyTextButton.loadingChild`] ([`loadingLabel`][`FancyFab.loadingLabel`] on [`FancyFab`]) to show next to the progress indicator.
 - `isEnabled`: Settings this to `false` disables this button, even if [`onPressed`][`FancyFab.onPressed`] is set.
 
@@ -173,15 +169,14 @@ In [`FancyFab`] (a [`FloatingActionButton`]), [`FancyTextButton`], [`FancyOutlin
 [`FancyOutlinedButton`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyOutlinedButton-class.html
 [`FancyElevatedButton`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyElevatedButton-class.html
 
-
 ### 🥙 FillOrWrap
 
 <img src="https://github.com/JonasWanke/black_hole_flutter/raw/main/doc/widgets-fillOrWrap.png?raw=true" width="300px" alt="FillOrWrap demo" />
 
 A layout with two different behaviors:
+
 - By default, all children are positioned **next to each other with equal widths**. This is comparable to a [`Row`] with all children wrapped in [`Expanded`].
 - If the children are too wide to fit in a single line, or one child would become smaller than its reported minimum width, the children get positioned **below each other** ("wrapped"). This is similar to a [`Column`] with [`MainAxisSize.min`].
-
 
 ## 🖼 RenderObject
 
@@ -192,7 +187,6 @@ When writing a custom layout, you might find this extension on [`ContainerRender
 | [`containerRenderObjectMixin.children`] | Returns all children using `firstChild` and `childAfter` |
 
 [`containerRenderObjectMixin.children`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/ContainerRenderObjectMixinBlackHole/children.html
-
 
 ## ↕ Size
 
@@ -208,14 +202,12 @@ When writing a custom layout, you might find this extension on [`ContainerRender
 [`size.coerceAtLeast(Size minimum)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancySize/coerceAtLeast.html
 [`size.coerceAtMost(Size maximum)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancySize/coerceAtMost.html
 
-
 [<kbd>🧭 flutter_deep_linking</kbd>]: https://pub.dev/packages/flutter_deep_linking
 <!-- Flutter -->
 [`BuildContext`]: https://api.flutter.dev/flutter/widgets/BuildContext-class.html
 [`Brightness`]: https://api.flutter.dev/flutter/dart-ui/Brightness-class.html
 [`CircularProgressIndicator`]: https://api.flutter.dev/flutter/material/CircularProgressIndicator-class.html
 [`Color`]: https://api.flutter.dev/flutter/dart-ui/Color-class.html
-[`Colors`]: https://api.flutter.dev/flutter/material/Colors-class.html
 [`Column`]: https://api.flutter.dev/flutter/widgets/Column-class.html
 [`ContainerRenderObjectMixin`]: https://api.flutter.dev/flutter/rendering/ContainerRenderObjectMixin-mixin.html
 [`Expanded`]: https://api.flutter.dev/flutter/widgets/Expanded-class.html
@@ -226,6 +218,5 @@ When writing a custom layout, you might find this extension on [`ContainerRender
 [`ProgressIndicator`]: https://api.flutter.dev/flutter/material/ProgressIndicator-class.html
 [`Row`]: https://api.flutter.dev/flutter/widgets/Row-class.html
 [`Size`]: https://api.flutter.dev/flutter/dart-ui/Size-class.html
-[`TextButton`]: https://api.flutter.dev/flutter/material/TextButton-class.html
 [`Theme.of`]: https://api.flutter.dev/flutter/material/Theme/of.html
 [`ThemeData`]: https://api.flutter.dev/flutter/material/ThemeData-class.html
