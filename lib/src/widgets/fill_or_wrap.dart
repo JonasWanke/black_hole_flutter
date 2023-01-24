@@ -18,11 +18,11 @@ import '../render_object.dart';
 /// with [MainAxisSize.min].
 class FillOrWrap extends MultiChildRenderObjectWidget {
   FillOrWrap({
-    Key? key,
+    super.key,
     this.spacing = 0,
     this.wrappedSpacing = 0,
-    required List<Widget> children,
-  }) : super(key: key, children: children);
+    required super.children,
+  });
 
   /// How much space to place between children when not wrapping.
   final double spacing;

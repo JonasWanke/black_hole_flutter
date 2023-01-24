@@ -73,7 +73,7 @@ extension BottomSheetContext on BuildContext {
 /// );
 /// ```
 class FancyBottomSheet extends StatelessWidget {
-  const FancyBottomSheet({Key? key, required this.builder}) : super(key: key);
+  const FancyBottomSheet({super.key, required this.builder});
 
   final WidgetBuilder builder;
 

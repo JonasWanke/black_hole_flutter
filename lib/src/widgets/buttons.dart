@@ -13,24 +13,15 @@ class FancyTextButton extends _FancyButton {
   ///
   /// [child] and [isLoading] must not be null.
   const FancyTextButton({
-    Key? key,
-    bool? isEnabled,
-    required VoidCallback? onPressed,
-    required Widget child,
-    bool isLoading = false,
-    Widget? loadingChild,
-    Widget? loadingIndicator,
-    ButtonStyle? style,
-  }) : super(
-          key: key,
-          isEnabled: isEnabled,
-          onPressed: onPressed,
-          child: child,
-          isLoading: isLoading,
-          loadingIndicator: loadingIndicator,
-          loadingChild: loadingChild,
-          style: style,
-        );
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required super.child,
+    super.isLoading,
+    super.loadingChild,
+    super.loadingIndicator,
+    super.style,
+  });
 
   /// Creates a [TextButton] with a leading icon.
   ///
@@ -38,25 +29,18 @@ class FancyTextButton extends _FancyButton {
   ///
   /// [child], [icon] and [isLoading] must not be null.
   const FancyTextButton.icon({
-    Key? key,
-    bool? isEnabled,
-    required VoidCallback? onPressed,
-    required Widget icon,
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required Widget super.icon,
     required Widget label,
-    bool isLoading = false,
+    super.isLoading,
     Widget? loadingLabel,
-    Widget? loadingIndicator,
-    ButtonStyle? style,
+    super.loadingIndicator,
+    super.style,
   }) : super(
-          key: key,
-          isEnabled: isEnabled,
-          onPressed: onPressed,
-          icon: icon,
           child: label,
-          isLoading: isLoading,
-          loadingIndicator: loadingIndicator,
           loadingChild: loadingLabel,
-          style: style,
         );
 
   @override
@@ -88,24 +72,15 @@ class FancyOutlinedButton extends _FancyButton {
   ///
   /// [child] and [isLoading] must not be null.
   const FancyOutlinedButton({
-    Key? key,
-    bool? isEnabled,
-    required VoidCallback? onPressed,
-    required Widget child,
-    bool isLoading = false,
-    Widget? loadingChild,
-    Widget? loadingIndicator,
-    ButtonStyle? style,
-  }) : super(
-          key: key,
-          isEnabled: isEnabled,
-          onPressed: onPressed,
-          child: child,
-          isLoading: isLoading,
-          loadingIndicator: loadingIndicator,
-          loadingChild: loadingChild,
-          style: style,
-        );
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required super.child,
+    super.isLoading,
+    super.loadingChild,
+    super.loadingIndicator,
+    super.style,
+  });
 
   /// Creates an [OutlinedButton] with a leading icon.
   ///
@@ -113,25 +88,18 @@ class FancyOutlinedButton extends _FancyButton {
   ///
   /// [child], [icon] and [isLoading] must not be null.
   const FancyOutlinedButton.icon({
-    Key? key,
-    bool? isEnabled,
-    required VoidCallback? onPressed,
-    required Widget icon,
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required Widget super.icon,
     required Widget label,
-    bool isLoading = false,
+    super.isLoading,
     Widget? loadingLabel,
-    Widget? loadingIndicator,
-    ButtonStyle? style,
+    super.loadingIndicator,
+    super.style,
   }) : super(
-          key: key,
-          isEnabled: isEnabled,
-          onPressed: onPressed,
-          icon: icon,
           child: label,
-          isLoading: isLoading,
-          loadingIndicator: loadingIndicator,
           loadingChild: loadingLabel,
-          style: style,
         );
 
   @override
@@ -163,24 +131,15 @@ class FancyElevatedButton extends _FancyButton {
   ///
   /// [child] and [isLoading] must not be null.
   const FancyElevatedButton({
-    Key? key,
-    bool? isEnabled,
-    required VoidCallback? onPressed,
-    required Widget child,
-    bool isLoading = false,
-    Widget? loadingChild,
-    Widget? loadingIndicator,
-    ButtonStyle? style,
-  }) : super(
-          key: key,
-          isEnabled: isEnabled,
-          onPressed: onPressed,
-          child: child,
-          isLoading: isLoading,
-          loadingIndicator: loadingIndicator,
-          loadingChild: loadingChild,
-          style: style,
-        );
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required super.child,
+    super.isLoading,
+    super.loadingChild,
+    super.loadingIndicator,
+    super.style,
+  });
 
   /// Creates a [ElevatedButton] with a leading icon.
   ///
@@ -188,25 +147,18 @@ class FancyElevatedButton extends _FancyButton {
   ///
   /// [child], [icon] and [isLoading] must not be null.
   const FancyElevatedButton.icon({
-    Key? key,
-    bool? isEnabled,
-    required VoidCallback? onPressed,
-    required Widget icon,
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required Widget super.icon,
     required Widget label,
-    bool isLoading = false,
+    super.isLoading,
     Widget? loadingLabel,
-    Widget? loadingIndicator,
-    ButtonStyle? style,
+    super.loadingIndicator,
+    super.style,
   }) : super(
-          key: key,
-          isEnabled: isEnabled,
-          onPressed: onPressed,
-          icon: icon,
           child: label,
-          isLoading: isLoading,
-          loadingIndicator: loadingIndicator,
           loadingChild: loadingLabel,
-          style: style,
         );
 
   @override
@@ -238,23 +190,17 @@ class FancyFab extends _FancyButton {
   ///
   /// [child] and [isLoading] must not be null.
   const FancyFab({
-    Key? key,
-    bool? isEnabled,
-    required VoidCallback? onPressed,
-    required Widget child,
-    bool isLoading = false,
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required super.child,
+    super.isLoading,
     Widget? loadingLabel,
-    Widget? loadingIndicator,
+    super.loadingIndicator,
     this.backgroundColor,
     this.shape,
   })  : reverseChildren = false,
         super(
-          key: key,
-          isEnabled: isEnabled,
-          onPressed: onPressed,
-          child: child,
-          isLoading: isLoading,
-          loadingIndicator: loadingIndicator,
           loadingChild: loadingLabel,
         );
 
@@ -264,25 +210,19 @@ class FancyFab extends _FancyButton {
   ///
   /// [icon], [child] and [isLoading] must not be null.
   const FancyFab.extended({
-    Key? key,
-    bool? isEnabled,
-    required VoidCallback? onPressed,
-    required Widget icon,
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required Widget super.icon,
     required Widget label,
-    bool isLoading = false,
+    super.isLoading,
     Widget? loadingLabel,
-    Widget? loadingIndicator,
+    super.loadingIndicator,
     this.backgroundColor,
     this.shape,
     this.reverseChildren = false,
   }) : super(
-          key: key,
-          isEnabled: isEnabled,
-          onPressed: onPressed,
-          icon: icon,
           child: label,
-          isLoading: isLoading,
-          loadingIndicator: loadingIndicator,
           loadingChild: loadingLabel,
         );
 
@@ -353,7 +293,7 @@ abstract class _FancyButton extends StatelessWidget {
   /// * `onPressed: null`
   /// {@endtemplate}
   const _FancyButton({
-    Key? key,
+    super.key,
     this.isEnabled,
     required this.onPressed,
     this.isLoading = false,
@@ -362,11 +302,10 @@ abstract class _FancyButton extends StatelessWidget {
     this.style,
     this.icon,
     required this.child,
-  })  : assert(
+  }) : assert(
           !(isEnabled == true && onPressed == null),
           'When explicitly setting isEnabled to true, onPressed must not be null',
-        ),
-        super(key: key);
+        );
 
   final bool? isEnabled;
   bool get isActuallyEnabled => (isEnabled ?? onPressed != null) && !isLoading;
