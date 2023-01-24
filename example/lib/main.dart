@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
         body: ListView(children: <Widget>[
           BottomSheetExample(),
           ButtonsExample(),
-          ChipGroupExample(),
           SeparatedButtonsExample(),
           FillOrWrapExample(),
         ]),
@@ -41,32 +40,6 @@ class BottomSheetExample extends StatelessWidget {
           },
           child: const Text('Open FancyBottomSheet'),
         ),
-      ],
-    );
-  }
-}
-
-class ChipGroupExample extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Section(
-      title: 'ChipGroup',
-      children: [
-        ChipGroup(children: [
-          Chip(label: Text('Lorem')),
-          Chip(label: Text('ipsum')),
-          Chip(label: Text('dolor')),
-          Chip(label: Text('sit')),
-          Chip(label: Text('amet')),
-          Chip(label: Text('consectetur')),
-          Chip(label: Text('adipiscing')),
-          Chip(label: Text('elit')),
-          Chip(label: Text('sed')),
-          Chip(label: Text('do')),
-          Chip(label: Text('eiusmod')),
-          Chip(label: Text('tempor')),
-          Chip(label: Text('incididunt')),
-        ]),
       ],
     );
   }
@@ -123,8 +96,7 @@ class FillOrWrapExample extends StatelessWidget {
 }
 
 class Section extends StatelessWidget {
-  const Section({Key? key, required this.title, required this.children})
-      : super(key: key);
+  const Section({super.key, required this.title, required this.children});
 
   final String title;
   final List<Widget> children;

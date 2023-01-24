@@ -7,7 +7,6 @@
 - [🧭 Navigation](#-navigation)
 - [📱 Widgets](#-widgets)
   - [🔳 Buttons](#-buttons)
-  - [🥔 ChipGroup](#-chipgroup)
   - [🥙 FillOrWrap](#-fillorwrap)
   - [↔ SeparatedButtons](#-separatedbuttons)
   - [📚 TitleAndSubtitle](#-titleandsubtitle)
@@ -175,13 +174,6 @@ In [`FancyFab`] (a [`FloatingActionButton`]), [`FancyTextButton`], [`FancyOutlin
 [`FancyTextButton.loadingChild`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyTextButton/loadingChild.html
 [`FancyOutlinedButton`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyOutlinedButton-class.html
 [`FancyElevatedButton`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyElevatedButton-class.html
-
-
-### 🥔 ChipGroup
-
-<img src="https://github.com/JonasWanke/black_hole_flutter/raw/main/doc/widgets-chipGroup.png?raw=true" width="300px" alt="ChipGroup demo" />
-
-Wraps multiple chips and can optionally show a title above these.
 
 
 ### 🥙 FillOrWrap
