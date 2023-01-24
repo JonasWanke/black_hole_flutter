@@ -5,7 +5,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 <!-- Template:
-## NEW · 2022-xx-xx
+## NEW · 2023-xx-xx
+
 ### ⚠️ BREAKING CHANGES
 ### 🎉 New Features
 ### ⚡ Changes
@@ -14,6 +15,20 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 🏗️ Refactoring
 ### 📦 Build & CI
 -->
+
+## 1.0.0 · 2023-01-24
+
+### ⚠️ BREAKING CHANGES
+* remove `ChipGroup` → use Flutter's [`Wrap`](https://api.flutter.dev/flutter/widgets/Wrap-class.html) instead ([`8f89c63`](https://github.com/JonasWanke/black_hole_flutter/commit/8f89c63b0cf30b2c967a7015459f33facd46b84a))
+* remove `SeparatedButtons` → use Flutter's [`Wrap`](https://api.flutter.dev/flutter/widgets/Wrap-class.html) instead ([`5cf0277`](https://github.com/JonasWanke/black_hole_flutter/commit/5cf0277881d06ee0347f9754921b88c85b06494c))
+* remove `TitleAndSubtitle` ([`41cc403`](https://github.com/JonasWanke/black_hole_flutter/commit/41cc4030dd1f9a6b4a24fcde0b01789e36dc05ff))
+* upgrade to Flutter: `>=3.3.0`, Dart `>=2.18.0 <3.0.0` ([`5c7230e`](https://github.com/JonasWanke/black_hole_flutter/commit/5c7230e8c328678ef8679002c62d9c09c8a466ac))
+
+### 🎉 New Features
+* add `ReportingNavigatorObserver` ([`0dcd1ff`](https://github.com/JonasWanke/black_hole_flutter/commit/0dcd1ff44874bf69c833b410341f69e1c71c55b9))
+* add `CenterOrScroll` ([`f52667c`](https://github.com/JonasWanke/black_hole_flutter/commit/f52667ccea72a9eea3c4ab426bbe8c586ec3c8a8))
+* add `expandOrScroll.key` and `.scrollDirection` ([`1f6f9d8`](https://github.com/JonasWanke/black_hole_flutter/commit/1f6f9d884977b1568aa4b6b91e9325d48672bd31))
+* add `SnackBarAction? action` parameter to `buildContext.` and `scaffoldMessengerState.showSimpleSnackBar(…)` ([`e0bbfa2`](https://github.com/JonasWanke/black_hole_flutter/commit/e0bbfa23c3bc04c13dd0f5fcc24378593e34742c))
 
 ## 0.3.5 · 2022-01-05
 
