@@ -1,8 +1,8 @@
 version: 2
 updates:
-  - package-ecosystem: 'github-actions'
-    directory: '/'
+  - package-ecosystem: github-actions
+    directory: /
     labels: ['T: Build']
-    reviewers: ['JonasWanke']
+    reviewers: [JonasWanke]
     schedule:
-      interval: 'weekly'
+      interval: weekly
