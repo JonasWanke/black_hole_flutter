@@ -43,8 +43,9 @@ extension FancyContext on BuildContext {
       ScaffoldMessenger.maybeOf(this);
 
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSimpleSnackBar(
-    String content,
-  ) =>
+    String content, {
+    SnackBarAction? action,
+  }) =>
       scaffoldMessenger.showSimpleSnackBar(content);
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnackBar(
     SnackBar snackBar,
@@ -60,7 +61,8 @@ extension FancyContext on BuildContext {
 
 extension FancyScaffoldMessenger on ScaffoldMessengerState {
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSimpleSnackBar(
-    String content,
-  ) =>
-      showSnackBar(SnackBar(content: Text(content)));
+    String content, {
+    SnackBarAction? action,
+  }) =>
+      showSnackBar(SnackBar(content: Text(content), action: action));
 }
