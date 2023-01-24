@@ -58,3 +58,26 @@ class LoggingNavigatorObserver extends NavigatorObserver {
   String routeToString(Route<dynamic>? route) =>
       route?.settings.name ?? '<none>';
 }
+
+/// A [NavigatorObserver] that reports the current route to a callback.
+class ReportingNavigatorObserver extends NavigatorObserver {
+  ReportingNavigatorObserver(this.onRouteChanged);
+
+  final ValueChanged<Route<dynamic>?> onRouteChanged;
+
+  @override
+  void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) =>
+      onRouteChanged(route);
+
+  @override
+  void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) =>
+      onRouteChanged(previousRoute);
+
+  @override
+  void didRemove(Route<dynamic> route, Route<dynamic>? previousRoute) =>
+      onRouteChanged(previousRoute);
+
+  @override
+  void didReplace({Route<dynamic>? newRoute, Route<dynamic>? oldRoute}) =>
+      onRouteChanged(newRoute);
+}
