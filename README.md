@@ -8,7 +8,6 @@
 - [📱 Widgets](#-widgets)
   - [🔳 Buttons](#-buttons)
   - [🥙 FillOrWrap](#-fillorwrap)
-  - [↔ SeparatedButtons](#-separatedbuttons)
   - [📚 TitleAndSubtitle](#-titleandsubtitle)
 - [🖼 RenderObject](#-renderobject)
 - [↕ Size](#-size)
@@ -183,13 +182,6 @@ In [`FancyFab`] (a [`FloatingActionButton`]), [`FancyTextButton`], [`FancyOutlin
 A layout with two different behaviors:
 - By default, all children are positioned **next to each other with equal widths**. This is comparable to a [`Row`] with all children wrapped in [`Expanded`].
 - If the children are too wide to fit in a single line, or one child would become smaller than its reported minimum width, the children get positioned **below each other** ("wrapped"). This is similar to a [`Column`] with [`MainAxisSize.min`].
-
-
-### ↔ SeparatedButtons
-
-<img src="https://github.com/JonasWanke/black_hole_flutter/raw/main/doc/widgets-separatedButtons.png?raw=true" width="300px" alt="SeparatedButtons demo" />
-
-A container wrapping multiple buttons with an interpunct (`·`) between each one. It's recommended to use [`TextButton`]s as children.
 
 
 ### 📚 TitleAndSubtitle

@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
         body: ListView(children: <Widget>[
           BottomSheetExample(),
           ButtonsExample(),
-          SeparatedButtonsExample(),
           FillOrWrapExample(),
         ]),
       ),
@@ -40,22 +39,6 @@ class BottomSheetExample extends StatelessWidget {
           },
           child: const Text('Open FancyBottomSheet'),
         ),
-      ],
-    );
-  }
-}
-
-class SeparatedButtonsExample extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Section(
-      title: 'SeparatedButtons',
-      children: [
-        SeparatedButtons(children: [
-          TextButton(onPressed: () {}, child: const Text('Imprint')),
-          TextButton(onPressed: () {}, child: const Text('Privacy Policy')),
-          TextButton(onPressed: () {}, child: const Text('Licenses')),
-        ]),
       ],
     );
   }
