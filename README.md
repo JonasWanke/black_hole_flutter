@@ -8,7 +8,6 @@
 - [📱 Widgets](#-widgets)
   - [🔳 Buttons](#-buttons)
   - [🥙 FillOrWrap](#-fillorwrap)
-  - [📚 TitleAndSubtitle](#-titleandsubtitle)
 - [🖼 RenderObject](#-renderobject)
 - [↕ Size](#-size)
 
@@ -182,22 +181,6 @@ In [`FancyFab`] (a [`FloatingActionButton`]), [`FancyTextButton`], [`FancyOutlin
 A layout with two different behaviors:
 - By default, all children are positioned **next to each other with equal widths**. This is comparable to a [`Row`] with all children wrapped in [`Expanded`].
 - If the children are too wide to fit in a single line, or one child would become smaller than its reported minimum width, the children get positioned **below each other** ("wrapped"). This is similar to a [`Column`] with [`MainAxisSize.min`].
-
-
-### 📚 TitleAndSubtitle
-
-Did you ever want to show a subtitle (in addition to a main title) in your `AppBar`? Use [`TitleAndSubtitle`] (very creative name, I know):
-
-```dart
-AppBar(
-  title: TitleAndSubtitle(
-    title: Text('My title'),
-    subtitle: Text('My optional subtitle'),
-  ),
-)
-```
-
-[`TitleAndSubtitle`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyFab-class.html
 
 
 ## 🖼 RenderObject
