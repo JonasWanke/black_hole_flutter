@@ -1,5 +1,40 @@
 import 'package:flutter/widgets.dart';
 
+/// Centers [child] if it's smaller than the parent and makes it scrollable
+/// along [scrollDirection] if it's taller.
+class CenterOrScroll extends StatelessWidget {
+  const CenterOrScroll({
+    super.key,
+    this.wrapInSafeArea = true,
+    this.padding = EdgeInsets.zero,
+    this.scrollDirection = Axis.vertical,
+    this.scrollController,
+    required this.child,
+  });
+
+  final bool wrapInSafeArea;
+  final EdgeInsets padding;
+  final Axis scrollDirection;
+  final ScrollController? scrollController;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    var child = this.child;
+
+    if (wrapInSafeArea) child = SafeArea(child: child);
+
+    child = SingleChildScrollView(
+      padding: padding,
+      scrollDirection: scrollDirection,
+      controller: scrollController,
+      child: child,
+    );
+
+    return Center(child: _intrinsicAlongAxis(scrollDirection, child));
+  }
+}
+
 class ExpandOrScroll extends StatelessWidget {
   const ExpandOrScroll({
     super.key,
