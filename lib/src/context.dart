@@ -46,7 +46,7 @@ extension FancyContext on BuildContext {
     String content, {
     SnackBarAction? action,
   }) =>
-      scaffoldMessenger.showSimpleSnackBar(content);
+      scaffoldMessenger.showSimpleSnackBar(content, action: action);
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnackBar(
     SnackBar snackBar,
   ) =>
