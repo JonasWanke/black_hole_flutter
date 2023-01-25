@@ -16,6 +16,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 📦 Build & CI
 -->
 
+## 1.0.1 · 2023-01-25
+
+### 🐛 Bug Fixes
+* actually use `context.showSimpleSnackBar(…)`'s `action` parameter ([`cf95317`](https://github.com/JonasWanke/black_hole_flutter/commit/cf95317d57a58f3a66abbfc186261cfab7e3b03a))
+
+### 📦 Build & CI
+* upgrade to Flutter v3.7.0, Dart v2.19.0 ([`e400915`](https://github.com/JonasWanke/black_hole_flutter/commit/e400915484b32f14463694f8bd1636d7bc9b1dfb))
+
 ## 1.0.0 · 2023-01-24
 
 ### ⚠️ BREAKING CHANGES
