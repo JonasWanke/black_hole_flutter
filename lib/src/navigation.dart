@@ -39,21 +39,28 @@ class LoggingNavigatorObserver extends NavigatorObserver {
   static void defaultLogger(String message) => print('Navigator: $message');
 
   @override
-  void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) => logger(
-      'didPush ${routeToString(previousRoute)} → ${routeToString(route)}');
+  void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    logger('didPush ${routeToString(previousRoute)} → ${routeToString(route)}');
+  }
 
   @override
-  void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) => logger(
-      'didPop ${routeToString(previousRoute)} ← ${routeToString(route)}');
+  void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    logger('didPop ${routeToString(previousRoute)} ← ${routeToString(route)}');
+  }
 
   @override
-  void didRemove(Route<dynamic> route, Route<dynamic>? previousRoute) => logger(
-      'didRemove ${routeToString(previousRoute)} → ${routeToString(route)}');
+  void didRemove(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    logger(
+      'didRemove ${routeToString(previousRoute)} → ${routeToString(route)}',
+    );
+  }
 
   @override
-  void didReplace({Route<dynamic>? newRoute, Route<dynamic>? oldRoute}) =>
-      logger(
-          'didReplace ${routeToString(oldRoute)} → ${routeToString(newRoute)}');
+  void didReplace({Route<dynamic>? newRoute, Route<dynamic>? oldRoute}) {
+    logger(
+      'didReplace ${routeToString(oldRoute)} → ${routeToString(newRoute)}',
+    );
+  }
 
   String routeToString(Route<dynamic>? route) =>
       route?.settings.name ?? '<none>';
