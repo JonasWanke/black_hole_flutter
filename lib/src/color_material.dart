@@ -67,7 +67,7 @@ extension ThemeMaterialColors on ThemeData {
   @Deprecated(
     'Use `onSecondary` instead. This feature was deprecated after v0.3.2',
   )
-  Color get onAccent => accentColor.contrastColor;
+  Color get onAccent => onSecondary;
 
   /// The Material Design high emphasis color contrasting with this theme's
   /// accent [Color].
@@ -75,7 +75,7 @@ extension ThemeMaterialColors on ThemeData {
     'Use `highEmphasisOnSecondary` instead. This feature was deprecated after '
     'v0.3.2',
   )
-  Color get highEmphasisOnAccent => accentColor.highEmphasisOnColor;
+  Color get highEmphasisOnAccent => highEmphasisOnSecondary;
 
   /// The Material Design medium emphasis color contrasting with this theme's
   /// accent [Color].
@@ -83,7 +83,7 @@ extension ThemeMaterialColors on ThemeData {
     'Use `mediumEmphasisOnSecondary` instead. This feature was deprecated '
     'after v0.3.2',
   )
-  Color get mediumEmphasisOnAccent => accentColor.mediumEmphasisOnColor;
+  Color get mediumEmphasisOnAccent => mediumEmphasisOnSecondary;
 
   /// The Material Design disabled color contrasting with this theme's
   /// accent [Color].
@@ -91,7 +91,7 @@ extension ThemeMaterialColors on ThemeData {
     'Use `disabledOnSecondary` instead. This feature was deprecated after '
     'v0.3.2',
   )
-  Color get disabledOnAccent => accentColor.disabledOnColor;
+  Color get disabledOnAccent => disabledOnSecondary;
 
   // Secondary color
 
