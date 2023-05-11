@@ -17,7 +17,7 @@ import '../render_object.dart';
 /// positioned **below each other** ("wrapped"). This is similar to a [Column]
 /// with [MainAxisSize.min].
 class FillOrWrap extends MultiChildRenderObjectWidget {
-  FillOrWrap({
+  const FillOrWrap({
     super.key,
     this.spacing = 0,
     this.wrappedSpacing = 0,
