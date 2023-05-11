@@ -2,6 +2,9 @@ name: black_hole_flutter
 description: A package absorbing all Flutter utility functions, including extension functions and commonly used widgets
 version: 1.0.1
 repository: https://github.com/JonasWanke/black_hole_flutter
+screenshots:
+  - description: Fancy buttons feature a loading state
+    path: doc/widgets-buttons.gif
 
 environment:
   sdk: '>=2.19.0 <3.0.0'
