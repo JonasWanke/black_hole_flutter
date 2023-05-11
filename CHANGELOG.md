@@ -16,6 +16,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 📦 Build & CI
 -->
 
+## 1.0.3 · 2023-05-11
+
+### 🐛 Bug Fixes
+* remove const from `FillOrWrap`'s constructor ([`8eb3ce3`](https://github.com/JonasWanke/black_hole_flutter/commit/8eb3ce31ab8265544828d43af082763f0957bf45))
+
 ## 1.0.2 · 2023-05-11
 
 ### ⚡ Changes
