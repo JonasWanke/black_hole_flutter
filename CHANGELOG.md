@@ -16,6 +16,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 📦 Build & CI
 -->
 
+## 1.0.2 · 2023-05-11
+
+### ⚡ Changes
+* delegate accent color getters to secondary ([`78f72f2`](https://github.com/JonasWanke/black_hole_flutter/commit/78f72f2939a8c9715181b15c23d5d3e9cedc4c84))
+
 ## 1.0.1 · 2023-01-25
 
 ### 🐛 Bug Fixes
