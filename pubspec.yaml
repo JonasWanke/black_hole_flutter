@@ -21,4 +21,4 @@ dev_dependencies:
     git:
       url: https://github.com/JonasWanke/supernova.git
       path: supernova
-      ref: 1b0e3aeecb7df334806f8ad6f58b4fdcfb5d9ae7
+      ref: f59c0bb55b5cc611b67c60c9eaa35dc34a927310
