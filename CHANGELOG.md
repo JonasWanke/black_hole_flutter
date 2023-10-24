@@ -16,6 +16,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 📦 Build & CI
 -->
 
+## 1.1.0 · 2023-10-24
+
+### 🎉 New Features
+* add `LeftCenterRight` ([#20](https://github.com/JonasWanke/black_hole_flutter/pull/20))
+* make `FillOrWrap`'s constructor const ([#21](https://github.com/JonasWanke/black_hole_flutter/pull/21))
+
+### 📦 Build & CI
+* upgrade to Flutter v3.10.0, Dart v3.0.0
+
 ## 1.0.3 · 2023-05-11
 
 ### 🐛 Bug Fixes
