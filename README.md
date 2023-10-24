@@ -178,6 +178,11 @@ A layout with two different behaviors:
 - By default, all children are positioned **next to each other with equal widths**. This is comparable to a [`Row`] with all children wrapped in [`Expanded`].
 - If the children are too wide to fit in a single line, or one child would become smaller than its reported minimum width, the children get positioned **below each other** ("wrapped"). This is similar to a [`Column`] with [`MainAxisSize.min`].
 
+### 🎯 LeftCenterRight
+
+A layout taking optional `left`, `center`, and `right` children.
+It will try to keep `center` in the center of itself, even if only one of `left` and `right` is set or they have different widths.
+
 ## 🖼 RenderObject
 
 When writing a custom layout, you might find this extension on [`ContainerRenderObjectMixin`] useful:
