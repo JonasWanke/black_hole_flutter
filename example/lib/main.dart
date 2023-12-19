@@ -29,17 +29,19 @@ class BottomSheetExample extends StatelessWidget {
       title: 'FancyBottomSheet',
       children: [
         FancyElevatedButton(
-          onPressed: () {
-            context.showFancyModalBottomSheet<void>(
-              builder: (_) => const Padding(
-                padding: EdgeInsets.symmetric(vertical: 128, horizontal: 16),
-                child: Text("I'm fancy!"),
-              ),
-            );
-          },
+          onPressed: () async => _handlePressed(context),
           child: const Text('Open FancyBottomSheet'),
         ),
       ],
+    );
+  }
+
+  Future<void> _handlePressed(BuildContext context) async {
+    await context.showFancyModalBottomSheet<void>(
+      builder: (_) => const Padding(
+        padding: EdgeInsets.symmetric(vertical: 128, horizontal: 16),
+        child: Text("I'm fancy!"),
+      ),
     );
   }
 }
@@ -63,7 +65,9 @@ class FillOrWrapExample extends StatelessWidget {
     return Center(
       child: Container(
         constraints: isConstrained ? const BoxConstraints(maxWidth: 200) : null,
-        decoration: BoxDecoration(border: Border.all()),
+        decoration: const BoxDecoration(
+          border: Border.fromBorderSide(BorderSide()),
+        ),
         child: FillOrWrap(
           spacing: 8,
           wrappedSpacing: 8,
@@ -93,7 +97,7 @@ class Section extends StatelessWidget {
         children: [
           Text(title, style: context.textTheme.titleMedium),
           const SizedBox(height: 8),
-          ...children
+          ...children,
         ],
       ),
     );
