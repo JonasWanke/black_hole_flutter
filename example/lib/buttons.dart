@@ -44,7 +44,7 @@ class ButtonsExample extends StatelessWidget {
               ],
             ),
           ),
-        )
+        ),
       ],
     );
   }
