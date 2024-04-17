@@ -95,6 +95,8 @@ class FancyBottomSheet extends StatelessWidget {
 }
 
 class DragIndicator extends StatelessWidget {
+  const DragIndicator({super.key});
+
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(

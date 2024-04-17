@@ -10,6 +10,7 @@ enum _LeftCenterRightSlot { left, center, right }
 
 class LeftCenterRight extends MultiChildRenderObjectWidget {
   LeftCenterRight({
+    super.key,
     this.crossAxisAlignment = CrossAxisAlignment.center,
     this.textBaseline,
     Widget? left,
