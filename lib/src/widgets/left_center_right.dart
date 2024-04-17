@@ -190,22 +190,17 @@ class _RenderLeftCenterRight extends RenderBox
       return 0;
     }
 
-    switch (sizingDirection) {
-      case Axis.horizontal:
-        return children.map((it) => childSize(it, extent)).sum;
-      case Axis.vertical:
-        // Intrinsic cross size is the max of the intrinsic cross sizes of the
-        // children, with the children sized using their max intrinsic
-        // dimensions.
-
-        return children
-                .map(
-                  (it) =>
-                      childSize(it, it.getMaxIntrinsicWidth(double.infinity)),
-                )
-                .maxOrNull ??
-            0;
-    }
+    return switch (sizingDirection) {
+      Axis.horizontal => children.map((it) => childSize(it, extent)).sum,
+      // Intrinsic cross size is the max of the intrinsic cross sizes of the
+      // children, with the children sized using their max intrinsic dimensions.
+      Axis.vertical => children
+              .map(
+                (it) => childSize(it, it.getMaxIntrinsicWidth(double.infinity)),
+              )
+              .maxOrNull ??
+          0,
+    };
   }
 
   Map<_LeftCenterRightSlot, RenderBox> _createChildrenMap() {

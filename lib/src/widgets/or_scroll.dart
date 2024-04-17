@@ -75,10 +75,8 @@ class ExpandOrScroll extends StatelessWidget {
 }
 
 Widget _intrinsicAlongAxis(Axis axis, Widget child) {
-  switch (axis) {
-    case Axis.horizontal:
-      return IntrinsicWidth(child: child);
-    case Axis.vertical:
-      return IntrinsicHeight(child: child);
-  }
+  return switch (axis) {
+    Axis.horizontal => IntrinsicWidth(child: child),
+    Axis.vertical => IntrinsicHeight(child: child),
+  };
 }
