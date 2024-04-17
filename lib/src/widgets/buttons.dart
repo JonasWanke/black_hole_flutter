@@ -303,8 +303,9 @@ abstract class _FancyButton extends StatelessWidget {
     this.icon,
     required this.child,
   }) : assert(
-          !(isEnabled == true && onPressed == null),
-          'When explicitly setting isEnabled to true, onPressed must not be null',
+          !((isEnabled ?? false) && onPressed == null),
+          'When explicitly setting isEnabled to true, onPressed must not be '
+          'null',
         );
 
   final bool? isEnabled;

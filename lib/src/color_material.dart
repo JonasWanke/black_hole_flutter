@@ -18,7 +18,8 @@ extension BrightnessMaterialColors on Brightness {
   /// The Material Design medium emphasis color of this brightness.
   Color get mediumEmphasisColor => color.withOpacity(_mediumEmphasisOpacity);
 
-  /// The Material Design medium emphasis color contrasting with this brightness.
+  /// The Material Design medium emphasis color contrasting with this
+  /// brightness.
   Color get mediumEmphasisOnColor =>
       contrastColor.withOpacity(_mediumEmphasisOpacity);
 

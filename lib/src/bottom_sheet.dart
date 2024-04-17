@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as material show showModalBottomSheet;
+import 'package:flutter/material.dart';
 
 import 'context.dart';
 
@@ -85,7 +85,7 @@ class FancyBottomSheet extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Center(child: DragIndicator()),
+          const Center(child: DragIndicator()),
           const SizedBox(height: 8),
           builder(context),
         ],

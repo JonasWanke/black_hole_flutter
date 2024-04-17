@@ -19,7 +19,8 @@ class LeftCenterRight extends MultiChildRenderObjectWidget {
   })  : assert(
           crossAxisAlignment != CrossAxisAlignment.baseline ||
               textBaseline != null,
-          '`textBaseline` is required if `crossAxisAlignment == CrossAxisAlignment.baseline`',
+          '`textBaseline` is required if '
+          '`crossAxisAlignment == CrossAxisAlignment.baseline`',
         ),
         super(
           children: [
@@ -216,10 +217,12 @@ class _RenderLeftCenterRight extends RenderBox
   @override
   Size computeDryLayout(BoxConstraints constraints) {
     if (!_canComputeIntrinsics) {
-      assert(debugCannotComputeDryLayout(
-        reason:
-            'Dry layout cannot be computed for `CrossAxisAlignment.baseline`, which requires a full layout.',
-      ));
+      assert(
+        debugCannotComputeDryLayout(
+          reason: 'Dry layout cannot be computed for '
+              '`CrossAxisAlignment.baseline`, which requires a full layout.',
+        ),
+      );
       return Size.zero;
     }
 

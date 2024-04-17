@@ -57,8 +57,8 @@ class ExpandOrScroll extends StatelessWidget {
 
     if (wrapInSafeArea) child = SafeArea(child: child);
 
-    return LayoutBuilder(builder: (context, constraints) {
-      return SingleChildScrollView(
+    return LayoutBuilder(
+      builder: (context, constraints) => SingleChildScrollView(
         padding: padding,
         scrollDirection: scrollDirection,
         controller: scrollController,
@@ -69,8 +69,8 @@ class ExpandOrScroll extends StatelessWidget {
           ),
           child: _intrinsicAlongAxis(scrollDirection, child),
         ),
-      );
-    });
+      ),
+    );
   }
 }
 
