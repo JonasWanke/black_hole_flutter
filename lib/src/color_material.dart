@@ -2,35 +2,42 @@ import 'package:flutter/material.dart';
 
 import 'color.dart';
 
-// Values taken from [https://material.io/design/color/text-legibility.html].
+// Values taken from https://m2.material.io/design/color/text-legibility.html.
 const _highEmphasisOpacity = 0.87;
 const _mediumEmphasisOpacity = 0.6;
 const _disabledOpacity = 0.38;
 
 extension BrightnessMaterialColors on Brightness {
   /// The Material Design high emphasis color of this brightness.
-  Color get highEmphasisColor => color.withOpacity(_highEmphasisOpacity);
+  Color get highEmphasisColor => color.withHighEmphasisOpacity;
 
   /// The Material Design high emphasis color contrasting with this brightness.
-  Color get highEmphasisOnColor =>
-      contrastColor.withOpacity(_highEmphasisOpacity);
+  Color get highEmphasisOnColor => contrastColor.withHighEmphasisOpacity;
 
   /// The Material Design medium emphasis color of this brightness.
-  Color get mediumEmphasisColor => color.withOpacity(_mediumEmphasisOpacity);
+  Color get mediumEmphasisColor => color.withMediumEmphasisOpacity;
 
   /// The Material Design medium emphasis color contrasting with this
   /// brightness.
-  Color get mediumEmphasisOnColor =>
-      contrastColor.withOpacity(_mediumEmphasisOpacity);
+  Color get mediumEmphasisOnColor => contrastColor.withMediumEmphasisOpacity;
 
   /// The Material Design disabled color of this brightness.
-  Color get disabledColor => color.withOpacity(_disabledOpacity);
+  Color get disabledColor => color.withDisabledOpacity;
 
   /// The Material Design disabled color contrasting with this brightness.
-  Color get disabledOnColor => contrastColor.withOpacity(_disabledOpacity);
+  Color get disabledOnColor => contrastColor.withDisabledOpacity;
 }
 
 extension MaterialColors on Color {
+  /// The Material Design high emphasis version with this color.
+  Color get withHighEmphasisOpacity => withOpacity(_highEmphasisOpacity);
+
+  /// The Material Design medium emphasis version with this color.
+  Color get withMediumEmphasisOpacity => withOpacity(_mediumEmphasisOpacity);
+
+  /// The Material Design disabled version with this color.
+  Color get withDisabledOpacity => withOpacity(_disabledOpacity);
+
   /// The Material Design high emphasis color contrasting with this color.
   Color get highEmphasisOnColor => estimatedBrightness.highEmphasisOnColor;
 
