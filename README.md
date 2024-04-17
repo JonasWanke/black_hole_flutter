@@ -8,6 +8,7 @@
 - [📱 Widgets](#-widgets)
   - [🔳 Buttons](#-buttons)
   - [🥙 FillOrWrap](#-fillorwrap)
+  - [🎯 LeftCenterRight](#-leftcenterright)
 - [🖼 RenderObject](#-renderobject)
 - [↕ Size](#-size)
 
@@ -206,9 +207,10 @@ When writing a custom layout, you might find this extension on [`ContainerRender
 [`size.squaredDiagonal`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancySize/squaredDiagonal.html
 [`size.coerceAtLeast(Size minimum)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancySize/coerceAtLeast.html
 [`size.coerceAtMost(Size maximum)`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancySize/coerceAtMost.html
-
 [<kbd>🧭 flutter_deep_linking</kbd>]: https://pub.dev/packages/flutter_deep_linking
+
 <!-- Flutter -->
+
 [`BuildContext`]: https://api.flutter.dev/flutter/widgets/BuildContext-class.html
 [`Brightness`]: https://api.flutter.dev/flutter/dart-ui/Brightness-class.html
 [`CircularProgressIndicator`]: https://api.flutter.dev/flutter/material/CircularProgressIndicator-class.html

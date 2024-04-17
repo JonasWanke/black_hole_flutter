@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 <!-- Template:
-## NEW · 2023-xx-xx
+## NEW · 2024-xx-xx
 
 ### ⚠️ BREAKING CHANGES
 ### 🎉 New Features
@@ -24,48 +24,48 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## 1.1.0 · 2023-10-24
 
 ### 🎉 New Features
-* add `LeftCenterRight` ([#20](https://github.com/JonasWanke/black_hole_flutter/pull/20))
-* make `FillOrWrap`'s constructor const ([#21](https://github.com/JonasWanke/black_hole_flutter/pull/21))
+- add `LeftCenterRight` ([#20](https://github.com/JonasWanke/black_hole_flutter/pull/20))
+- make `FillOrWrap`'s constructor const ([#21](https://github.com/JonasWanke/black_hole_flutter/pull/21))
 
 ### 📦 Build & CI
-* upgrade to Flutter v3.10.0, Dart v3.0.0
+- upgrade to Flutter v3.10.0, Dart v3.0.0
 
 ## 1.0.3 · 2023-05-11
 
 ### 🐛 Bug Fixes
-* remove const from `FillOrWrap`'s constructor ([`8eb3ce3`](https://github.com/JonasWanke/black_hole_flutter/commit/8eb3ce31ab8265544828d43af082763f0957bf45)), closes: [#16](https://github.com/JonasWanke/black_hole_flutter/issues/16)
+- remove const from `FillOrWrap`'s constructor ([`8eb3ce3`](https://github.com/JonasWanke/black_hole_flutter/commit/8eb3ce31ab8265544828d43af082763f0957bf45)), closes: [#16](https://github.com/JonasWanke/black_hole_flutter/issues/16)
 
 ## 1.0.2 · 2023-05-11
 
 ### ⚡ Changes
-* delegate accent color getters to secondary ([`78f72f2`](https://github.com/JonasWanke/black_hole_flutter/commit/78f72f2939a8c9715181b15c23d5d3e9cedc4c84))
+- delegate accent color getters to secondary ([`78f72f2`](https://github.com/JonasWanke/black_hole_flutter/commit/78f72f2939a8c9715181b15c23d5d3e9cedc4c84))
 
 ## 1.0.1 · 2023-01-25
 
 ### 🐛 Bug Fixes
-* actually use `context.showSimpleSnackBar(…)`'s `action` parameter ([`cf95317`](https://github.com/JonasWanke/black_hole_flutter/commit/cf95317d57a58f3a66abbfc186261cfab7e3b03a))
+- actually use `context.showSimpleSnackBar(…)`'s `action` parameter ([`cf95317`](https://github.com/JonasWanke/black_hole_flutter/commit/cf95317d57a58f3a66abbfc186261cfab7e3b03a))
 
 ### 📦 Build & CI
-* upgrade to Flutter v3.7.0, Dart v2.19.0 ([`e400915`](https://github.com/JonasWanke/black_hole_flutter/commit/e400915484b32f14463694f8bd1636d7bc9b1dfb))
+- upgrade to Flutter v3.7.0, Dart v2.19.0 ([`e400915`](https://github.com/JonasWanke/black_hole_flutter/commit/e400915484b32f14463694f8bd1636d7bc9b1dfb))
 
 ## 1.0.0 · 2023-01-24
 
 ### ⚠️ BREAKING CHANGES
-* remove `ChipGroup` → use Flutter's [`Wrap`](https://api.flutter.dev/flutter/widgets/Wrap-class.html) instead ([`8f89c63`](https://github.com/JonasWanke/black_hole_flutter/commit/8f89c63b0cf30b2c967a7015459f33facd46b84a))
-* remove `SeparatedButtons` → use Flutter's [`Wrap`](https://api.flutter.dev/flutter/widgets/Wrap-class.html) instead ([`5cf0277`](https://github.com/JonasWanke/black_hole_flutter/commit/5cf0277881d06ee0347f9754921b88c85b06494c))
-* remove `TitleAndSubtitle` ([`41cc403`](https://github.com/JonasWanke/black_hole_flutter/commit/41cc4030dd1f9a6b4a24fcde0b01789e36dc05ff))
-* upgrade to Flutter: `>=3.3.0`, Dart `>=2.18.0 <3.0.0` ([`5c7230e`](https://github.com/JonasWanke/black_hole_flutter/commit/5c7230e8c328678ef8679002c62d9c09c8a466ac))
+- remove `ChipGroup` → use Flutter's [`Wrap`](https://api.flutter.dev/flutter/widgets/Wrap-class.html) instead ([`8f89c63`](https://github.com/JonasWanke/black_hole_flutter/commit/8f89c63b0cf30b2c967a7015459f33facd46b84a))
+- remove `SeparatedButtons` → use Flutter's [`Wrap`](https://api.flutter.dev/flutter/widgets/Wrap-class.html) instead ([`5cf0277`](https://github.com/JonasWanke/black_hole_flutter/commit/5cf0277881d06ee0347f9754921b88c85b06494c))
+- remove `TitleAndSubtitle` ([`41cc403`](https://github.com/JonasWanke/black_hole_flutter/commit/41cc4030dd1f9a6b4a24fcde0b01789e36dc05ff))
+- upgrade to Flutter: `>=3.3.0`, Dart `>=2.18.0 <3.0.0` ([`5c7230e`](https://github.com/JonasWanke/black_hole_flutter/commit/5c7230e8c328678ef8679002c62d9c09c8a466ac))
 
 ### 🎉 New Features
-* add `ReportingNavigatorObserver` ([`0dcd1ff`](https://github.com/JonasWanke/black_hole_flutter/commit/0dcd1ff44874bf69c833b410341f69e1c71c55b9))
-* add `CenterOrScroll` ([`f52667c`](https://github.com/JonasWanke/black_hole_flutter/commit/f52667ccea72a9eea3c4ab426bbe8c586ec3c8a8))
-* add `expandOrScroll.key` and `.scrollDirection` ([`1f6f9d8`](https://github.com/JonasWanke/black_hole_flutter/commit/1f6f9d884977b1568aa4b6b91e9325d48672bd31))
-* add `SnackBarAction? action` parameter to `buildContext.` and `scaffoldMessengerState.showSimpleSnackBar(…)` ([`e0bbfa2`](https://github.com/JonasWanke/black_hole_flutter/commit/e0bbfa23c3bc04c13dd0f5fcc24378593e34742c))
+- add `ReportingNavigatorObserver` ([`0dcd1ff`](https://github.com/JonasWanke/black_hole_flutter/commit/0dcd1ff44874bf69c833b410341f69e1c71c55b9))
+- add `CenterOrScroll` ([`f52667c`](https://github.com/JonasWanke/black_hole_flutter/commit/f52667ccea72a9eea3c4ab426bbe8c586ec3c8a8))
+- add `expandOrScroll.key` and `.scrollDirection` ([`1f6f9d8`](https://github.com/JonasWanke/black_hole_flutter/commit/1f6f9d884977b1568aa4b6b91e9325d48672bd31))
+- add `SnackBarAction? action` parameter to `buildContext.` and `scaffoldMessengerState.showSimpleSnackBar(…)` ([`e0bbfa2`](https://github.com/JonasWanke/black_hole_flutter/commit/e0bbfa23c3bc04c13dd0f5fcc24378593e34742c))
 
 ## 0.3.5 · 2022-01-05
 
 ### 📦 Build & CI
-* remove dependency on the discontinued [<kbd>supercharged</kbd>](https://pub.dev/packages/supercharged) ([`b1831db`](https://github.com/JonasWanke/black_hole_flutter/commit/b1831db8acedd2f46170333d7080a4316461e0cc))
+- remove dependency on the discontinued [<kbd>supercharged</kbd>](https://pub.dev/packages/supercharged) ([`b1831db`](https://github.com/JonasWanke/black_hole_flutter/commit/b1831db8acedd2f46170333d7080a4316461e0cc))
 
 ## 0.3.4 · 2021-12-04
 
