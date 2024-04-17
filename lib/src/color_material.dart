@@ -48,24 +48,44 @@ extension MaterialColors on Color {
   Color get disabledOnColor => estimatedBrightness.disabledOnColor;
 }
 
+@Deprecated(
+  'See the deprecation messages of each member for its replacement. This '
+  'feature was deprecated after v1.1.0.',
+)
 extension ThemeMaterialColors on ThemeData {
   // Primary color
 
   /// The Material Design "On" color contrasting with this theme's
-  /// primary [Color], i.e., [Colors.black] or [Colors.white].
+  /// [ColorScheme.primary] [Color], i.e., [Colors.black] or [Colors.white].
+  @Deprecated(
+    'Use `colorScheme.primary.contrastColor` instead. This feature was '
+    'deprecated after v1.1.0.',
+  )
   Color get onPrimary => colorScheme.primary.contrastColor;
 
   /// The Material Design high emphasis color contrasting with this theme's
-  /// primary [Color].
+  /// [ColorScheme.primary] [Color].
+  @Deprecated(
+    'Use `colorScheme.primary.highEmphasisOnColor` instead. This feature was '
+    'deprecated after v1.1.0.',
+  )
   Color get highEmphasisOnPrimary => colorScheme.primary.highEmphasisOnColor;
 
   /// The Material Design medium emphasis color contrasting with this theme's
-  /// primary [Color].
+  /// [ColorScheme.primary] [Color].
+  @Deprecated(
+    'Use `colorScheme.primary.mediumEmphasisOnColor` instead. This feature was '
+    'deprecated after v1.1.0.',
+  )
   Color get mediumEmphasisOnPrimary =>
       colorScheme.primary.mediumEmphasisOnColor;
 
   /// The Material Design disabled color contrasting with this theme's
-  /// primary [Color].
+  /// [ColorScheme.primary] [Color].
+  @Deprecated(
+    'Use `colorScheme.primary.disabledOnColor` instead. This feature was '
+    'deprecated after v1.1.0.',
+  )
   Color get disabledOnPrimary => colorScheme.primary.disabledOnColor;
 
   // Accent color
@@ -73,7 +93,7 @@ extension ThemeMaterialColors on ThemeData {
   /// The Material Design "On" color contrasting with this theme's
   /// accent [Color], i.e., [Colors.black] or [Colors.white].
   @Deprecated(
-    'Use `onSecondary` instead. This feature was deprecated after v0.3.2',
+    'Use `onSecondary` instead. This feature was deprecated after v0.3.2.',
   )
   Color get onAccent => onSecondary;
 
@@ -81,7 +101,7 @@ extension ThemeMaterialColors on ThemeData {
   /// accent [Color].
   @Deprecated(
     'Use `highEmphasisOnSecondary` instead. This feature was deprecated after '
-    'v0.3.2',
+    'v0.3.2.',
   )
   Color get highEmphasisOnAccent => highEmphasisOnSecondary;
 
@@ -89,7 +109,7 @@ extension ThemeMaterialColors on ThemeData {
   /// accent [Color].
   @Deprecated(
     'Use `mediumEmphasisOnSecondary` instead. This feature was deprecated '
-    'after v0.3.2',
+    'after v0.3.2.',
   )
   Color get mediumEmphasisOnAccent => mediumEmphasisOnSecondary;
 
@@ -97,65 +117,113 @@ extension ThemeMaterialColors on ThemeData {
   /// accent [Color].
   @Deprecated(
     'Use `disabledOnSecondary` instead. This feature was deprecated after '
-    'v0.3.2',
+    'v0.3.2.',
   )
   Color get disabledOnAccent => disabledOnSecondary;
 
   // Secondary color
 
   /// The Material Design "On" color contrasting with this theme's
-  /// accent [Color], i.e., [Colors.black] or [Colors.white].
+  /// [ColorScheme.secondary] [Color], i.e., [Colors.black] or [Colors.white].
+  @Deprecated(
+    'Use `colorScheme.secondary.contrastColor` instead. This feature was '
+    'deprecated after v1.1.0.',
+  )
   Color get onSecondary => colorScheme.secondary.contrastColor;
 
   /// The Material Design high emphasis color contrasting with this theme's
   /// [ColorScheme.secondary] [Color].
+  @Deprecated(
+    'Use `colorScheme.secondary.highEmphasisOnColor` instead. This feature was '
+    'deprecated after v1.1.0.',
+  )
   Color get highEmphasisOnSecondary =>
       colorScheme.secondary.highEmphasisOnColor;
 
   /// The Material Design medium emphasis color contrasting with this theme's
   /// [ColorScheme.secondary] [Color].
+  @Deprecated(
+    'Use `colorScheme.secondary.mediumEmphasisOnColor` instead. This feature '
+    'was deprecated after v1.1.0.',
+  )
   Color get mediumEmphasisOnSecondary =>
       colorScheme.secondary.mediumEmphasisOnColor;
 
   /// The Material Design disabled color contrasting with this theme's
   /// [ColorScheme.secondary] [Color].
+  @Deprecated(
+    'Use `colorScheme.secondary.disabledOnColor` instead. This feature was '
+    'deprecated after v1.1.0.',
+  )
   Color get disabledOnSecondary => colorScheme.secondary.disabledOnColor;
 
   // Background color
 
   /// The Material Design "On" color contrasting with this theme's
-  /// background [Color], i.e., [Colors.black] or [Colors.white].
+  /// [ColorScheme.background] [Color], i.e., [Colors.black] or [Colors.white].
+  @Deprecated(
+    'Use `colorScheme.background.contrastColor` instead. This feature was '
+    'deprecated after v1.1.0.',
+  )
   Color get onBackground => colorScheme.background.contrastColor;
 
   /// The Material Design high emphasis color contrasting with this theme's
-  /// background [Color].
+  /// [ColorScheme.background] [Color].
+  @Deprecated(
+    'Use `colorScheme.background.highEmphasisOnColor` instead. This feature '
+    'was deprecated after v1.1.0.',
+  )
   Color get highEmphasisOnBackground =>
       colorScheme.background.highEmphasisOnColor;
 
   /// The Material Design medium emphasis color contrasting with this theme's
-  /// background [Color].
+  /// [ColorScheme.background] [Color].
+  @Deprecated(
+    'Use `colorScheme.background.mediumEmphasisOnColor` instead. This feature '
+    'was deprecated after v1.1.0.',
+  )
   Color get mediumEmphasisOnBackground =>
       colorScheme.background.mediumEmphasisOnColor;
 
   /// The Material Design disabled color contrasting with this theme's
-  /// background [Color].
+  /// [ColorScheme.background] [Color].
+  @Deprecated(
+    'Use `colorScheme.background.disabledOnColor` instead. This feature was '
+    'deprecated after v1.1.0.',
+  )
   Color get disabledOnBackground => colorScheme.background.disabledOnColor;
 
   // Error color
 
   /// The Material Design "On" color contrasting with this theme's
-  /// error [Color], i.e., [Colors.black] or [Colors.white].
+  /// [ColorScheme.error] [Color], i.e., [Colors.black] or [Colors.white].
+  @Deprecated(
+    'Use `colorScheme.error.contrastColor` instead. This feature was '
+    'deprecated after v1.1.0.',
+  )
   Color get onError => colorScheme.error.contrastColor;
 
   /// The Material Design high emphasis color contrasting with this theme's
-  /// error [Color].
+  /// [ColorScheme.error] [Color].
+  @Deprecated(
+    'Use `colorScheme.error.highEmphasisOnColor` instead. This feature was '
+    'deprecated after v1.1.0.',
+  )
   Color get highEmphasisOnError => colorScheme.error.highEmphasisOnColor;
 
   /// The Material Design medium emphasis color contrasting with this theme's
-  /// error [Color].
+  /// [ColorScheme.error] [Color].
+  @Deprecated(
+    'Use `colorScheme.error.mediumEmphasisOnColor` instead. This feature was '
+    'deprecated after v1.1.0.',
+  )
   Color get mediumEmphasisOnError => colorScheme.error.mediumEmphasisOnColor;
 
   /// The Material Design disabled color contrasting with this theme's
-  /// error [Color].
+  /// [ColorScheme.error] [Color].
+  @Deprecated(
+    'Use `colorScheme.error.disabledOnColor` instead. This feature was '
+    'deprecated after v1.1.0.',
+  )
   Color get disabledOnError => colorScheme.error.disabledOnColor;
 }

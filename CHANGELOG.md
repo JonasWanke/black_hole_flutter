@@ -16,6 +16,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 📦 Build & CI
 -->
 
+## Next Release
+
+### ⚡ Changes
+- **color_material:** Deprecate `ThemeMaterialColors` containing `onPrimary`, `highEmphasisOnPrimary`, `mediumEmphasisOnPrimary`, `disabledOnPrimary`, `onSecondary`, `highEmphasisOnSecondary`, `mediumEmphasisOnSecondary`, `disabledOnSecondary`, `onBackground`, `highEmphasisOnBackground`, `mediumEmphasisOnBackground`, `disabledOnBackground`, `onError`, `highEmphasisOnError`, `mediumEmphasisOnError`, and `disabledOnError`.
+
 ## 1.1.0 · 2023-10-24
 
 ### 🎉 New Features
