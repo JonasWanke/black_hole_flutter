@@ -181,6 +181,65 @@ class FancyElevatedButton extends _FancyButton {
   }
 }
 
+/// In addition to a normal [FilledButton], this [Widget] natively supports
+/// disabling it and showing a loading state.
+class FancyFilledButton extends _FancyButton {
+  /// Creates a [FilledButton].
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  ///
+  /// [child] and [isLoading] must not be null.
+  const FancyFilledButton({
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required super.child,
+    super.isLoading,
+    super.loadingChild,
+    super.loadingIndicator,
+    super.style,
+  });
+
+  /// Creates a [FilledButton] with a leading icon.
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  ///
+  /// [child], [icon] and [isLoading] must not be null.
+  const FancyFilledButton.icon({
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required Widget super.icon,
+    required Widget label,
+    super.isLoading,
+    Widget? loadingLabel,
+    super.loadingIndicator,
+    super.style,
+  }) : super(
+          child: label,
+          loadingChild: loadingLabel,
+        );
+
+  @override
+  Widget _buildDefault(BuildContext context) {
+    return FilledButton(
+      onPressed: actualOnPressed,
+      style: style,
+      child: child,
+    );
+  }
+
+  @override
+  Widget _buildIcon(BuildContext context, Widget icon) {
+    return FilledButton.icon(
+      onPressed: actualOnPressed,
+      style: style,
+      icon: icon,
+      label: actualChild,
+    );
+  }
+}
+
 /// In addition to a normal [FloatingActionButton], this [Widget] natively
 /// supports disabling it and showing a loading state.
 class FancyFab extends _FancyButton {
