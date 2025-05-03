@@ -55,6 +55,9 @@ extension FancyContext on BuildContext {
   /// Shortcut for `Theme.of(context)`.
   ThemeData get theme => Theme.of(this);
 
+  /// Shortcut for `Theme.of(context).colorScheme`.
+  ColorScheme get colorScheme => theme.colorScheme;
+
   /// Shortcut for `Theme.of(context).textTheme`.
   TextTheme get textTheme => theme.textTheme;
 }
