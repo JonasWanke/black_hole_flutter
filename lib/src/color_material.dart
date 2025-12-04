@@ -30,13 +30,14 @@ extension BrightnessMaterialColors on Brightness {
 
 extension MaterialColors on Color {
   /// The Material Design high emphasis version with this color.
-  Color get withHighEmphasisOpacity => withOpacity(_highEmphasisOpacity);
+  Color get withHighEmphasisOpacity => withValues(alpha: _highEmphasisOpacity);
 
   /// The Material Design medium emphasis version with this color.
-  Color get withMediumEmphasisOpacity => withOpacity(_mediumEmphasisOpacity);
+  Color get withMediumEmphasisOpacity =>
+      withValues(alpha: _mediumEmphasisOpacity);
 
   /// The Material Design disabled version with this color.
-  Color get withDisabledOpacity => withOpacity(_disabledOpacity);
+  Color get withDisabledOpacity => withValues(alpha: _disabledOpacity);
 
   /// The Material Design high emphasis color contrasting with this color.
   Color get highEmphasisOnColor => estimatedBrightness.highEmphasisOnColor;

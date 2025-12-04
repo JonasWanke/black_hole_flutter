@@ -34,18 +34,11 @@ class FancyTextButton extends _FancyButton {
     Widget? loadingLabel,
     super.loadingIndicator,
     super.style,
-  }) : super(
-          child: label,
-          loadingChild: loadingLabel,
-        );
+  }) : super(child: label, loadingChild: loadingLabel);
 
   @override
   Widget _buildDefault(BuildContext context) {
-    return TextButton(
-      onPressed: actualOnPressed,
-      style: style,
-      child: child,
-    );
+    return TextButton(onPressed: actualOnPressed, style: style, child: child);
   }
 
   @override
@@ -89,10 +82,7 @@ class FancyOutlinedButton extends _FancyButton {
     Widget? loadingLabel,
     super.loadingIndicator,
     super.style,
-  }) : super(
-          child: label,
-          loadingChild: loadingLabel,
-        );
+  }) : super(child: label, loadingChild: loadingLabel);
 
   @override
   Widget _buildDefault(BuildContext context) {
@@ -144,10 +134,7 @@ class FancyElevatedButton extends _FancyButton {
     Widget? loadingLabel,
     super.loadingIndicator,
     super.style,
-  }) : super(
-          child: label,
-          loadingChild: loadingLabel,
-        );
+  }) : super(child: label, loadingChild: loadingLabel);
 
   @override
   Widget _buildDefault(BuildContext context) {
@@ -199,18 +186,11 @@ class FancyFilledButton extends _FancyButton {
     Widget? loadingLabel,
     super.loadingIndicator,
     super.style,
-  }) : super(
-          child: label,
-          loadingChild: loadingLabel,
-        );
+  }) : super(child: label, loadingChild: loadingLabel);
 
   @override
   Widget _buildDefault(BuildContext context) {
-    return FilledButton(
-      onPressed: actualOnPressed,
-      style: style,
-      child: child,
-    );
+    return FilledButton(onPressed: actualOnPressed, style: style, child: child);
   }
 
   @override
@@ -240,10 +220,8 @@ class FancyFab extends _FancyButton {
     super.loadingIndicator,
     this.backgroundColor,
     this.shape,
-  })  : reverseChildren = false,
-        super(
-          loadingChild: loadingLabel,
-        );
+  }) : reverseChildren = false,
+       super(loadingChild: loadingLabel);
 
   /// Creates an extended [FloatingActionButton].
   ///
@@ -260,10 +238,7 @@ class FancyFab extends _FancyButton {
     this.backgroundColor,
     this.shape,
     this.reverseChildren = false,
-  }) : super(
-          child: label,
-          loadingChild: loadingLabel,
-        );
+  }) : super(child: label, loadingChild: loadingLabel);
 
   final Color? backgroundColor;
   final ShapeBorder? shape;
@@ -342,10 +317,10 @@ abstract class _FancyButton extends StatelessWidget {
     this.icon,
     required this.child,
   }) : assert(
-          !((isEnabled ?? false) && onPressed == null),
-          'When explicitly setting isEnabled to true, onPressed must not be '
-          'null',
-        );
+         !((isEnabled ?? false) && onPressed == null),
+         'When explicitly setting isEnabled to true, onPressed must not be '
+         'null',
+       );
 
   final bool? isEnabled;
   bool get isActuallyEnabled => (isEnabled ?? onPressed != null) && !isLoading;

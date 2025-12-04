@@ -45,12 +45,10 @@ extension FancyContext on BuildContext {
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSimpleSnackBar(
     String content, {
     SnackBarAction? action,
-  }) =>
-      scaffoldMessenger.showSimpleSnackBar(content, action: action);
+  }) => scaffoldMessenger.showSimpleSnackBar(content, action: action);
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnackBar(
     SnackBar snackBar,
-  ) =>
-      scaffoldMessenger.showSnackBar(snackBar);
+  ) => scaffoldMessenger.showSnackBar(snackBar);
 
   /// Shortcut for `Theme.of(context)`.
   ThemeData get theme => Theme.of(this);
@@ -66,6 +64,5 @@ extension FancyScaffoldMessenger on ScaffoldMessengerState {
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSimpleSnackBar(
     String content, {
     SnackBarAction? action,
-  }) =>
-      showSnackBar(SnackBar(content: Text(content), action: action));
+  }) => showSnackBar(SnackBar(content: Text(content), action: action));
 }

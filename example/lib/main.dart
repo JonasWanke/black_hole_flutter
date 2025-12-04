@@ -12,11 +12,13 @@ class MyApp extends StatelessWidget {
       title: '🛠 black_hole_flutter example',
       home: Scaffold(
         appBar: AppBar(title: const Text('🛠 black_hole_flutter example')),
-        body: ListView(children: <Widget>[
-          BottomSheetExample(),
-          ButtonsExample(),
-          FillOrWrapExample(),
-        ]),
+        body: ListView(
+          children: [
+            BottomSheetExample(),
+            ButtonsExample(),
+            FillOrWrapExample(),
+          ],
+        ),
       ),
     );
   }

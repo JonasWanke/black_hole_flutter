@@ -32,10 +32,7 @@ class FillOrWrap extends MultiChildRenderObjectWidget {
 
   @override
   RenderObject createRenderObject(BuildContext context) {
-    return _FillOrWrapLayout(
-      spacing: spacing,
-      wrappedSpacing: wrappedSpacing,
-    );
+    return _FillOrWrapLayout(spacing: spacing, wrappedSpacing: wrappedSpacing);
   }
 
   @override
@@ -55,11 +52,9 @@ class _FillOrWrapLayout extends RenderBox
     with
         ContainerRenderObjectMixin<RenderBox, _FillOrWrapParentData>,
         RenderBoxContainerDefaultsMixin<RenderBox, _FillOrWrapParentData> {
-  _FillOrWrapLayout({
-    double spacing = 0,
-    double wrappedSpacing = 0,
-  })  : _spacing = spacing,
-        _wrappedSpacing = wrappedSpacing;
+  _FillOrWrapLayout({double spacing = 0, double wrappedSpacing = 0})
+    : _spacing = spacing,
+      _wrappedSpacing = wrappedSpacing;
 
   double _spacing;
   double get spacing => _spacing;
@@ -146,8 +141,9 @@ class _FillOrWrapLayout extends RenderBox
       var height = 0.0;
       final childWidth =
           (constraints.maxWidth - _spacingCount * spacing) / childCount;
-      final childConstraints =
-          constraints.heightConstraints().tighten(width: childWidth);
+      final childConstraints = constraints.heightConstraints().tighten(
+        width: childWidth,
+      );
 
       for (final child in children) {
         child.layout(childConstraints, parentUsesSize: true);
@@ -175,8 +171,10 @@ class _FillOrWrapLayout extends RenderBox
 
       var y = 0.0;
       for (final child in children) {
-        (child.parentData! as _FillOrWrapParentData).offset =
-            Offset((size.width - child.size.width) / 2, y);
+        (child.parentData! as _FillOrWrapParentData).offset = Offset(
+          (size.width - child.size.width) / 2,
+          y,
+        );
         y += child.size.height + wrappedSpacing;
       }
       _hasOverflow = y > size.height;
