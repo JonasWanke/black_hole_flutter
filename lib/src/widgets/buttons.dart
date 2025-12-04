@@ -10,8 +10,6 @@ class FancyTextButton extends _FancyButton {
   /// Creates a [TextButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child] and [isLoading] must not be null.
   const FancyTextButton({
     super.key,
     super.isEnabled,
@@ -26,8 +24,6 @@ class FancyTextButton extends _FancyButton {
   /// Creates a [TextButton] with a leading icon.
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child], [icon] and [isLoading] must not be null.
   const FancyTextButton.icon({
     super.key,
     super.isEnabled,
@@ -69,8 +65,6 @@ class FancyOutlinedButton extends _FancyButton {
   /// Creates an [OutlinedButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child] and [isLoading] must not be null.
   const FancyOutlinedButton({
     super.key,
     super.isEnabled,
@@ -85,8 +79,6 @@ class FancyOutlinedButton extends _FancyButton {
   /// Creates an [OutlinedButton] with a leading icon.
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child], [icon] and [isLoading] must not be null.
   const FancyOutlinedButton.icon({
     super.key,
     super.isEnabled,
@@ -128,8 +120,6 @@ class FancyElevatedButton extends _FancyButton {
   /// Creates a [ElevatedButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child] and [isLoading] must not be null.
   const FancyElevatedButton({
     super.key,
     super.isEnabled,
@@ -144,8 +134,6 @@ class FancyElevatedButton extends _FancyButton {
   /// Creates a [ElevatedButton] with a leading icon.
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child], [icon] and [isLoading] must not be null.
   const FancyElevatedButton.icon({
     super.key,
     super.isEnabled,
@@ -187,8 +175,6 @@ class FancyFilledButton extends _FancyButton {
   /// Creates a [FilledButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child] and [isLoading] must not be null.
   const FancyFilledButton({
     super.key,
     super.isEnabled,
@@ -203,8 +189,6 @@ class FancyFilledButton extends _FancyButton {
   /// Creates a [FilledButton] with a leading icon.
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child], [icon] and [isLoading] must not be null.
   const FancyFilledButton.icon({
     super.key,
     super.isEnabled,
@@ -246,8 +230,6 @@ class FancyFab extends _FancyButton {
   /// Creates a circular [FloatingActionButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child] and [isLoading] must not be null.
   const FancyFab({
     super.key,
     super.isEnabled,
@@ -266,8 +248,6 @@ class FancyFab extends _FancyButton {
   /// Creates an extended [FloatingActionButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [icon], [child] and [isLoading] must not be null.
   const FancyFab.extended({
     super.key,
     super.isEnabled,
