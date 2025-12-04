@@ -312,6 +312,7 @@ class FancyIconButton extends _FancyButton {
     super.isLoading,
     super.loadingChild,
     super.loadingIndicator,
+    this.tooltip,
     super.style,
   }) : _variant = .standard,
        super(child: icon);
@@ -327,6 +328,7 @@ class FancyIconButton extends _FancyButton {
     super.isLoading,
     super.loadingChild,
     super.loadingIndicator,
+    this.tooltip,
     super.style,
   }) : _variant = .filled,
        super(child: icon);
@@ -342,6 +344,7 @@ class FancyIconButton extends _FancyButton {
     super.isLoading,
     super.loadingChild,
     super.loadingIndicator,
+    this.tooltip,
     super.style,
   }) : _variant = .filledTonal,
        super(child: icon);
@@ -357,10 +360,12 @@ class FancyIconButton extends _FancyButton {
     super.isLoading,
     super.loadingChild,
     super.loadingIndicator,
+    this.tooltip,
     super.style,
   }) : _variant = .outlined,
        super(child: icon);
 
+  final String? tooltip;
   final _IconButtonVariant _variant;
 
   @override
@@ -371,7 +376,12 @@ class FancyIconButton extends _FancyButton {
       .filledTonal => IconButton.filledTonal,
       .outlined => IconButton.outlined,
     };
-    return constructor(onPressed: actualOnPressed, style: style, icon: child);
+    return constructor(
+      onPressed: actualOnPressed,
+      tooltip: tooltip,
+      style: style,
+      icon: child,
+    );
   }
 
   @override
