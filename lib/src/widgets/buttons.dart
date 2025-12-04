@@ -369,7 +369,9 @@ class FancyIconButton extends _FancyButton {
   final _IconButtonVariant _variant;
 
   @override
-  Widget _buildDefault(BuildContext context) {
+  Widget _buildDefault(BuildContext context) => _buildIcon(context, child);
+  @override
+  Widget _buildIcon(BuildContext context, Widget icon) {
     final constructor = switch (_variant) {
       .standard => IconButton.new,
       .filled => IconButton.filled,
@@ -380,13 +382,9 @@ class FancyIconButton extends _FancyButton {
       onPressed: actualOnPressed,
       tooltip: tooltip,
       style: style,
-      icon: child,
+      icon: icon,
     );
   }
-
-  @override
-  Widget _buildIcon(BuildContext context, Widget icon) =>
-      throw UnsupportedError('FancyIconButton only has one variant');
 }
 
 enum _IconButtonVariant { standard, filled, filledTonal, outlined }
@@ -457,9 +455,8 @@ class _LoadingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: size,
-      height: size,
+    return SizedBox.square(
+      dimension: size,
       child: const CircularProgressIndicator(strokeWidth: 2),
     );
   }
