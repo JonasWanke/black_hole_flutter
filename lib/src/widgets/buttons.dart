@@ -298,6 +298,89 @@ class FancyFab extends _FancyButton {
   }
 }
 
+/// In addition to a normal [IconButton], this [Widget] natively supports
+/// disabling it and showing a loading state.
+class FancyIconButton extends _FancyButton {
+  /// Creates an [IconButton].
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  const FancyIconButton({
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required Widget icon,
+    super.isLoading,
+    super.loadingChild,
+    super.loadingIndicator,
+    super.style,
+  }) : _variant = .standard,
+       super(child: icon);
+
+  /// Creates an [IconButton.filled].
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  const FancyIconButton.filled({
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required Widget icon,
+    super.isLoading,
+    super.loadingChild,
+    super.loadingIndicator,
+    super.style,
+  }) : _variant = .filled,
+       super(child: icon);
+
+  /// Creates an [IconButton.filledTonal].
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  const FancyIconButton.filledTonal({
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required Widget icon,
+    super.isLoading,
+    super.loadingChild,
+    super.loadingIndicator,
+    super.style,
+  }) : _variant = .filledTonal,
+       super(child: icon);
+
+  /// Creates an [IconButton.outlined].
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  const FancyIconButton.outlined({
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required Widget icon,
+    super.isLoading,
+    super.loadingChild,
+    super.loadingIndicator,
+    super.style,
+  }) : _variant = .outlined,
+       super(child: icon);
+
+  final _IconButtonVariant _variant;
+
+  @override
+  Widget _buildDefault(BuildContext context) {
+    final constructor = switch (_variant) {
+      .standard => IconButton.new,
+      .filled => IconButton.filled,
+      .filledTonal => IconButton.filledTonal,
+      .outlined => IconButton.outlined,
+    };
+    return constructor(onPressed: actualOnPressed, style: style, icon: child);
+  }
+
+  @override
+  Widget _buildIcon(BuildContext context, Widget icon) =>
+      throw UnsupportedError('FancyIconButton only has one variant');
+}
+
+enum _IconButtonVariant { standard, filled, filledTonal, outlined }
+
 abstract class _FancyButton extends StatelessWidget {
   /// {@template black_hole_flutter.buttons.isEnabled}
   /// Use [isEnabled] to avoid ternary statements for [onPressed] — you can
