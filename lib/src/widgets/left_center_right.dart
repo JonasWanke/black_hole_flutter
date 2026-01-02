@@ -16,31 +16,31 @@ class LeftCenterRight extends MultiChildRenderObjectWidget {
     Widget? left,
     Widget? center,
     Widget? right,
-  })  : assert(
-          crossAxisAlignment != CrossAxisAlignment.baseline ||
-              textBaseline != null,
-          '`textBaseline` is required if '
-          '`crossAxisAlignment == CrossAxisAlignment.baseline`',
-        ),
-        super(
-          children: [
-            if (left != null)
-              _LeftCenterRightParentDataWidget(
-                _LeftCenterRightSlot.left,
-                child: left,
-              ),
-            if (center != null)
-              _LeftCenterRightParentDataWidget(
-                _LeftCenterRightSlot.center,
-                child: center,
-              ),
-            if (right != null)
-              _LeftCenterRightParentDataWidget(
-                _LeftCenterRightSlot.right,
-                child: right,
-              ),
-          ],
-        );
+  }) : assert(
+         crossAxisAlignment != CrossAxisAlignment.baseline ||
+             textBaseline != null,
+         '`textBaseline` is required if '
+         '`crossAxisAlignment == CrossAxisAlignment.baseline`',
+       ),
+       super(
+         children: [
+           if (left != null)
+             _LeftCenterRightParentDataWidget(
+               _LeftCenterRightSlot.left,
+               child: left,
+             ),
+           if (center != null)
+             _LeftCenterRightParentDataWidget(
+               _LeftCenterRightSlot.center,
+               child: center,
+             ),
+           if (right != null)
+             _LeftCenterRightParentDataWidget(
+               _LeftCenterRightSlot.right,
+               child: right,
+             ),
+         ],
+       );
 
   final CrossAxisAlignment crossAxisAlignment;
   final TextBaseline? textBaseline;
@@ -106,8 +106,8 @@ class _RenderLeftCenterRight extends RenderBox
   _RenderLeftCenterRight({
     CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
     TextBaseline? textBaseline,
-  })  : _crossAxisAlignment = crossAxisAlignment,
-        _textBaseline = textBaseline;
+  }) : _crossAxisAlignment = crossAxisAlignment,
+       _textBaseline = textBaseline;
 
   CrossAxisAlignment get crossAxisAlignment => _crossAxisAlignment;
   CrossAxisAlignment _crossAxisAlignment;
@@ -191,22 +191,22 @@ class _RenderLeftCenterRight extends RenderBox
     }
 
     return switch (sizingDirection) {
-      Axis.horizontal => children.map((it) => childSize(it, extent)).sum,
+      .horizontal => children.map((it) => childSize(it, extent)).sum,
       // Intrinsic cross size is the max of the intrinsic cross sizes of the
       // children, with the children sized using their max intrinsic dimensions.
-      Axis.vertical => children
-              .map(
-                (it) => childSize(it, it.getMaxIntrinsicWidth(double.infinity)),
-              )
-              .maxOrNull ??
-          0,
+      .vertical =>
+        children
+                .map(
+                  (it) =>
+                      childSize(it, it.getMaxIntrinsicWidth(double.infinity)),
+                )
+                .maxOrNull ??
+            0,
     };
   }
 
   Map<_LeftCenterRightSlot, RenderBox> _createChildrenMap() {
-    return {
-      for (final child in children) child.data.slot!: child,
-    };
+    return {for (final child in children) child.data.slot!: child};
   }
 
   @override
@@ -214,7 +214,8 @@ class _RenderLeftCenterRight extends RenderBox
     if (!_canComputeIntrinsics) {
       assert(
         debugCannotComputeDryLayout(
-          reason: 'Dry layout cannot be computed for '
+          reason:
+              'Dry layout cannot be computed for '
               '`CrossAxisAlignment.baseline`, which requires a full layout.',
         ),
       );
@@ -250,20 +251,21 @@ class _RenderLeftCenterRight extends RenderBox
       var maxSizeAboveBaseline = 0.0;
       var maxSizeBelowBaseline = 0.0;
       for (final child in children) {
-        final distance =
-            child.getDistanceToBaseline(textBaseline!, onlyReal: true);
+        final distance = child.getDistanceToBaseline(
+          textBaseline!,
+          onlyReal: true,
+        );
         if (distance != null) {
           maxBaselineDistance = math.max(maxBaselineDistance, distance);
-          maxSizeAboveBaseline = math.max(
-            distance,
-            maxSizeAboveBaseline,
-          );
+          maxSizeAboveBaseline = math.max(distance, maxSizeAboveBaseline);
           maxSizeBelowBaseline = math.max(
             child.size.height - distance,
             maxSizeBelowBaseline,
           );
-          height =
-              math.max(maxSizeAboveBaseline + maxSizeBelowBaseline, height);
+          height = math.max(
+            maxSizeAboveBaseline + maxSizeBelowBaseline,
+            height,
+          );
         }
       }
     }
@@ -272,17 +274,19 @@ class _RenderLeftCenterRight extends RenderBox
 
     double computeY(RenderBox child) {
       switch (_crossAxisAlignment) {
-        case CrossAxisAlignment.start:
+        case .start:
           return 0;
-        case CrossAxisAlignment.end:
+        case .end:
           return size.height - child.size.height;
-        case CrossAxisAlignment.center:
+        case .center:
           return (size.height - child.size.height) / 2;
-        case CrossAxisAlignment.stretch:
+        case .stretch:
           return 0;
-        case CrossAxisAlignment.baseline:
-          final distance =
-              child.getDistanceToBaseline(textBaseline!, onlyReal: true);
+        case .baseline:
+          final distance = child.getDistanceToBaseline(
+            textBaseline!,
+            onlyReal: true,
+          );
           return distance == null ? 0 : maxBaselineDistance - distance;
       }
     }
@@ -298,8 +302,10 @@ class _RenderLeftCenterRight extends RenderBox
 
     final rightChild = childrenMap[_LeftCenterRightSlot.right];
     if (rightChild != null) {
-      rightChild.data.offset =
-          Offset(right - rightChild.size.width, computeY(rightChild));
+      rightChild.data.offset = Offset(
+        right - rightChild.size.width,
+        computeY(rightChild),
+      );
       right -= rightChild.size.width;
     }
 
@@ -307,8 +313,10 @@ class _RenderLeftCenterRight extends RenderBox
     if (centerChild != null) {
       centerChild.data.offset = Offset(
         // This is where the magic happend:
-        ((size.width - centerChild.size.width) / 2)
-            .clamp(left, right - centerChild.size.width),
+        ((size.width - centerChild.size.width) / 2).clamp(
+          left,
+          right - centerChild.size.width,
+        ),
         computeY(centerChild),
       );
     }
@@ -322,29 +330,35 @@ class _RenderLeftCenterRight extends RenderBox
     var remainingConstraints = constraints;
 
     final left = childrenMap[_LeftCenterRightSlot.left];
-    final leftSize =
-        left == null ? null : layoutChild(left, remainingConstraints);
+    final leftSize = left == null
+        ? null
+        : layoutChild(left, remainingConstraints);
     if (leftSize != null) {
-      remainingConstraints =
-          constraints.deflate(EdgeInsets.only(left: leftSize.width));
+      remainingConstraints = constraints.deflate(
+        EdgeInsets.only(left: leftSize.width),
+      );
     }
 
     final right = childrenMap[_LeftCenterRightSlot.right];
-    final rightSize =
-        right == null ? null : layoutChild(right, remainingConstraints);
+    final rightSize = right == null
+        ? null
+        : layoutChild(right, remainingConstraints);
     if (rightSize != null) {
-      remainingConstraints =
-          constraints.deflate(EdgeInsets.only(right: rightSize.width));
+      remainingConstraints = constraints.deflate(
+        EdgeInsets.only(right: rightSize.width),
+      );
     }
 
     final center = childrenMap[_LeftCenterRightSlot.center];
-    final centerSize =
-        center == null ? null : layoutChild(center, remainingConstraints);
+    final centerSize = center == null
+        ? null
+        : layoutChild(center, remainingConstraints);
 
-    return [leftSize, centerSize, rightSize]
-            .whereNotNull()
-            .map((it) => it.height)
-            .maxOrNull ??
+    return [
+          ?leftSize,
+          ?centerSize,
+          ?rightSize,
+        ].map((it) => it.height).maxOrNull ??
         0;
   }
 

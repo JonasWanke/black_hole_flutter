@@ -1,7 +1,9 @@
 import 'package:flutter/rendering.dart';
 
-extension ContainerRenderObjectMixinBlackHole<ChildType extends RenderObject,
-        ParentDataType extends ContainerParentDataMixin<ChildType>>
+extension ContainerRenderObjectMixinBlackHole<
+  ChildType extends RenderObject,
+  ParentDataType extends ContainerParentDataMixin<ChildType>
+>
     on ContainerRenderObjectMixin<ChildType, ParentDataType> {
   /// Returns all children using [firstChild] and [childAfter].
   Iterable<ChildType> get children sync* {

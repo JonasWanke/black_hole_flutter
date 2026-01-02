@@ -10,8 +10,6 @@ class FancyTextButton extends _FancyButton {
   /// Creates a [TextButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child] and [isLoading] must not be null.
   const FancyTextButton({
     super.key,
     super.isEnabled,
@@ -26,8 +24,6 @@ class FancyTextButton extends _FancyButton {
   /// Creates a [TextButton] with a leading icon.
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child], [icon] and [isLoading] must not be null.
   const FancyTextButton.icon({
     super.key,
     super.isEnabled,
@@ -38,18 +34,11 @@ class FancyTextButton extends _FancyButton {
     Widget? loadingLabel,
     super.loadingIndicator,
     super.style,
-  }) : super(
-          child: label,
-          loadingChild: loadingLabel,
-        );
+  }) : super(child: label, loadingChild: loadingLabel);
 
   @override
   Widget _buildDefault(BuildContext context) {
-    return TextButton(
-      onPressed: actualOnPressed,
-      style: style,
-      child: child,
-    );
+    return TextButton(onPressed: actualOnPressed, style: style, child: child);
   }
 
   @override
@@ -69,8 +58,6 @@ class FancyOutlinedButton extends _FancyButton {
   /// Creates an [OutlinedButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child] and [isLoading] must not be null.
   const FancyOutlinedButton({
     super.key,
     super.isEnabled,
@@ -85,8 +72,6 @@ class FancyOutlinedButton extends _FancyButton {
   /// Creates an [OutlinedButton] with a leading icon.
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child], [icon] and [isLoading] must not be null.
   const FancyOutlinedButton.icon({
     super.key,
     super.isEnabled,
@@ -97,10 +82,7 @@ class FancyOutlinedButton extends _FancyButton {
     Widget? loadingLabel,
     super.loadingIndicator,
     super.style,
-  }) : super(
-          child: label,
-          loadingChild: loadingLabel,
-        );
+  }) : super(child: label, loadingChild: loadingLabel);
 
   @override
   Widget _buildDefault(BuildContext context) {
@@ -128,8 +110,6 @@ class FancyElevatedButton extends _FancyButton {
   /// Creates a [ElevatedButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child] and [isLoading] must not be null.
   const FancyElevatedButton({
     super.key,
     super.isEnabled,
@@ -144,8 +124,6 @@ class FancyElevatedButton extends _FancyButton {
   /// Creates a [ElevatedButton] with a leading icon.
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child], [icon] and [isLoading] must not be null.
   const FancyElevatedButton.icon({
     super.key,
     super.isEnabled,
@@ -156,10 +134,7 @@ class FancyElevatedButton extends _FancyButton {
     Widget? loadingLabel,
     super.loadingIndicator,
     super.style,
-  }) : super(
-          child: label,
-          loadingChild: loadingLabel,
-        );
+  }) : super(child: label, loadingChild: loadingLabel);
 
   @override
   Widget _buildDefault(BuildContext context) {
@@ -187,8 +162,6 @@ class FancyFilledButton extends _FancyButton {
   /// Creates a [FilledButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child] and [isLoading] must not be null.
   const FancyFilledButton({
     super.key,
     super.isEnabled,
@@ -203,8 +176,6 @@ class FancyFilledButton extends _FancyButton {
   /// Creates a [FilledButton] with a leading icon.
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child], [icon] and [isLoading] must not be null.
   const FancyFilledButton.icon({
     super.key,
     super.isEnabled,
@@ -215,18 +186,11 @@ class FancyFilledButton extends _FancyButton {
     Widget? loadingLabel,
     super.loadingIndicator,
     super.style,
-  }) : super(
-          child: label,
-          loadingChild: loadingLabel,
-        );
+  }) : super(child: label, loadingChild: loadingLabel);
 
   @override
   Widget _buildDefault(BuildContext context) {
-    return FilledButton(
-      onPressed: actualOnPressed,
-      style: style,
-      child: child,
-    );
+    return FilledButton(onPressed: actualOnPressed, style: style, child: child);
   }
 
   @override
@@ -246,8 +210,6 @@ class FancyFab extends _FancyButton {
   /// Creates a circular [FloatingActionButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [child] and [isLoading] must not be null.
   const FancyFab({
     super.key,
     super.isEnabled,
@@ -258,16 +220,12 @@ class FancyFab extends _FancyButton {
     super.loadingIndicator,
     this.backgroundColor,
     this.shape,
-  })  : reverseChildren = false,
-        super(
-          loadingChild: loadingLabel,
-        );
+  }) : reverseChildren = false,
+       super(loadingChild: loadingLabel);
 
   /// Creates an extended [FloatingActionButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  ///
-  /// [icon], [child] and [isLoading] must not be null.
   const FancyFab.extended({
     super.key,
     super.isEnabled,
@@ -280,10 +238,7 @@ class FancyFab extends _FancyButton {
     this.backgroundColor,
     this.shape,
     this.reverseChildren = false,
-  }) : super(
-          child: label,
-          loadingChild: loadingLabel,
-        );
+  }) : super(child: label, loadingChild: loadingLabel);
 
   final Color? backgroundColor;
   final ShapeBorder? shape;
@@ -343,6 +298,97 @@ class FancyFab extends _FancyButton {
   }
 }
 
+/// In addition to a normal [IconButton], this [Widget] natively supports
+/// disabling it and showing a loading state.
+class FancyIconButton extends _FancyButton {
+  /// Creates an [IconButton].
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  const FancyIconButton({
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required Widget icon,
+    super.isLoading,
+    super.loadingChild,
+    super.loadingIndicator,
+    this.tooltip,
+    super.style,
+  }) : _variant = .standard,
+       super(child: icon);
+
+  /// Creates an [IconButton.filled].
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  const FancyIconButton.filled({
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required Widget icon,
+    super.isLoading,
+    super.loadingChild,
+    super.loadingIndicator,
+    this.tooltip,
+    super.style,
+  }) : _variant = .filled,
+       super(child: icon);
+
+  /// Creates an [IconButton.filledTonal].
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  const FancyIconButton.filledTonal({
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required Widget icon,
+    super.isLoading,
+    super.loadingChild,
+    super.loadingIndicator,
+    this.tooltip,
+    super.style,
+  }) : _variant = .filledTonal,
+       super(child: icon);
+
+  /// Creates an [IconButton.outlined].
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  const FancyIconButton.outlined({
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required Widget icon,
+    super.isLoading,
+    super.loadingChild,
+    super.loadingIndicator,
+    this.tooltip,
+    super.style,
+  }) : _variant = .outlined,
+       super(child: icon);
+
+  final String? tooltip;
+  final _IconButtonVariant _variant;
+
+  @override
+  Widget _buildDefault(BuildContext context) => _buildIcon(context, child);
+  @override
+  Widget _buildIcon(BuildContext context, Widget icon) {
+    final constructor = switch (_variant) {
+      .standard => IconButton.new,
+      .filled => IconButton.filled,
+      .filledTonal => IconButton.filledTonal,
+      .outlined => IconButton.outlined,
+    };
+    return constructor(
+      onPressed: actualOnPressed,
+      tooltip: tooltip,
+      style: style,
+      icon: icon,
+    );
+  }
+}
+
+enum _IconButtonVariant { standard, filled, filledTonal, outlined }
+
 abstract class _FancyButton extends StatelessWidget {
   /// {@template black_hole_flutter.buttons.isEnabled}
   /// Use [isEnabled] to avoid ternary statements for [onPressed] — you can
@@ -362,10 +408,10 @@ abstract class _FancyButton extends StatelessWidget {
     this.icon,
     required this.child,
   }) : assert(
-          !((isEnabled ?? false) && onPressed == null),
-          'When explicitly setting isEnabled to true, onPressed must not be '
-          'null',
-        );
+         !((isEnabled ?? false) && onPressed == null),
+         'When explicitly setting isEnabled to true, onPressed must not be '
+         'null',
+       );
 
   final bool? isEnabled;
   bool get isActuallyEnabled => (isEnabled ?? onPressed != null) && !isLoading;
@@ -409,9 +455,8 @@ class _LoadingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: size,
-      height: size,
+    return SizedBox.square(
+      dimension: size,
       child: const CircularProgressIndicator(strokeWidth: 2),
     );
   }

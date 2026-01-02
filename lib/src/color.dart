@@ -54,20 +54,17 @@ extension FancyColor on Color {
   SystemUiOverlayStyle get contrastSystemUiOverlayStyle =>
       estimatedBrightness.contrastSystemUiOverlayStyle;
 
-  /// `true` if this color is fully opaque, i.e. has an [opacity] of `1.0`.
-  bool get isOpaque => alpha == _channelMax;
+  /// `true` if this color is fully opaque, i.e. has an [a] of `1.0`.
+  bool get isOpaque => a == 1.0;
 
   /// Shortcut for `Color.alphaBlend(color, background)`.
   Color alphaBlendOn(Color background) => Color.alphaBlend(this, background);
 
-  /// Apply [opacity] in addition to the existing opacity by multiplying them.
-  Color withAdditionalOpacity(double opacity) {
-    assert(opacity >= 0.0 && opacity <= 1.0);
-    return withOpacity(this.opacity * opacity);
+  /// Apply [alpha] in addition to the existing opacity by multiplying them.
+  Color withAdditionalAlpha(double alpha) {
+    assert(alpha >= 0.0 && alpha <= 1.0);
+    return withValues(alpha: a * alpha);
   }
-
-  /// Apply [alpha] in addition to the existing alpha by multiplying them.
-  Color withAdditionalAlpha(int alpha) => withAlpha(this.alpha * alpha);
 
   /// Shortcut for `HSLColor.fromColor(color)`.
   HSLColor get hsl => HSLColor.fromColor(this);
