@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 <!-- Template:
-## NEW · 2024-xx-xx
+## NEW · 2026-xx-xx
 
 ### ⚠️ BREAKING CHANGES
 ### 🎉 New Features
@@ -16,16 +16,29 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 📦 Build & CI
 -->
 
-## Next Release
+## 1.2.0 · 2026-01-02
+
+### 🎉 New Features
+- add `menuController.toggle()` ([`ecb9b20`](https://github.com/JonasWanke/black_hole_flutter/commit/ecb9b20fb234989a28f31d25b66cec2752fd8a76))
+- **color_material:** add `color.withHighEmphasisAlpha`, `.withMediumEmphasisAlpha`, `.withDisabledAlpha` ([`0ef819c`](https://github.com/JonasWanke/black_hole_flutter/commit/0ef819cbdb486b23280e9b65a0c332301b1ebb46))
+- **color_material:** add `MaterialColors.highEmphasisTextAlpha`, `.mediumEmphasisTextAlpha`, `.disabledTextAlpha` ([`66572ed`](https://github.com/JonasWanke/black_hole_flutter/commit/66572ed621a4220ef8c2184109884c7ef98f3a7a))
+- **context:** add `theme.colorScheme` ([`250b530`](https://github.com/JonasWanke/black_hole_flutter/commit/250b5306104522a01d77d186f9f85b6270608332))
+- **widgets:** add missing `key` parameters to `LeftCenterRight`, `DragIndicator` ([`ec31f0d`](https://github.com/JonasWanke/black_hole_flutter/commit/ec31f0d7196d382ea3225fb29378c43bf8f35e91))
+- **widgets:** add `Circle` ([`f8e9379`](https://github.com/JonasWanke/black_hole_flutter/commit/f8e937955c2755f756991d8790bdff4823d0ec4b))
+- **widgets/buttons** add missing variants ([`fac0bfc`](https://github.com/JonasWanke/black_hole_flutter/commit/fac0bfc101b1c2c116131246ee13a164f941bd1e), [`74d873e`](https://github.com/JonasWanke/black_hole_flutter/commit/74d873ef291b9fb108fc54c25ccbcd1355875ab4), [`9a8a3a7`](https://github.com/JonasWanke/black_hole_flutter/commit/9a8a3a70030145a4a7c58705d389d208e70f3af3))
 
 ### ⚡ Changes
-- **color_material:** Deprecate `ThemeMaterialColors` containing `onPrimary`, `highEmphasisOnPrimary`, `mediumEmphasisOnPrimary`, `disabledOnPrimary`, `onSecondary`, `highEmphasisOnSecondary`, `mediumEmphasisOnSecondary`, `disabledOnSecondary`, `onBackground`, `highEmphasisOnBackground`, `mediumEmphasisOnBackground`, `disabledOnBackground`, `onError`, `highEmphasisOnError`, `mediumEmphasisOnError`, and `disabledOnError`.
+- **color_material:** deprecate `ThemeMaterialColors` containing `onPrimary`, `highEmphasisOnPrimary`, `mediumEmphasisOnPrimary`, `disabledOnPrimary`, `onSecondary`, `highEmphasisOnSecondary`, `mediumEmphasisOnSecondary`, `disabledOnSecondary`, `onBackground`, `highEmphasisOnBackground`, `mediumEmphasisOnBackground`, `disabledOnBackground`, `onError`, `highEmphasisOnError`, `mediumEmphasisOnError`, and `disabledOnError` ([`d232dfd`](https://github.com/JonasWanke/swipeable_page_route/commit/d232dfdc7e3f845919139ecbb138f58156f3dd49))
+
+### 📦 Build & CI
+
+- upgrade to Flutter v3.38.0, Dart v3.10.0 ([`c96d94c`](https://github.com/JonasWanke/swipeable_page_route/commit/c96d94cb366de2827a1aa72c9281bd413db6c301))
 
 ## 1.1.0 · 2023-10-24
 
 ### 🎉 New Features
-- add `LeftCenterRight` ([#20](https://github.com/JonasWanke/black_hole_flutter/pull/20))
-- make `FillOrWrap`'s constructor const ([#21](https://github.com/JonasWanke/black_hole_flutter/pull/21))
+- **widgets:** add `LeftCenterRight` ([#20](https://github.com/JonasWanke/black_hole_flutter/pull/20))
+- **widgets:** make `FillOrWrap`'s constructor const ([#21](https://github.com/JonasWanke/black_hole_flutter/pull/21))
 
 ### 📦 Build & CI
 - upgrade to Flutter v3.10.0, Dart v3.0.0
@@ -33,7 +46,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## 1.0.3 · 2023-05-11
 
 ### 🐛 Bug Fixes
-- remove const from `FillOrWrap`'s constructor ([`8eb3ce3`](https://github.com/JonasWanke/black_hole_flutter/commit/8eb3ce31ab8265544828d43af082763f0957bf45)), closes: [#16](https://github.com/JonasWanke/black_hole_flutter/issues/16)
+- **widgets:** remove const from `FillOrWrap`'s constructor ([`8eb3ce3`](https://github.com/JonasWanke/black_hole_flutter/commit/8eb3ce31ab8265544828d43af082763f0957bf45)), closes: [#16](https://github.com/JonasWanke/black_hole_flutter/issues/16)
 
 ## 1.0.2 · 2023-05-11
 
@@ -89,7 +102,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## 0.3.2 · 2021-06-01
 
 ### 🎉 New Features
-- **content:** add `buildContext.showSimpleSnackBar`, `.showSnackBar`, and `scaffoldMessengerState.showSimpleSnackBar`
+- **context:** add `buildContext.showSimpleSnackBar`, `.showSnackBar`, and `scaffoldMessengerState.showSimpleSnackBar`
 - **widgets:** add `ExpandOrScroll`
 
 ### 📦 Build & CI
