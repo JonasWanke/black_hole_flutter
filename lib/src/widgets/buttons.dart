@@ -171,7 +171,7 @@ class FancyFilledButton extends _FancyButton {
     super.loadingChild,
     super.loadingIndicator,
     super.style,
-  });
+  }) : isTonal = false;
 
   /// Creates a [FilledButton] with a leading icon.
   ///
@@ -186,16 +186,53 @@ class FancyFilledButton extends _FancyButton {
     Widget? loadingLabel,
     super.loadingIndicator,
     super.style,
-  }) : super(child: label, loadingChild: loadingLabel);
+  }) : isTonal = false,
+       super(child: label, loadingChild: loadingLabel);
+
+  /// Creates a [FilledButton.tonal].
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  const FancyFilledButton.tonal({
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required super.child,
+    super.isLoading,
+    super.loadingChild,
+    super.loadingIndicator,
+    super.style,
+  }) : isTonal = true;
+
+  /// Creates a [FilledButton.tonalIcon] with a leading icon.
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  const FancyFilledButton.tonalIcon({
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required Widget super.icon,
+    required Widget label,
+    super.isLoading,
+    Widget? loadingLabel,
+    super.loadingIndicator,
+    super.style,
+  }) : isTonal = true,
+       super(child: label, loadingChild: loadingLabel);
+
+  final bool isTonal;
 
   @override
   Widget _buildDefault(BuildContext context) {
-    return FilledButton(onPressed: actualOnPressed, style: style, child: child);
+    return (isTonal ? FilledButton.tonal : FilledButton.new)(
+      onPressed: actualOnPressed,
+      style: style,
+      child: child,
+    );
   }
 
   @override
   Widget _buildIcon(BuildContext context, Widget icon) {
-    return FilledButton.icon(
+    return (isTonal ? FilledButton.tonalIcon : FilledButton.icon)(
       onPressed: actualOnPressed,
       style: style,
       icon: icon,
@@ -220,7 +257,42 @@ class FancyFab extends _FancyButton {
     super.loadingIndicator,
     this.backgroundColor,
     this.shape,
-  }) : reverseChildren = false,
+  }) : _type = .regular,
+       reverseChildren = false,
+       super(loadingChild: loadingLabel);
+
+  /// Creates a circular [FloatingActionButton.small].
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  const FancyFab.small({
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required super.child,
+    super.isLoading,
+    Widget? loadingLabel,
+    super.loadingIndicator,
+    this.backgroundColor,
+    this.shape,
+  }) : _type = .small,
+       reverseChildren = false,
+       super(loadingChild: loadingLabel);
+
+  /// Creates a circular [FloatingActionButton.large].
+  ///
+  /// {@macro black_hole_flutter.buttons.isEnabled}
+  const FancyFab.large({
+    super.key,
+    super.isEnabled,
+    required super.onPressed,
+    required super.child,
+    super.isLoading,
+    Widget? loadingLabel,
+    super.loadingIndicator,
+    this.backgroundColor,
+    this.shape,
+  }) : _type = .large,
+       reverseChildren = false,
        super(loadingChild: loadingLabel);
 
   /// Creates an extended [FloatingActionButton].
@@ -238,10 +310,12 @@ class FancyFab extends _FancyButton {
     this.backgroundColor,
     this.shape,
     this.reverseChildren = false,
-  }) : super(child: label, loadingChild: loadingLabel);
+  }) : _type = .extended,
+       super(child: label, loadingChild: loadingLabel);
 
   final Color? backgroundColor;
   final ShapeBorder? shape;
+  final _FloatingActionButtonType _type;
 
   final bool reverseChildren;
 
@@ -250,7 +324,13 @@ class FancyFab extends _FancyButton {
 
   @override
   Widget _buildDefault(BuildContext context) {
-    return FloatingActionButton(
+    final constructor = switch (_type) {
+      .regular => FloatingActionButton.new,
+      .small => FloatingActionButton.small,
+      .large => FloatingActionButton.large,
+      .extended => throw StateError('Extended FAB requires an icon'),
+    };
+    return constructor(
       onPressed: actualOnPressed,
       foregroundColor: _foregroundColor(context),
       backgroundColor: _backgroundColor(context),
@@ -267,7 +347,7 @@ class FancyFab extends _FancyButton {
       return _buildDefault(context);
     }
 
-    return FloatingActionButton.extended(
+    Widget child = FloatingActionButton.extended(
       onPressed: actualOnPressed,
       foregroundColor: _foregroundColor(context),
       backgroundColor: _backgroundColor(context),
@@ -280,6 +360,30 @@ class FancyFab extends _FancyButton {
             )
           : actualChild,
     );
+
+    final customSizeConstraints = switch (_type) {
+      _FloatingActionButtonType.regular => null,
+      _FloatingActionButtonType.small =>
+        context.theme.floatingActionButtonTheme.smallSizeConstraints
+                ?.heightConstraints() ??
+            const BoxConstraints.tightFor(height: 40),
+      _FloatingActionButtonType.large =>
+        context.theme.floatingActionButtonTheme.largeSizeConstraints
+                ?.heightConstraints() ??
+            const BoxConstraints.tightFor(height: 96),
+      _FloatingActionButtonType.extended => null,
+    };
+    if (customSizeConstraints != null) {
+      child = Theme(
+        data: context.theme.copyWith(
+          floatingActionButtonTheme: context.theme.floatingActionButtonTheme
+              .copyWith(extendedSizeConstraints: customSizeConstraints),
+        ),
+        child: child,
+      );
+    }
+
+    return child;
   }
 
   Color? _foregroundColor(BuildContext context) {
@@ -297,6 +401,8 @@ class FancyFab extends _FancyButton {
     );
   }
 }
+
+enum _FloatingActionButtonType { regular, small, large, extended }
 
 /// In addition to a normal [IconButton], this [Widget] natively supports
 /// disabling it and showing a loading state.
