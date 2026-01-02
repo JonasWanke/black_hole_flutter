@@ -9,6 +9,7 @@
   - [🔳 Buttons](#-buttons)
   - [🥙 FillOrWrap](#-fillorwrap)
   - [🎯 LeftCenterRight](#-leftcenterright)
+  - [🟢 Circle](#-circle)
 - [🖼 RenderObject](#-renderobject)
 - [↕ Size](#-size)
 
@@ -30,6 +31,7 @@ In Flutter, you often see the pattern `<Class>.of(context)` (e.g., [`Theme.of(co
 
 | Extension                         | Shortcut for                         |
 | --------------------------------- | ------------------------------------ |
+| [`context.colorScheme`]           | `ColorScheme.of(context)`            |
 | [`context.defaultTextStyle`]      | `DefaultTextStyle.of(context)`       |
 | [`context.directionality`]        | `Directionality.of(context)`         |
 | [`context.form`]                  | `Form.of(context)`                   |
@@ -40,9 +42,10 @@ In Flutter, you often see the pattern `<Class>.of(context)` (e.g., [`Theme.of(co
 | [`context.pageStorage`]           | `PageStorage.of(context)`            |
 | [`context.scaffold`]              | `Scaffold.of(context)`               |
 | [`context.scaffoldOrNull`]        | `Scaffold.of(context, nullOk: true)` |
-| [`context.textTheme`]             | `Theme.of(context).textTheme`        |
+| [`context.textTheme`]             | `TextTheme.of(context)`              |
 | [`context.theme`]                 | `Theme.of(context)`                  |
 
+[`context.colorScheme`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/colorScheme.html
 [`context.defaultTextStyle`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/defaultTextStyle.html
 [`context.directionality`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/directionality.html
 [`context.form`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyContext/form.html
@@ -104,13 +107,14 @@ Convert between alpha and opacity with `int.alphaToOpacity` and `double.opacityT
 
 ### 🌈 Material Design colors
 
-[Material Design](https://material.io/design/color/text-legibility.html) specifies different opacities of white and black colors to use for text of different emphases on colored backgrounds. You can now use the [`highEmphasisOnColor`][`MaterialColors.highEmphasisOnColor`], [`mediumEmphasisOnColor`][`MaterialColors.mediumEmphasisOnColor`] and [`disabledOnColor`][`MaterialColors.disabledOnColor`] extension getters on [`Color`] to make your text legible!
-
-There are also getters on [`ThemeData`] for contrast colors on the primary, accent, background, and error colors.
+[Material Design](https://material.io/design/color/text-legibility.html) specifies different opacities of white and black colors to use for text of different emphases on colored backgrounds. You can now use the [`highEmphasisOnColor`][`MaterialColors.highEmphasisOnColor`], [`mediumEmphasisOnColor`][`MaterialColors.mediumEmphasisOnColor`] and [`disabledOnColor`][`MaterialColors.disabledOnColor`] extension getters on [`Color`] to make your text legible! The raw opacity values are also available as [`MaterialColors.highEmphasisTextAlpha`], [`MaterialColors.mediumEmphasisTextAlpha`], and [`MaterialColors.disabledTextAlpha`].
 
 [`MaterialColors.disabledOnColor`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/MaterialColors/disabledOnColor.html
+[`MaterialColors.disabledTextAlpha`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/MaterialColors/disabledTextAlpha.html
 [`MaterialColors.highEmphasisOnColor`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/MaterialColors/highEmphasisOnColor.html
+[`MaterialColors.highEmphasisTextAlpha`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/MaterialColors/highEmphasisTextAlpha.html
 [`MaterialColors.mediumEmphasisOnColor`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/MaterialColors/mediumEmphasisOnColor.html
+[`MaterialColors.mediumEmphasisTextAlpha`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/MaterialColors/mediumEmphasisTextAlpha.html
 
 ## 🧭 Navigation
 
@@ -156,7 +160,9 @@ Did you ever want to show a [progress indicator][`ProgressIndicator`] inside a b
 
 ![Button demo](https://github.com/JonasWanke/black_hole_flutter/raw/main/doc/widgets-buttons.gif?raw=true)
 
-In [`FancyFab`] (a [`FloatingActionButton`]), [`FancyTextButton`], [`FancyOutlinedButton`], and [`FancyElevatedButton`], we introduce some new parameters:
+<sup>This screenshot only shows an excerpt of all available button types and variants.</sup>
+
+In [`FancyFab`] (a [`FloatingActionButton`]), [`FancyTextButton`], [`FancyOutlinedButton`], [`FancyElevatedButton`], [`FancyFilledButton`], and [`FancyIconButton`], we introduce some new parameters:
 
 - [`isLoading`][`FancyFab.isLoading`]: Setting this to `true` shows a [`CircularProgressIndicator`] and disables this button. You can optionally specify a [`loadingChild`][`FancyTextButton.loadingChild`] ([`loadingLabel`][`FancyFab.loadingLabel`] on [`FancyFab`]) to show next to the progress indicator.
 - `isEnabled`: Settings this to `false` disables this button, even if [`onPressed`][`FancyFab.onPressed`] is set.
@@ -169,6 +175,8 @@ In [`FancyFab`] (a [`FloatingActionButton`]), [`FancyTextButton`], [`FancyOutlin
 [`FancyTextButton.loadingChild`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyTextButton/loadingChild.html
 [`FancyOutlinedButton`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyOutlinedButton-class.html
 [`FancyElevatedButton`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyElevatedButton-class.html
+[`FancyFilledButton`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyFilledButton-class.html
+[`FancyIconButton`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/FancyIconButton-class.html
 
 ### 🥙 FillOrWrap
 
@@ -182,7 +190,11 @@ A layout with two different behaviors:
 ### 🎯 LeftCenterRight
 
 A layout taking optional `left`, `center`, and `right` children.
-It will try to keep `center` in the center of itself, even if only one of `left` and `right` is set or they have different widths.
+It will try to keep `center` in the center of itself, even if only one of `left` and `right` is set, or they have different widths.
+
+### 🟢 Circle
+
+A circle with optional diameter, background color, padding, and child.
 
 ## 🖼 RenderObject
 

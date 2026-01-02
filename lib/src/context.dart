@@ -54,10 +54,10 @@ extension FancyContext on BuildContext {
   ThemeData get theme => Theme.of(this);
 
   /// Shortcut for `Theme.of(context).colorScheme`.
-  ColorScheme get colorScheme => theme.colorScheme;
+  ColorScheme get colorScheme => ColorScheme.of(this);
 
   /// Shortcut for `Theme.of(context).textTheme`.
-  TextTheme get textTheme => theme.textTheme;
+  TextTheme get textTheme => TextTheme.of(this);
 }
 
 extension FancyScaffoldMessenger on ScaffoldMessengerState {
