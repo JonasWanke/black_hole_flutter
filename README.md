@@ -142,7 +142,7 @@ MaterialApp(
 // Navigator: didPop /dashboard ← /articles/12345
 ```
 
-> **Note:** This uses the `name` of routes, so it only works with [named routes](https://flutter.dev/docs/cookbook/navigation/named-routes). If you want to handle all your routing declaratively with proper deep links, check out my package [<kbd>🧭 flutter_deep_linking</kbd>] :)
+> **Note:** This uses the `name` of routes, so it only works with [named routes](https://flutter.dev/docs/cookbook/navigation/named-routes).
 
 [`context.modalRoute`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/NavigationContext/modalRoute.html
 [`context.navigator`]: https://pub.dev/documentation/black_hole_flutter/latest/black_hole_flutter/NavigationContext/navigator.html
