@@ -2,11 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'color.dart';
 
-// Values taken from https://m2.material.io/design/color/text-legibility.html.
-const _highEmphasisOpacity = 0.87;
-const _mediumEmphasisOpacity = 0.6;
-const _disabledOpacity = 0.38;
-
 extension BrightnessMaterialColors on Brightness {
   /// The Material Design high emphasis color of this brightness.
   Color get highEmphasisColor => color.withHighEmphasisOpacity;
@@ -29,15 +24,30 @@ extension BrightnessMaterialColors on Brightness {
 }
 
 extension MaterialColors on Color {
+  /// Alpha value for Material Design high-emphasis text.
+  ///
+  /// https://m2.material.io/design/color/text-legibility.html
+  static const highEmphasisTextAlpha = 0.87;
+
+  /// Alpha value for Material Design medium-emphasis text.
+  ///
+  /// https://m2.material.io/design/color/text-legibility.html
+  static const mediumEmphasisTextAlpha = 0.6;
+
+  /// Alpha value for Material Design disabled text.
+  ///
+  /// https://m2.material.io/design/color/text-legibility.html
+  static const disabledTextAlpha = 0.38;
+
   /// The Material Design high emphasis version with this color.
-  Color get withHighEmphasisOpacity => withValues(alpha: _highEmphasisOpacity);
+  Color get withHighEmphasisOpacity => withValues(alpha: highEmphasisTextAlpha);
 
   /// The Material Design medium emphasis version with this color.
   Color get withMediumEmphasisOpacity =>
-      withValues(alpha: _mediumEmphasisOpacity);
+      withValues(alpha: mediumEmphasisTextAlpha);
 
   /// The Material Design disabled version with this color.
-  Color get withDisabledOpacity => withValues(alpha: _disabledOpacity);
+  Color get withDisabledOpacity => withValues(alpha: disabledTextAlpha);
 
   /// The Material Design high emphasis color contrasting with this color.
   Color get highEmphasisOnColor => estimatedBrightness.highEmphasisOnColor;
