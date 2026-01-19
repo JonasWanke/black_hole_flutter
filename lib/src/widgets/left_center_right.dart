@@ -294,14 +294,12 @@ class _RenderLeftCenterRight extends RenderBox
     var left = 0.0;
     var right = size.width;
 
-    final leftChild = childrenMap[_LeftCenterRightSlot.left];
-    if (leftChild != null) {
+    if (childrenMap[_LeftCenterRightSlot.left] case final leftChild?) {
       leftChild.data.offset = Offset(left, computeY(leftChild));
       left += leftChild.size.width;
     }
 
-    final rightChild = childrenMap[_LeftCenterRightSlot.right];
-    if (rightChild != null) {
+    if (childrenMap[_LeftCenterRightSlot.right] case final rightChild?) {
       rightChild.data.offset = Offset(
         right - rightChild.size.width,
         computeY(rightChild),
@@ -309,10 +307,9 @@ class _RenderLeftCenterRight extends RenderBox
       right -= rightChild.size.width;
     }
 
-    final centerChild = childrenMap[_LeftCenterRightSlot.center];
-    if (centerChild != null) {
+    if (childrenMap[_LeftCenterRightSlot.center] case final centerChild?) {
       centerChild.data.offset = Offset(
-        // This is where the magic happend:
+        // This is where the magic happens:
         ((size.width - centerChild.size.width) / 2).clamp(
           left,
           right - centerChild.size.width,
