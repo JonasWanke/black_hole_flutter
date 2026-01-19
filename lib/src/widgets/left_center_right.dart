@@ -327,7 +327,7 @@ class _RenderLeftCenterRight extends RenderBox
     Map<_LeftCenterRightSlot, RenderBox> childrenMap, {
     required ChildLayouter layoutChild,
   }) {
-    var remainingConstraints = constraints;
+    var remainingConstraints = constraints.loosen();
 
     final left = childrenMap[_LeftCenterRightSlot.left];
     final leftSize = left == null
