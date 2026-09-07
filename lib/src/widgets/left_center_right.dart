@@ -104,10 +104,9 @@ class _RenderLeftCenterRight extends RenderBox
         ContainerRenderObjectMixin<RenderBox, _LeftCenterRightParentData>,
         RenderBoxContainerDefaultsMixin<RenderBox, _LeftCenterRightParentData> {
   _RenderLeftCenterRight({
-    CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
-    TextBaseline? textBaseline,
-  }) : _crossAxisAlignment = crossAxisAlignment,
-       _textBaseline = textBaseline;
+    this._crossAxisAlignment = CrossAxisAlignment.center,
+    this._textBaseline,
+  });
 
   CrossAxisAlignment get crossAxisAlignment => _crossAxisAlignment;
   CrossAxisAlignment _crossAxisAlignment;

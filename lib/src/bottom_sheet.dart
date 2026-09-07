@@ -41,7 +41,7 @@ extension BottomSheetContext on BuildContext {
   }) {
     return material.showModalBottomSheet(
       context: this,
-      builder: (_) => FancyBottomSheet(builder: builder),
+      builder: (context) => FancyBottomSheet(builder: builder),
       backgroundColor: backgroundColor,
       elevation: elevation,
       shape: shape,

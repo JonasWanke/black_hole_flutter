@@ -1,4 +1,9 @@
-include: package:supernova/lints.yaml
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+include: package:supernova_lints/lints.yaml
 
 linter:
   rules:
