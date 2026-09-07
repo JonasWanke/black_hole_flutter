@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart' as material show showModalBottomSheet;
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart'
+    as material
+    show showModalBottomSheet;
+import 'package:material_ui/material_ui.dart';
 
 import 'context.dart';
 
