@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart' as material show showModalBottomSheet;
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart'
+    as material
+    show showModalBottomSheet;
+import 'package:material_ui/material_ui.dart';
 
 import 'context.dart';
 
@@ -41,7 +43,7 @@ extension BottomSheetContext on BuildContext {
   }) {
     return material.showModalBottomSheet(
       context: this,
-      builder: (_) => FancyBottomSheet(builder: builder),
+      builder: (context) => FancyBottomSheet(builder: builder),
       backgroundColor: backgroundColor,
       elevation: elevation,
       shape: shape,

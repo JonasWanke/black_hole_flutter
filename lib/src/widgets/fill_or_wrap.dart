@@ -52,9 +52,7 @@ class _FillOrWrapLayout extends RenderBox
     with
         ContainerRenderObjectMixin<RenderBox, _FillOrWrapParentData>,
         RenderBoxContainerDefaultsMixin<RenderBox, _FillOrWrapParentData> {
-  _FillOrWrapLayout({double spacing = 0, double wrappedSpacing = 0})
-    : _spacing = spacing,
-      _wrappedSpacing = wrappedSpacing;
+  _FillOrWrapLayout({this._spacing = 0, this._wrappedSpacing = 0});
 
   double _spacing;
   double get spacing => _spacing;

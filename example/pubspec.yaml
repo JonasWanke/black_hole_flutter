@@ -2,21 +2,22 @@ name: black_hole_flutter_example
 publish_to: none
 
 environment:
-  sdk: ^3.10.0
-  flutter: '>=3.38.0'
+  sdk: ^3.12.0
+  flutter: '>=3.47.0'
 
 dependencies:
   black_hole_flutter:
     path: ../
   flutter:
     sdk: flutter
+  material_ui: ^1.1.1
 
 dev_dependencies:
   supernova:
     git:
       url: https://github.com/JonasWanke/supernova.git
       path: supernova
-      ref: 6da7cfcf12aa2755ed9f7e1a59458c600ef3e1d0
+      ref: 20b9a50f30efe39b17c9d20a6189027af4742526
 
 flutter:
   uses-material-design: true

@@ -1,5 +1,5 @@
 import 'package:black_hole_flutter/black_hole_flutter.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'buttons.dart';
 
@@ -31,7 +31,7 @@ class BottomSheetExample extends StatelessWidget {
       title: 'FancyBottomSheet',
       children: [
         FancyElevatedButton(
-          onPressed: () async => _handlePressed(context),
+          onPressed: () => _handlePressed(context),
           child: const Text('Open FancyBottomSheet'),
         ),
       ],
@@ -40,7 +40,7 @@ class BottomSheetExample extends StatelessWidget {
 
   Future<void> _handlePressed(BuildContext context) async {
     await context.showFancyModalBottomSheet<void>(
-      builder: (_) => const Padding(
+      builder: (context) => const Padding(
         padding: EdgeInsets.symmetric(vertical: 128, horizontal: 16),
         child: Text("I'm fancy!"),
       ),
