@@ -16,3 +16,7 @@ doc/api/
 # Generated dart files
 *.g.dart
 *.pb*.dart
+
+# IDE folders
+.idea/
+.vscode/
