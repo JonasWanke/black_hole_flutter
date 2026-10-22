@@ -16,6 +16,21 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### 📦 Build & CI
 -->
 
+## 2.0.0 · 2026-10-22
+
+### ⚠️ BREAKING CHANGES
+- migrate from `flutter/material.dart` to `material_ui` ^1.8.0 ([`bf6d1df`](https://github.com/JonasWanke/black_hole_flutter/commit/bf6d1df6dca2a3dc6c3de988bb964eea701697e8))
+- **color_material:** remove deprecated `ThemeMaterialColors` extension on `ThemeData` ([`d877925`](https://github.com/JonasWanke/black_hole_flutter/commit/d8779255cec221d09c8b8340087625513c05cb93))
+
+### ⚡ Changes
+- **context:** mark `context.getModalRoute()` as `@optionalTypeArgs` ([`188ffd8`](https://github.com/JonasWanke/black_hole_flutter/commit/188ffd8d26b9f1fb9bbd004f73e833ae5923894a))
+
+### 🐛 Bug Fixes
+- **widgets:** Loosen constraints for `LeftCenterRight`'s children ([`d30f048`](https://github.com/JonasWanke/black_hole_flutter/commit/d30f0487ef0a8225752d2a3c1c161263e2a0ab78))
+
+### 📦 Build & CI
+- upgrade to Flutter v3.47.0, Dart v3.13.0 ([`eb68363`](https://github.com/JonasWanke/black_hole_flutter/commit/eb6836389130c059f4e3258556f06fa51d147076))
+
 ## 1.2.0 · 2026-01-02
 
 ### 🎉 New Features
