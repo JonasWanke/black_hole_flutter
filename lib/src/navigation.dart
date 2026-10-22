@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 
 extension NavigationContext on BuildContext {
   /// Shortcut for `ModalRoute.of(context)`.
+  @optionalTypeArgs
   ModalRoute<T>? getModalRoute<T>() => ModalRoute.of(this);
 
   /// Shortcut for `Navigator.of(context)`.
