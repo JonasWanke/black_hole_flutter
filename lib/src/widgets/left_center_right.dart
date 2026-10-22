@@ -9,7 +9,7 @@ import '../render_object.dart';
 enum _LeftCenterRightSlot { left, center, right }
 
 class LeftCenterRight extends MultiChildRenderObjectWidget {
-  LeftCenterRight({
+  new({
     super.key,
     this.crossAxisAlignment = CrossAxisAlignment.center,
     this.textBaseline,
@@ -77,12 +77,10 @@ class _LeftCenterRightParentData extends ContainerBoxParentData<RenderBox> {
   _LeftCenterRightSlot? slot;
 }
 
-class _LeftCenterRightParentDataWidget
-    extends ParentDataWidget<_LeftCenterRightParentData> {
-  const _LeftCenterRightParentDataWidget(this.slot, {required super.child});
-
-  final _LeftCenterRightSlot slot;
-
+class const _LeftCenterRightParentDataWidget(
+  final _LeftCenterRightSlot slot, {
+  required super.child,
+}) extends ParentDataWidget<_LeftCenterRightParentData> {
   @override
   Type get debugTypicalAncestorWidgetClass => LeftCenterRight;
 
@@ -103,11 +101,10 @@ class _RenderLeftCenterRight extends RenderBox
     with
         ContainerRenderObjectMixin<RenderBox, _LeftCenterRightParentData>,
         RenderBoxContainerDefaultsMixin<RenderBox, _LeftCenterRightParentData> {
-  _RenderLeftCenterRight({
-    CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
-    TextBaseline? textBaseline,
-  }) : _crossAxisAlignment = crossAxisAlignment,
-       _textBaseline = textBaseline;
+  new({
+    this._crossAxisAlignment = CrossAxisAlignment.center,
+    this._textBaseline,
+  });
 
   CrossAxisAlignment get crossAxisAlignment => _crossAxisAlignment;
   CrossAxisAlignment _crossAxisAlignment;

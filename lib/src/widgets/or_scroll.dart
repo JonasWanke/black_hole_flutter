@@ -2,22 +2,14 @@ import 'package:flutter/widgets.dart';
 
 /// Centers [child] if it's smaller than the parent and makes it scrollable
 /// along [scrollDirection] if it's taller.
-class CenterOrScroll extends StatelessWidget {
-  const CenterOrScroll({
-    super.key,
-    this.wrapInSafeArea = true,
-    this.padding = EdgeInsets.zero,
-    this.scrollDirection = Axis.vertical,
-    this.scrollController,
-    required this.child,
-  });
-
-  final bool wrapInSafeArea;
-  final EdgeInsets padding;
-  final Axis scrollDirection;
-  final ScrollController? scrollController;
-  final Widget child;
-
+class const CenterOrScroll({
+  super.key,
+  final bool wrapInSafeArea = true,
+  final EdgeInsets padding = EdgeInsets.zero,
+  final Axis scrollDirection = Axis.vertical,
+  final ScrollController? scrollController,
+  required final Widget child,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var child = this.child;
@@ -35,22 +27,14 @@ class CenterOrScroll extends StatelessWidget {
   }
 }
 
-class ExpandOrScroll extends StatelessWidget {
-  const ExpandOrScroll({
-    super.key,
-    this.wrapInSafeArea = true,
-    this.padding = EdgeInsets.zero,
-    this.scrollDirection = Axis.vertical,
-    this.scrollController,
-    required this.child,
-  });
-
-  final bool wrapInSafeArea;
-  final EdgeInsetsGeometry padding;
-  final Axis scrollDirection;
-  final ScrollController? scrollController;
-  final Widget child;
-
+class const ExpandOrScroll({
+  super.key,
+  final bool wrapInSafeArea = true,
+  final EdgeInsetsGeometry padding = EdgeInsets.zero,
+  final Axis scrollDirection = Axis.vertical,
+  final ScrollController? scrollController,
+  required final Widget child,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var child = this.child;

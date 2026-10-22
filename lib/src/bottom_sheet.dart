@@ -1,4 +1,6 @@
-import 'package:material_ui/material_ui.dart' as material show showModalBottomSheet;
+import 'package:material_ui/material_ui.dart'
+    as material
+    show showModalBottomSheet;
 import 'package:material_ui/material_ui.dart';
 
 import 'context.dart';
@@ -41,7 +43,7 @@ extension BottomSheetContext on BuildContext {
   }) {
     return material.showModalBottomSheet(
       context: this,
-      builder: (_) => FancyBottomSheet(builder: builder),
+      builder: (context) => FancyBottomSheet(builder: builder),
       backgroundColor: backgroundColor,
       elevation: elevation,
       shape: shape,
@@ -72,11 +74,8 @@ extension BottomSheetContext on BuildContext {
 ///   builder: (BuildContext context) => Text('I am fancy!'),
 /// );
 /// ```
-class FancyBottomSheet extends StatelessWidget {
-  const FancyBottomSheet({super.key, required this.builder});
-
-  final WidgetBuilder builder;
-
+class const FancyBottomSheet({super.key, required final WidgetBuilder builder})
+    extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -94,9 +93,7 @@ class FancyBottomSheet extends StatelessWidget {
   }
 }
 
-class DragIndicator extends StatelessWidget {
-  const DragIndicator({super.key});
-
+class const DragIndicator({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(

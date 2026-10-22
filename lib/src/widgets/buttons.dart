@@ -10,7 +10,7 @@ class FancyTextButton extends _FancyButton {
   /// Creates a [TextButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyTextButton({
+  const new({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -24,7 +24,7 @@ class FancyTextButton extends _FancyButton {
   /// Creates a [TextButton] with a leading icon.
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyTextButton.icon({
+  const new icon({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -58,7 +58,7 @@ class FancyOutlinedButton extends _FancyButton {
   /// Creates an [OutlinedButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyOutlinedButton({
+  const new({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -72,7 +72,7 @@ class FancyOutlinedButton extends _FancyButton {
   /// Creates an [OutlinedButton] with a leading icon.
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyOutlinedButton.icon({
+  const new icon({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -110,7 +110,7 @@ class FancyElevatedButton extends _FancyButton {
   /// Creates a [ElevatedButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyElevatedButton({
+  const new({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -124,7 +124,7 @@ class FancyElevatedButton extends _FancyButton {
   /// Creates a [ElevatedButton] with a leading icon.
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyElevatedButton.icon({
+  const new icon({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -162,7 +162,7 @@ class FancyFilledButton extends _FancyButton {
   /// Creates a [FilledButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyFilledButton({
+  const new({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -176,7 +176,7 @@ class FancyFilledButton extends _FancyButton {
   /// Creates a [FilledButton] with a leading icon.
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyFilledButton.icon({
+  const new icon({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -192,7 +192,7 @@ class FancyFilledButton extends _FancyButton {
   /// Creates a [FilledButton.tonal].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyFilledButton.tonal({
+  const new tonal({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -206,7 +206,7 @@ class FancyFilledButton extends _FancyButton {
   /// Creates a [FilledButton.tonalIcon] with a leading icon.
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyFilledButton.tonalIcon({
+  const new tonalIcon({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -247,7 +247,7 @@ class FancyFab extends _FancyButton {
   /// Creates a circular [FloatingActionButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyFab({
+  const new({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -264,7 +264,7 @@ class FancyFab extends _FancyButton {
   /// Creates a circular [FloatingActionButton.small].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyFab.small({
+  const new small({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -281,7 +281,7 @@ class FancyFab extends _FancyButton {
   /// Creates a circular [FloatingActionButton.large].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyFab.large({
+  const new large({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -298,7 +298,7 @@ class FancyFab extends _FancyButton {
   /// Creates an extended [FloatingActionButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyFab.extended({
+  const new extended({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -410,7 +410,7 @@ class FancyIconButton extends _FancyButton {
   /// Creates an [IconButton].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyIconButton({
+  const new({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -426,7 +426,7 @@ class FancyIconButton extends _FancyButton {
   /// Creates an [IconButton.filled].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyIconButton.filled({
+  const new filled({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -442,7 +442,7 @@ class FancyIconButton extends _FancyButton {
   /// Creates an [IconButton.filledTonal].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyIconButton.filledTonal({
+  const new filledTonal({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -458,7 +458,7 @@ class FancyIconButton extends _FancyButton {
   /// Creates an [IconButton.outlined].
   ///
   /// {@macro black_hole_flutter.buttons.isEnabled}
-  const FancyIconButton.outlined({
+  const new outlined({
     super.key,
     super.isEnabled,
     required super.onPressed,
@@ -503,7 +503,7 @@ abstract class _FancyButton extends StatelessWidget {
   /// * `isEnabled: false` or
   /// * `onPressed: null`
   /// {@endtemplate}
-  const _FancyButton({
+  const new({
     super.key,
     this.isEnabled,
     required this.onPressed,
@@ -554,11 +554,7 @@ abstract class _FancyButton extends StatelessWidget {
   Widget _buildIcon(BuildContext context, Widget icon);
 }
 
-class _LoadingIndicator extends StatelessWidget {
-  const _LoadingIndicator(this.size);
-
-  final double size;
-
+class const _LoadingIndicator(final double size) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox.square(

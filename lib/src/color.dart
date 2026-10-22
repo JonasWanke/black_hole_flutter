@@ -1,20 +1,20 @@
 import 'dart:math';
 
-import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 
 // Maximum value per channel of a [Color].
 const _channelMax = (1 << 8) - 1;
 
 extension FancyBrightness on Brightness {
   /// `true` for [Brightness.dark], `false` otherwise.
-  bool get isDark => this == Brightness.dark;
+  bool get isDark => this == .dark;
 
   /// `true` for [Brightness.light], `false` otherwise.
-  bool get isLight => this == Brightness.light;
+  bool get isLight => this == .light;
 
   /// The opposite [Brightness] — [light] becomes [dark] and vice versa.
-  Brightness get opposite => isDark ? Brightness.light : Brightness.dark;
+  Brightness get opposite => isDark ? .light : .dark;
 
   /// The [Color] representing this [Brightness]:
   ///
@@ -30,7 +30,7 @@ extension FancyBrightness on Brightness {
 
   /// The [SystemUiOverlayStyle] providing the most contrast on this brightness.
   SystemUiOverlayStyle get contrastSystemUiOverlayStyle =>
-      isDark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark;
+      isDark ? .light : .dark;
 }
 
 extension FancyColor on Color {
@@ -58,7 +58,7 @@ extension FancyColor on Color {
   bool get isOpaque => a == 1.0;
 
   /// Shortcut for `Color.alphaBlend(color, background)`.
-  Color alphaBlendOn(Color background) => Color.alphaBlend(this, background);
+  Color alphaBlendOn(Color background) => .alphaBlend(this, background);
 
   /// Apply [alpha] in addition to the existing opacity by multiplying them.
   Color withAdditionalAlpha(double alpha) {
@@ -67,10 +67,10 @@ extension FancyColor on Color {
   }
 
   /// Shortcut for `HSLColor.fromColor(color)`.
-  HSLColor get hsl => HSLColor.fromColor(this);
+  HSLColor get hsl => .fromColor(this);
 
   /// Shortcut for `HSVColor.fromColor(color)`.
-  HSVColor get hsv => HSVColor.fromColor(this);
+  HSVColor get hsv => .fromColor(this);
 }
 
 extension FancyThemeData on ThemeData {
@@ -110,7 +110,7 @@ extension RandomColor on Random {
     final b = blue ?? nextInt(_channelMax);
 
     if (opacity != null) return Color.fromRGBO(r, g, b, opacity);
-    return Color.fromARGB(alpha ?? nextInt(_channelMax), r, g, b);
+    return .fromARGB(alpha ?? nextInt(_channelMax), r, g, b);
   }
 
   /// Generates a random [HSLColor] with uniformly distributed hue, saturation,
@@ -128,7 +128,7 @@ extension RandomColor on Random {
     final l = lightness ?? nextDouble();
     final a = alpha ?? nextDouble();
 
-    return HSLColor.fromAHSL(a, h, s, l);
+    return .fromAHSL(a, h, s, l);
   }
 
   /// Generates a random [HSVColor] with uniformly distributed hue, saturation,
@@ -146,7 +146,7 @@ extension RandomColor on Random {
     final v = value ?? nextDouble();
     final a = alpha ?? nextDouble();
 
-    return HSVColor.fromAHSV(a, h, s, v);
+    return .fromAHSV(a, h, s, v);
   }
 }
 

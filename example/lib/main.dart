@@ -31,7 +31,7 @@ class BottomSheetExample extends StatelessWidget {
       title: 'FancyBottomSheet',
       children: [
         FancyElevatedButton(
-          onPressed: () async => _handlePressed(context),
+          onPressed: () => _handlePressed(context),
           child: const Text('Open FancyBottomSheet'),
         ),
       ],
@@ -40,7 +40,7 @@ class BottomSheetExample extends StatelessWidget {
 
   Future<void> _handlePressed(BuildContext context) async {
     await context.showFancyModalBottomSheet<void>(
-      builder: (_) => const Padding(
+      builder: (context) => const Padding(
         padding: EdgeInsets.symmetric(vertical: 128, horizontal: 16),
         child: Text("I'm fancy!"),
       ),
@@ -84,12 +84,11 @@ class FillOrWrapExample extends StatelessWidget {
   }
 }
 
-class Section extends StatelessWidget {
-  const Section({super.key, required this.title, required this.children});
-
-  final String title;
-  final List<Widget> children;
-
+class const Section({
+  super.key,
+  required final String title,
+  required final List<Widget> children,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(

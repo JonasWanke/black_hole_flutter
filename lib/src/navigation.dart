@@ -32,7 +32,7 @@ typedef MessageLogger = void Function(String message);
 /// A [NavigatorObserver] that loggs all navigation events to a [MessageLogger]
 /// (defaults to [print]).
 class LoggingNavigatorObserver extends NavigatorObserver {
-  LoggingNavigatorObserver({this.logger = defaultLogger});
+  new({this.logger = defaultLogger});
 
   final MessageLogger logger;
 
@@ -69,7 +69,7 @@ class LoggingNavigatorObserver extends NavigatorObserver {
 
 /// A [NavigatorObserver] that reports the current route to a callback.
 class ReportingNavigatorObserver extends NavigatorObserver {
-  ReportingNavigatorObserver(this.onRouteChanged);
+  new(this.onRouteChanged);
 
   final ValueChanged<Route<dynamic>?> onRouteChanged;
 
