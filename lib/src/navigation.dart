@@ -31,11 +31,8 @@ typedef MessageLogger = void Function(String message);
 
 /// A [NavigatorObserver] that loggs all navigation events to a [MessageLogger]
 /// (defaults to [print]).
-class LoggingNavigatorObserver extends NavigatorObserver {
-  new({this.logger = defaultLogger});
-
-  final MessageLogger logger;
-
+class LoggingNavigatorObserver({final MessageLogger logger = defaultLogger})
+    extends NavigatorObserver {
   // ignore: avoid_print
   static void defaultLogger(String message) => print('Navigator: $message');
 
@@ -68,11 +65,9 @@ class LoggingNavigatorObserver extends NavigatorObserver {
 }
 
 /// A [NavigatorObserver] that reports the current route to a callback.
-class ReportingNavigatorObserver extends NavigatorObserver {
-  new(this.onRouteChanged);
-
-  final ValueChanged<Route<dynamic>?> onRouteChanged;
-
+class ReportingNavigatorObserver(
+  final ValueChanged<Route<dynamic>?> onRouteChanged,
+) extends NavigatorObserver {
   @override
   void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) =>
       onRouteChanged(route);

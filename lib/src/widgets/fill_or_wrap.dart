@@ -16,20 +16,16 @@ import '../render_object.dart';
 /// become smaller than its reported minimum width, the [children] get
 /// positioned **below each other** ("wrapped"). This is similar to a [Column]
 /// with [MainAxisSize.min].
-class FillOrWrap extends MultiChildRenderObjectWidget {
-  const new({
-    super.key,
-    this.spacing = 0,
-    this.wrappedSpacing = 0,
-    required super.children,
-  });
+class const FillOrWrap({
+  super.key,
 
   /// How much space to place between children when not wrapping.
-  final double spacing;
+  final double spacing = 0,
 
   /// How much space to place between children when wrapping.
-  final double wrappedSpacing;
-
+  final double wrappedSpacing = 0,
+  required super.children,
+}) extends MultiChildRenderObjectWidget {
   @override
   RenderObject createRenderObject(BuildContext context) {
     return _FillOrWrapLayout(spacing: spacing, wrappedSpacing: wrappedSpacing);

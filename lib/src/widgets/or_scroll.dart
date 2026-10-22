@@ -58,9 +58,7 @@ class const ExpandOrScroll({
   }
 }
 
-Widget _intrinsicAlongAxis(Axis axis, Widget child) {
-  return switch (axis) {
-    .horizontal => IntrinsicWidth(child: child),
-    .vertical => IntrinsicHeight(child: child),
-  };
-}
+Widget _intrinsicAlongAxis(Axis axis, Widget child) => switch (axis) {
+  .horizontal => IntrinsicWidth(child: child),
+  .vertical => IntrinsicHeight(child: child),
+};

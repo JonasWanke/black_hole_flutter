@@ -8,42 +8,32 @@ import '../render_object.dart';
 
 enum _LeftCenterRightSlot { left, center, right }
 
-class LeftCenterRight extends MultiChildRenderObjectWidget {
-  new({
-    super.key,
-    this.crossAxisAlignment = CrossAxisAlignment.center,
-    this.textBaseline,
-    Widget? left,
-    Widget? center,
-    Widget? right,
-  }) : assert(
-         crossAxisAlignment != CrossAxisAlignment.baseline ||
-             textBaseline != null,
-         '`textBaseline` is required if '
-         '`crossAxisAlignment == CrossAxisAlignment.baseline`',
-       ),
-       super(
-         children: [
-           if (left != null)
-             _LeftCenterRightParentDataWidget(
-               _LeftCenterRightSlot.left,
-               child: left,
-             ),
-           if (center != null)
-             _LeftCenterRightParentDataWidget(
-               _LeftCenterRightSlot.center,
-               child: center,
-             ),
-           if (right != null)
-             _LeftCenterRightParentDataWidget(
-               _LeftCenterRightSlot.right,
-               child: right,
-             ),
-         ],
-       );
-
-  final CrossAxisAlignment crossAxisAlignment;
-  final TextBaseline? textBaseline;
+// ignore: prefer_const_constructors_in_immutables
+class LeftCenterRight({
+  super.key,
+  final CrossAxisAlignment crossAxisAlignment = .center,
+  final TextBaseline? textBaseline,
+  Widget? left,
+  Widget? center,
+  Widget? right,
+}) extends MultiChildRenderObjectWidget {
+  this
+    : assert(
+        crossAxisAlignment != CrossAxisAlignment.baseline ||
+            textBaseline != null,
+        '`textBaseline` is required if '
+        '`crossAxisAlignment == CrossAxisAlignment.baseline`',
+      ),
+      super(
+        children: [
+          if (left != null)
+            _LeftCenterRightParentDataWidget(.left, child: left),
+          if (center != null)
+            _LeftCenterRightParentDataWidget(.center, child: center),
+          if (right != null)
+            _LeftCenterRightParentDataWidget(.right, child: right),
+        ],
+      );
 
   @override
   RenderObject createRenderObject(BuildContext context) {
@@ -97,17 +87,14 @@ class const _LeftCenterRightParentDataWidget(
   }
 }
 
-class _RenderLeftCenterRight extends RenderBox
+class _RenderLeftCenterRight({
+  var CrossAxisAlignment _crossAxisAlignment = .center,
+  var TextBaseline? _textBaseline,
+}) extends RenderBox
     with
         ContainerRenderObjectMixin<RenderBox, _LeftCenterRightParentData>,
         RenderBoxContainerDefaultsMixin<RenderBox, _LeftCenterRightParentData> {
-  new({
-    this._crossAxisAlignment = CrossAxisAlignment.center,
-    this._textBaseline,
-  });
-
   CrossAxisAlignment get crossAxisAlignment => _crossAxisAlignment;
-  CrossAxisAlignment _crossAxisAlignment;
   set crossAxisAlignment(CrossAxisAlignment value) {
     if (_crossAxisAlignment != value) {
       _crossAxisAlignment = value;
@@ -116,7 +103,6 @@ class _RenderLeftCenterRight extends RenderBox
   }
 
   TextBaseline? get textBaseline => _textBaseline;
-  TextBaseline? _textBaseline;
   set textBaseline(TextBaseline? value) {
     assert(_crossAxisAlignment != CrossAxisAlignment.baseline || value != null);
     if (_textBaseline != value) {
