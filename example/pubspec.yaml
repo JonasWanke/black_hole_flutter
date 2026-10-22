@@ -10,13 +10,14 @@ dependencies:
     path: ../
   flutter:
     sdk: flutter
+  material_ui: ^1.8.0
 
 dev_dependencies:
   supernova:
     git:
       url: https://github.com/JonasWanke/supernova.git
       path: supernova
-      ref: 6da7cfcf12aa2755ed9f7e1a59458c600ef3e1d0
+      ref: 20b9a50f30efe39b17c9d20a6189027af4742526
 
 flutter:
   uses-material-design: true

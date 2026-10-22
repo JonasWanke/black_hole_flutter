@@ -1,5 +1,11 @@
 include: package:supernova/lints.yaml
 
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+
 linter:
   rules:
     use_key_in_widget_constructors: false
