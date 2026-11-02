@@ -10,7 +10,7 @@ dependencies:
     path: ../
   flutter:
     sdk: flutter
-  material_ui: ^1.8.0
+  material_ui: ^1.9.0
 
 dev_dependencies:
   supernova:
