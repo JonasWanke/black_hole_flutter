@@ -1,6 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    # https://github.com/NixOS/nixpkgs/pull/587442
+    nixpkgs.url = "github:nixos/nixpkgs?ref=fdc28e399b28c24e279274962fe452f0c82d5bd8";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -21,7 +22,7 @@
           };
         };
 
-        flutter = pkgs.flutterPackages.v3_38;
+        flutter = pkgs.flutterPackages.v3_50;
 
         # Android
         androidSdkArgs = {
